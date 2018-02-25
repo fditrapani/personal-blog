@@ -936,3 +936,62 @@ body, #root {
     transform: translateY(200px); }
   100% {
     transform: translateY(0); } }
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #2e2a2b; }
+  .content h1, .content h2, .content h3, .content h4, .content h5 {
+    font-weight: 900;
+    color: #2e2a2b; }
+  .content p {
+    font-family: Georgia;
+    line-height: 1.6; }
+    @media (min-width: 550px) {
+      .content p {
+        font-size: 2.2rem; } }
+    @media (min-width: 900px) {
+      .content p {
+        font-size: 2.6rem;
+        line-height: 1.7; } }
+  .content a:hover {
+    text-decoration: none; }
+  .content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box; }
+  .content figure {
+    margin: 0 0 2.2rem; }
+  .content figcaption {
+    margin-top: 10px; }
+  .content ol, .content ul {
+    font-family: Georgia;
+    line-height: 1.6; }
+    @media (min-width: 550px) {
+      .content ol, .content ul {
+        font-size: 2.2rem;
+        margin-left: 1em; } }
+    @media (min-width: 900px) {
+      .content ol, .content ul {
+        font-size: 2.6rem; } }
+  .content ul li {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 25px;
+    color: #2e2a2b; }
+  .content blockquote {
+    font-style: oblique;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 1em;
+    border-left: 8px solid #d4d4d4; }
+    @media (min-width: 550px) {
+      .content blockquote {
+        padding-left: 1.5em; } }
+  .content .error_wrapper {
+    border-bottom: 16px solid #d4d4d4;
+    padding: 3rem 0;
+    margin: 3rem 0 6rem; }
