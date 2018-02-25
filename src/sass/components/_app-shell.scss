@@ -1,0 +1,147 @@
+@import "colours";
+
+html {
+  height: 100%
+}
+
+body, #root {
+  background: $background;	
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.app-shell {
+	flex-grow: 1;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+@media (max-width: 650px) { 
+  .app-shell {
+    flex-direction: column-reverse;
+  }
+}
+
+.app-shell__content {
+  flex-grow: 1;
+  overflow-y: auto;
+  animation: contentLoad 1s 0.3s ease-in-out;
+  animation-fill-mode: backwards;
+}
+
+.app-shell__navigation {
+	background: $primary-colour;
+	box-sizing: border-box;
+	box-shadow: 0 -3px 10px #000;
+	z-index: 1;
+	animation: navLoad 0.5s ease-out;
+	animation-fill-mode: backwards;
+
+	@media (max-width: 650px) { 
+		box-shadow: 0 4px 10px #000;
+		animation: mobileNavLoad 0.5s ease-out;
+	}
+}
+
+.app-shell__nav-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	padding: 0px 20px;
+	overflow: hidden;
+}
+
+.app-shell__nav-icon-link {
+	height: 25px;
+}
+
+.app-shell__nav-icon {
+	width: 16px;
+}
+
+.app-shell__nav-wrapper {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transform: translate( 10px, -1px);
+}
+
+.app-shell__nav-item {
+	margin: 0 0 0 5px;
+	padding: 0;
+	list-style: none;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.app-shell__nav-link {
+	text-decoration: none;
+	color: $dark-colour;
+	font-size: 1.6rem;
+	padding: 5px 10px;
+	position: relative;
+
+	&:hover{
+		color: $dark-colour;
+	}
+
+	&:after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: -11px;
+		left: 0;
+		width: 100%;
+		height: 0px;
+		background: $dark-colour;
+	}
+
+	&:hover:after {
+		height: 4px;
+	}
+
+	&.active {
+		color: $dark-colour;
+
+		&:after {
+			height: 4px;
+		}
+	}
+}
+
+//screen-loader
+@keyframes contentLoad {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }    
+}
+
+@keyframes navLoad {
+    0% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(0)
+    }    
+}
+
+@keyframes mobileNavLoad {
+    0% {
+        transform: translateY(200px);
+    }
+    100% {
+        transform: translateY(0)
+    }    
+}

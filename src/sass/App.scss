@@ -1,33 +1,43 @@
-.App {
-  text-align: center;
-}
+/*!
+ * Bootstrap v4.0.0-beta (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+@import "skeleton/normalize";
+@import "skeleton/skeleton";
+@import "components/colours";
+@import "components/app-shell";
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.app-shell__nav-icon {
-  width: 100px;
-  fill: #fff;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/* TBD: Delete
+@import "scss/custom";
+@import "scss/functions";
+@import "scss/variables";
+@import "scss/mixins";
+@import "scss/print";
+@import "scss/reboot";
+@import "scss/type";
+@import "scss/images";
+@import "scss/code";
+@import "scss/grid";
+@import "scss/tables";
+@import "scss/forms";
+@import "scss/buttons";
+@import "scss/transitions";
+@import "scss/dropdown";
+@import "scss/button-group";
+@import "scss/input-group";
+@import "scss/custom-forms";
+@import "scss/nav";
+@import "scss/card";
+@import "scss/breadcrumb";
+@import "scss/pagination";
+@import "scss/badge";
+@import "scss/alert";
+@import "scss/media";
+@import "scss/list-group";
+@import "scss/close";
+@import "scss/tooltip";
+@import "scss/utilities";
+*/
