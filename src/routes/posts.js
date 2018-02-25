@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import AppShell from '../components/appshell/';
 
 class Posts extends Component {
   render() {
     return (
-      <AppShell>
+      <div>
          <h1>Vafancul2</h1>
          <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-      </AppShell>
+      </div>
     );
   }
 }
