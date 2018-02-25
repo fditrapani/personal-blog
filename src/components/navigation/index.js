@@ -1,31 +1,32 @@
 import React from 'react'
 import Logo from '../logo'
+import { Link } from 'react-router';
 
 const Navigation = () => (
   <nav className="app-shell__navigation">
     <div className="app-shell__nav-content">
 
-      <a href="/" className="app-shell__nav-icon-link">
+      <Link to="/" className="app-shell__nav-icon-link">
         <Logo logoClass="app-shell__nav-icon" />
-      </a>
+      </Link>
 
       <ul className="app-shell__nav-wrapper">
         <li className="app-shell__nav-item">
-          <a
+          <Link
             className="app-shell__nav-link"
-            href="/"
+            to="/"
           >
             Posts
-          </a>
+          </Link>
         </li>
 
         <li className="app-shell__nav-item">
-          <a
+          <Link
             className="app-shell__nav-link"
-            href="/about"
+            to="/about"
           >
             About
-          </a>
+          </Link>
         </li>
       </ul>
     </div>  

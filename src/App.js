@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import Navigation from './components/navigation/';
-import './sass/App.css';
+import { Router, browserHistory, Route } from 'react-router';
+import Posts from './routes/posts';
+import About from './routes/about';
 
 class App extends Component {
   render() {
     return (
-      <div className="app-shell">
-        <Navigation />
-
-        <div className="app-shell__content">
-           <h1>Vafanculo</h1>
-           <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-        </div>
-      </div>
+      <Router history={browserHistory}>
+        <Route path="/" component={ Posts }/>
+        <Route path="/about" component={ About }/>
+      </Router>
     );
   }
 }

@@ -851,16 +851,16 @@ body, #root {
 .app-shell__content {
   flex-grow: 1;
   overflow-y: auto;
-  animation: contentLoad 1s 0.3s ease-in-out;
-  animation-fill-mode: backwards; }
+  /*animation: contentLoad 1s 0.3s ease-in-out;
+  animation-fill-mode: backwards;*/ }
 
 .app-shell__navigation {
   background: #ffd000;
   box-sizing: border-box;
   box-shadow: 0 -3px 10px #000;
   z-index: 1;
-  animation: navLoad 0.5s ease-out;
-  animation-fill-mode: backwards; }
+  /*animation: navLoad 0.5s ease-out;
+	animation-fill-mode: backwards;*/ }
   @media (max-width: 650px) {
     .app-shell__navigation {
       box-shadow: 0 4px 10px #000;
@@ -936,35 +936,3 @@ body, #root {
     transform: translateY(200px); }
   100% {
     transform: translateY(0); } }
-
-/* TBD: Delete
-@import "scss/custom";
-@import "scss/functions";
-@import "scss/variables";
-@import "scss/mixins";
-@import "scss/print";
-@import "scss/reboot";
-@import "scss/type";
-@import "scss/images";
-@import "scss/code";
-@import "scss/grid";
-@import "scss/tables";
-@import "scss/forms";
-@import "scss/buttons";
-@import "scss/transitions";
-@import "scss/dropdown";
-@import "scss/button-group";
-@import "scss/input-group";
-@import "scss/custom-forms";
-@import "scss/nav";
-@import "scss/card";
-@import "scss/breadcrumb";
-@import "scss/pagination";
-@import "scss/badge";
-@import "scss/alert";
-@import "scss/media";
-@import "scss/list-group";
-@import "scss/close";
-@import "scss/tooltip";
-@import "scss/utilities";
-*/
