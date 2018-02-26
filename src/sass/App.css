@@ -569,10 +569,10 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #00a7aa; }
+  color: #714FA0; }
 
 a:hover {
-  color: #00a7aa; }
+  color: #714FA0; }
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -923,9 +923,9 @@ body, #root {
     .app-shell__nav-link.active:after {
       height: 4px; }
   .app-shell__nav-link:active {
-    color: #00a7aa; }
+    color: #282828; }
   .app-shell__nav-link:active:after {
-    background: #00a7aa; }
+    background: #714FA0; }
 
 @keyframes contentLoad {
   0% {

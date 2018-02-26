@@ -121,10 +121,11 @@ body, #root {
 			height: 4px;
 		}
 	}
-
+	
 	&:active {
-		color: $interactive;
+		color: $dark-colour
 	}
+
 	&:active:after {
 		background: $interactive;
 	}
