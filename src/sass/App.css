@@ -923,7 +923,7 @@ body, #root {
     .app-shell__nav-link.active:after {
       height: 4px; }
   .app-shell__nav-link:active {
-    color: #282828; }
+    color: #714FA0; }
   .app-shell__nav-link:active:after {
     background: #714FA0; }
 
