@@ -850,7 +850,9 @@ body, #root {
 
 .app-shell__content {
   flex-grow: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
+  /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
   animation: contentLoad 1s 0.3s ease-in-out;
   animation-fill-mode: backwards; }
 
@@ -912,12 +914,18 @@ body, #root {
     width: 100%;
     height: 0px;
     background: #282828; }
+  .app-shell__nav-link:active {
+    color: #FF0000; }
   .app-shell__nav-link:hover:after {
     height: 4px; }
   .app-shell__nav-link.active {
     color: #282828; }
     .app-shell__nav-link.active:after {
       height: 4px; }
+  .app-shell__nav-link:active {
+    color: #00a7aa; }
+  .app-shell__nav-link:active:after {
+    background: #00a7aa; }
 
 @keyframes contentLoad {
   0% {

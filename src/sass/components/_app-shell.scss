@@ -106,6 +106,10 @@ body, #root {
 		background: $dark-colour;
 	}
 
+	&:active {
+		color: #FF0000;
+	}
+
 	&:hover:after {
 		height: 4px;
 	}
@@ -116,6 +120,13 @@ body, #root {
 		&:after {
 			height: 4px;
 		}
+	}
+
+	&:active {
+		color: $interactive;
+	}
+	&:active:after {
+		background: $interactive;
 	}
 }
 

@@ -9,10 +9,9 @@ class AppShell extends Component {
   
   render() {
     const { children } = this.props;
-
     return (
       <div className="app-shell">
-        <Navigation />
+        <Navigation location={ this.props.location } />
 
         <div ref="appShellContainer" className="app-shell__content">
            { children }
