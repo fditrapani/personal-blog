@@ -48,6 +48,18 @@ body, #root {
 	}
 }
 
+
+.page-main {
+	position: relative;
+}
+
+.fade-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .app-shell__nav-content {
 	display: flex;
 	justify-content: space-between;
@@ -63,6 +75,10 @@ body, #root {
 
 .app-shell__nav-icon {
 	width: 16px;
+
+	.app-shell__nav-icon-link &:active {
+		fill: $interactive;
+	}
 }
 
 .app-shell__nav-wrapper {

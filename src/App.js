@@ -3,7 +3,9 @@ import { withRouter, Switch, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import AppShell from './components/appshell/';
 import Posts from './routes/posts';
+import Post from './routes/post';
 import About from './routes/about';
+import NotFound from './routes/404';
 
 class App extends Component {
   render() {
@@ -19,7 +21,8 @@ class App extends Component {
               <Switch location={ location }>
                 <Route path="/" exact component={ Posts } />
                 <Route path="/about" component={ About } />
-                <Route component={ Posts } />
+                <Route path="/post/:id/:slug" component={ Post } />
+                <Route component={ NotFound } />
               </Switch>
             </section>
           </CSSTransition>

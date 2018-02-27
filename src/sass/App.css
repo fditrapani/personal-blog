@@ -868,6 +868,15 @@ body, #root {
       box-shadow: 0 4px 10px #000;
       animation: mobileNavLoad 0.5s ease-out; } }
 
+.page-main {
+  position: relative; }
+
+.fade-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
 .app-shell__nav-content {
   display: flex;
   justify-content: space-between;
@@ -881,6 +890,8 @@ body, #root {
 
 .app-shell__nav-icon {
   width: 16px; }
+  .app-shell__nav-icon-link .app-shell__nav-icon:active {
+    fill: #714FA0; }
 
 .app-shell__nav-wrapper {
   margin: 0;
@@ -1010,12 +1021,12 @@ body, #root {
 
 .fade-appear-active,
 .fade-enter-active {
-  transition: opacity .6s ease-in-out;
+  transition: opacity .6s .4s ease-out;
   opacity: 1; }
 
 .fade-exit {
-  transition: opacity .6s ease-in-out;
-  opacity: 1; }
+  opacity: 1;
+  transition: opacity .2s ease-out; }
 
 .fade-exit-active {
   opacity: 0; }
