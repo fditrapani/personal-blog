@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     const location = this.props.location;
     const currentKey = location.pathname.split('/')[1] || '/'
-    const timeout = { enter: 800, exit: 600 }
+    const timeout = { enter: 800, exit: 800 }
 
     return (
       <AppShell location={ location }>
