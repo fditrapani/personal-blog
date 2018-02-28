@@ -1,0 +1,15 @@
+.reading-time__duration {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #a6a6a6;
+  text-align: right;
+  width: 80px; }
+
+.reading-time__minutes {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #a6a6a6;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  width: 100%; }

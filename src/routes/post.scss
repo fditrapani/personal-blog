@@ -1,0 +1,53 @@
+@import "../sass/components/colours";
+
+.post__title {
+	text-align: center;
+	font-weight: 900;
+	margin: 0;
+	padding: 3rem 0;
+	color: $text;
+
+	@media (min-width: 900px) {
+		padding: 5rem 0;
+	}
+
+	.reading-time__duration {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.post__imageWrapper {
+	position: relative;
+	padding: 46% 20px 0;
+	margin-bottom: 2rem;
+	overflow: hidden;
+	background: $white;
+
+	@media (min-width: 900px) {
+		margin-bottom: 2.5rem;
+	}
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		background: $white;
+		content: "";
+		display: block;
+	}
+}
+
+.post__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: inline-block;
+	background: $white;
+	padding: 10px;
+	box-sizing: border-box;
+}

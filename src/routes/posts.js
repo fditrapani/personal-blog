@@ -6,7 +6,7 @@ class Posts extends Component {
     return (
       <div className="container">
         <div className="content">
-           <h1>Welcome to my new site</h1>
+           <h1>Welcome to my new site</h1>           
            <p>Now go build something great.</p>
            <blockquote>
            Lorem ipsum dolor sit amet, <Link to="/post/2323/hello-world">consectetur adipiscing</Link> elit. Mauris elit urna, porta vitae fringilla non, fermentum sit amet ligula. Praesent vitae dolor porta, viverra erat nec, placerat urna. Sed finibus, enim eu mollis ullamcorper, lorem risus cursus ipsum, in placerat velit felis dignissim sapien. Sed fringilla, mi at sagittis convallis, lectus arcu mattis mauris, a euismod sapien risus vitae sem. Suspendisse tempor libero eget porttitor hendrerit. Sed faucibus id lorem sed mattis. Nam in malesuada leo. Vivamus rutrum rutrum erat sit amet fermentum. Nam quis lacinia lectus. Sed ultricies turpis leo, non hendrerit nibh aliquam vitae. Vestibulum ac nulla nec augue mollis luctus.
