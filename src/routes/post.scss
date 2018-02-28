@@ -3,13 +3,18 @@
 .post__title {
 	text-align: center;
 	font-weight: 900;
-	margin: 0;
+	margin: 0 auto;
 	padding: 3rem 0;
 	color: $text;
+	width: 90%; 
 
 	@media (min-width: 900px) {
 		padding: 5rem 0;
 	}
+
+	@media (min-width: 550px) {
+	    width: 80%; 
+    }
 
 	.reading-time__duration {
 		display: block;
@@ -20,25 +25,33 @@
 
 .post__imageWrapper {
 	position: relative;
-	padding: 46% 20px 0;
+	padding: 45% 20px 0;
 	margin-bottom: 2rem;
 	overflow: hidden;
 	background: $white;
 
-	@media (min-width: 900px) {
-		margin-bottom: 2.5rem;
-	}
+	@media (min-width: 550px) {
+	    max-width: 1200px;
+	    margin-left: auto;
+	    margin-right: auto;
+    }
 
-	&:after {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 10px;
-		background: $white;
-		content: "";
-		display: block;
-	}
+	@media (min-width: 900px) { 
+		padding: 35% 20px 0;
+		margin-bottom: 2.5rem;
+		width: 90%;
+
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 10px;
+			background: $white;
+			content: "";
+			display: block;
+		}
+	}	
 }
 
 .post__image {
@@ -47,7 +60,10 @@
 	left: 0;
 	width: 100%;
 	display: inline-block;
-	background: $white;
-	padding: 10px;
-	box-sizing: border-box;
+
+	@media (min-width: 900px) { 
+		background: $white;
+		padding: 10px;
+		box-sizing: border-box;
+	}
 }
