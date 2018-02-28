@@ -23,6 +23,14 @@
 
       .logo {
         fill: #d4d4d4;
+        animation: color_change 2s 0.3s infinite ease-in-out;
+        animation-fill-mode: backwards;
+      }
+
+      @keyframes color_change {
+        0% { opacity: 0; }
+        70% { opacity: 1; }
+        100% { opacity: 0; }
       }
 
       .preloader {

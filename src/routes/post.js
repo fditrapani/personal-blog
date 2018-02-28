@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
 import ReadingTime from '../components/readingtime/';
+import Logo from '../components/logo'
 import './post.css';
 
 class Post extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      imageClass: " post__image--not-loaded",
+    };
+  }
+
+  loadImage = () => {
+    this.setState({
+      imageClass: " post__image--loaded",
+    });
+  }
+
   render() {
     return (
       <div>
         <h1 className="post__title">{ `Fetching...${this.props.match.params.slug}` }:${this.props.match.params.id} <ReadingTime /></h1>
-        <div className="post__imageWrapper">
-          <img className="post__image" src="https://i1.wp.com/filippodt.blog/wp-content/uploads/2018/01/segmenting.jpg?fit=2782%2C1299&ssl=1" />
+
+        <div className="container--image">
+          <div className="post__imageWrapper">
+            <Logo logoClass="post__imageLoader" />
+            <img 
+              className={ "post__image" + this.state.imageClass }
+              onLoad={ this.loadImage }
+              src="https://i1.wp.com/filippodt.blog/wp-content/uploads/2018/01/segmenting.jpg?fit=2782%2C1299&ssl=1" />
+          </div>
         </div>
 
         <div className="container">
