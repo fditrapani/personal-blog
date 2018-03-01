@@ -9,7 +9,47 @@ class Post extends Component {
 
     this.state = {
       imageClass: " post__image--not-loaded",
+      isLoaded: false,
+      postData: {},
     };
+  }
+
+  componentDidMount() {
+    localStorage.setItem( 'visited-'+ window.location.pathname, true );
+
+    //Fetch API request here
+    fetch(
+      'https://public-api.wordpress.com/rest/v1.1/sites/filippodt.blog/posts/' + this.props.match.params.id
+    ).then( response => {
+          if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+              response.status);
+
+            switch( response.status ) {
+              case 404:
+                console.log("Redirect to the 404 page");
+                break
+              default:
+                console.log("Redirect to the broke page");
+                break
+            }
+
+            return;
+          }
+
+          // Examine the text in the response
+          response.json().then( data => {
+            console.log(data);
+
+            this.setState({
+              postData: data,
+            });
+          });
+        }
+      )
+      .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+      });
   }
 
   loadImage = () => {
@@ -21,7 +61,7 @@ class Post extends Component {
   render() {
     return (
       <div>
-        <h1 className="post__title">{ `Fetching...${this.props.match.params.slug}` }:${this.props.match.params.id} <ReadingTime /></h1>
+        <h1 className="post__title">Title: { this.state.postData.title }<ReadingTime /></h1>
 
         <div className="container--image">
           <div className="post__imageWrapper">
@@ -29,6 +69,7 @@ class Post extends Component {
             <img 
               className={ "post__image" + this.state.imageClass }
               onLoad={ this.loadImage }
+              alt="Image"
               src="https://i1.wp.com/filippodt.blog/wp-content/uploads/2018/01/segmenting.jpg?fit=2782%2C1299&ssl=1" />
           </div>
         </div>
