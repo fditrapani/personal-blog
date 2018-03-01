@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReadingTime from '../components/readingtime/';
 import Logo from '../components/logo'
+import { Redirect } from 'react-router-dom'
 import './post.css';
 
 class Post extends Component {
@@ -10,6 +11,7 @@ class Post extends Component {
     this.state = {
       imageClass: " post__image--not-loaded",
       isLoaded: false,
+      isNotFound: false,
       postData: {},
     };
   }
@@ -27,7 +29,7 @@ class Post extends Component {
 
             switch( response.status ) {
               case 404:
-                console.log("Redirect to the 404 page");
+                this.setState({ isNotFound: true, });
                 break
               default:
                 console.log("Redirect to the broke page");
@@ -43,11 +45,12 @@ class Post extends Component {
 
             this.setState({
               postData: data,
+              isLoaded: true,
             });
           });
         }
       )
-      .catch(function(err) {
+      .catch( err => {
         console.log('Fetch Error :-S', err);
       });
   }
@@ -59,6 +62,10 @@ class Post extends Component {
   }
 
   render() {
+    if( this.state.isNotFound ) {
+      return <Redirect to='/404'/>;
+    }
+
     return (
       <div>
         <h1 className="post__title">Title: { this.state.postData.title }<ReadingTime /></h1>
