@@ -1,5 +1,17 @@
 @import "../sass/components/colours";
 
+.post__content-wrapper {
+	transition: opacity 0.2s ease-in;
+}
+
+.post__content-wrapper--loading {
+	opacity: 0;
+}
+
+.post__content-wrapper--loaded {
+	opacity: 1;
+}
+
 .post__title {
 	text-align: center;
 	font-weight: 900;

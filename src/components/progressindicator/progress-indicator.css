@@ -1,0 +1,55 @@
+.progress-indicator-wrapper {
+  position: absolute;
+  width: 100%;
+  min-height: 220px;
+  /* top: auto; */
+  /* left: 0vw; */ }
+
+.progress-indicator {
+  position: relative;
+  margin: 100px auto 0;
+  background: #d4d4d4;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  z-index: 2;
+  border: 2px solid #d4d4d4;
+  animation: showLogo 0.6s ease-out 0.8s;
+  animation-fill-mode: backwards; }
+  .progress-indicator:after, .progress-indicator:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: 2px solid #d4d4d4;
+    animation: wave 1s ease-in-out infinite;
+    border-radius: 100%;
+    box-sizing: border-box;
+    transform: scale(1.1);
+    z-index: 1; }
+  .progress-indicator:before {
+    animation-duration: 2s; }
+
+.progress-indicator__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  fill: #f2f2f2; }
+
+@keyframes wave {
+  100% {
+    transform: scale(2);
+    opacity: 0; }
+  0% {
+    transform: scale(1.1);
+    opacity: 1; } }
+
+@keyframes showLogo {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
