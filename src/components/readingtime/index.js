@@ -13,7 +13,8 @@ export default class ReadingTime extends React.Component {
   };
 
   render() { 
-    const durationTime = 5;//Math.round( this.props.content.replace(/(<([^>]+)>)/ig,"").split(' ').length / 200 );
+    console.log(this.props);
+    const durationTime = Math.round( this.props.content.replace(/(<([^>]+)>)/ig,"").split(' ').length / 200 );
 
     if ( this.props.fullView ){
       return (

@@ -576,7 +576,6 @@ a:hover {
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,
 button,
 input[type="submit"],
 input[type="reset"],
@@ -1015,13 +1014,18 @@ body, #root {
     padding: 3rem 0;
     margin: 3rem 0 6rem; }
 
+.divider {
+  border-top: 16px solid #d4d4d4;
+  padding-top: 5rem;
+  margin: 6rem 0 6rem; }
+
 .fade-appear,
 .fade-enter {
   opacity: 0; }
 
 .fade-appear-active,
 .fade-enter-active {
-  transition: opacity .6s .4s ease-out;
+  transition: opacity .6s .2s ease-out;
   opacity: 1; }
 
 .fade-exit {

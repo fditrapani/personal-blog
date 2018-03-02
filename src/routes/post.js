@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReadingTime from '../components/readingtime/';
-import Logo from '../components/logo'
+import FeaturedImage from '../components/featuredimage'
+import Button from '../components/button'
 import ProgressIndicator from '../components/progressindicator'
 import { Redirect } from 'react-router-dom'
 import './post.css';
@@ -10,7 +11,6 @@ class Post extends Component {
     super();
 
     this.state = {
-      imageClass: " post__image--not-loaded",
       isLoaded: false,
       isNotFound: false,
       postData: {},
@@ -58,15 +58,39 @@ class Post extends Component {
       });
   }
 
-  loadImage = () => {
-    this.setState({
-      imageClass: " post__image--loaded",
-    });
-  }
-
   renderProgressIndicator = () => {
     if ( ! this.state.isLoaded ) {
       return <ProgressIndicator />
+    }
+  }
+
+  renderContent = () => {
+    if ( this.state.isLoaded ) {
+      const data = this.state.postData;
+
+      return (
+        <div className={ "post__content-wrapper " + this.state.contentWrapperClass }>
+          <h1 className="post__title">{ data.title }<ReadingTime content={ data.content } fullView={ true } /></h1>
+          
+          <FeaturedImage 
+            imageUrl={ data.featured_image } />
+
+          <div className="container">
+            <div className="content">
+               <div dangerouslySetInnerHTML={{ __html: data.content}} />
+
+               <div className="divider">
+                 <Button
+                   to="/"
+                   style="primary"
+                 >
+                   View all posts
+                 </Button>
+               </div>
+             </div>
+          </div>
+        </div>
+      )
     }
   }
 
@@ -78,32 +102,7 @@ class Post extends Component {
     return (
       <div>
         { this.renderProgressIndicator() }
-
-        <div className={ "post__content-wrapper " + this.state.contentWrapperClass }>
-          <h1 className="post__title">{ this.state.postData.title }<ReadingTime /></h1>
-
-          <div className="container--image">
-            <div className="post__imageWrapper">
-              <Logo logoClass="post__imageLoader" />
-              <img 
-                className={ "post__image" + this.state.imageClass }
-                onLoad={ this.loadImage }
-                alt="Featured stuff"
-                src="https://i1.wp.com/filippodt.blog/wp-content/uploads/2018/01/segmenting.jpg?fit=2782%2C1299&ssl=1" />
-            </div>
-          </div>
-
-          <div className="container">
-            <div className="content">
-               <p>
-               Cras posuere massa eu lacinia finibus. Sed id ultricies orci, ac pharetra odio. Mauris et enim a orci suscipit posuere eget vitae nulla. Vivamus pulvinar blandit tempus. Cras ultrices urna in tellus laoreet cursus. Pellentesque nec lacinia est. Proin non fermentum libero, quis scelerisque ligula. Sed non urna porta, malesuada eros at, placerat ante. Etiam sit amet dui nulla. Nulla facilisi.
-               </p>
-               <p>
-               Nulla interdum ipsum id augue blandit, nec luctus massa sodales. Pellentesque ultricies hendrerit risus, quis malesuada nunc consequat eget. Cras mattis eleifend mollis. Morbi quis odio vel velit luctus aliquam. Vivamus blandit pretium justo, eu fringilla est gravida sed. Praesent sed pellentesque dui. Sed fermentum mauris eu massa tempor elementum. Aenean non ipsum at purus faucibus egestas maximus quis ante. Morbi at sem ornare, euismod nibh ac, congue dolor. Proin in erat eget enim commodo placerat. Aenean in quam quam. Vivamus condimentum dictum metus nec posuere. Integer eget dignissim nulla.
-               </p>
-             </div>
-          </div>
-        </div>
+        { this.renderContent() }
       </div>
     );
   }

@@ -1,0 +1,31 @@
+@import "../../sass/components/colours";
+
+%base-button {
+    border: 2px solid $dark-colour;
+    color: $dark-colour;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-weight: bold;
+    padding: 5px 10px;
+
+    &:hover {
+        background: $dark-colour;
+        color: $background;
+    }
+
+    &:active {
+        background: transparent;
+        color: $dark-colour;
+    }
+}
+
+.button {
+    @extend %base-button;
+}
+
+.button--primary {
+    @extend %base-button;
+    padding: 10px 15px;
+    border-width: 4px;
+    display: inline-block;
+}
