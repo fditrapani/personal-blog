@@ -569,10 +569,10 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #714FA0; }
+  color: #038f08; }
 
 a:hover {
-  color: #714FA0; }
+  color: #038f08; }
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -889,8 +889,10 @@ body, #root {
 
 .app-shell__nav-icon {
   width: 16px; }
+  .app-shell__nav-icon-link .app-shell__nav-icon:hover {
+    fill: #038f08; }
   .app-shell__nav-icon-link .app-shell__nav-icon:active {
-    fill: #714FA0; }
+    fill: #282828; }
 
 .app-shell__nav-wrapper {
   margin: 0;
@@ -914,7 +916,7 @@ body, #root {
   padding: 5px 10px;
   position: relative; }
   .app-shell__nav-link:hover {
-    color: #282828; }
+    color: #038f08; }
   .app-shell__nav-link:after {
     display: block;
     content: '';
@@ -927,15 +929,17 @@ body, #root {
   .app-shell__nav-link:active {
     color: #FF0000; }
   .app-shell__nav-link:hover:after {
-    height: 4px; }
+    height: 4px;
+    background: #038f08; }
   .app-shell__nav-link.active {
     color: #282828; }
     .app-shell__nav-link.active:after {
-      height: 4px; }
+      height: 4px;
+      background: #282828; }
   .app-shell__nav-link:active {
-    color: #714FA0; }
+    color: #282828; }
   .app-shell__nav-link:active:after {
-    background: #714FA0; }
+    background: #282828; }
 
 @keyframes contentLoad {
   0% {

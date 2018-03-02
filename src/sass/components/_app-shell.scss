@@ -75,8 +75,12 @@ body, #root {
 .app-shell__nav-icon {
 	width: 16px;
 
-	.app-shell__nav-icon-link &:active {
+	.app-shell__nav-icon-link &:hover {
 		fill: $interactive;
+	}
+
+	.app-shell__nav-icon-link &:active {
+		fill: $dark-colour;
 	}
 }
 
@@ -107,7 +111,7 @@ body, #root {
 	position: relative;
 
 	&:hover{
-		color: $dark-colour;
+		color: $interactive;
 	}
 
 	&:after {
@@ -127,6 +131,7 @@ body, #root {
 
 	&:hover:after {
 		height: 4px;
+		background: $interactive;
 	}
 
 	&.active {
@@ -134,15 +139,16 @@ body, #root {
 
 		&:after {
 			height: 4px;
+			background: $dark-colour;
 		}
 	}
 	
 	&:active {
-		color: $interactive;
+		color: $dark-colour;
 	}
 
 	&:active:after {
-		background: $interactive;
+		background: $dark-colour;
 	}
 }
 

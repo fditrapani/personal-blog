@@ -6,11 +6,13 @@
   font-weight: bold;
   padding: 5px 10px; }
   .button:hover, .button--primary:hover {
-    background: #282828;
+    background: #038f08;
+    border-color: #038f08;
     color: #f2f2f2; }
   .button:active, .button--primary:active {
-    background: transparent;
-    color: #282828; }
+    background: #282828;
+    border-color: #282828;
+    color: #f2f2f2; }
 
 .button--primary {
   padding: 10px 15px;
