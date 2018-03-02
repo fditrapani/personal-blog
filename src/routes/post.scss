@@ -1,16 +1,8 @@
 @import "../sass/components/colours";
 
 .post__content-wrapper {
-	transition: opacity 0.6s ease-in;
-	opacity: 0;
-}
-
-.post__content-wrapper--loading {
-	opacity: 0;
-}
-
-.post__content-wrapper--loaded {
-	opacity: 1;
+	animation: contentLoad 0.3s ease-in-out;
+	animation-fill-mode: backwards;
 }
 
 .post__title {
@@ -34,4 +26,14 @@
 		width: 100%;
 		text-align: center;
 	}
+}
+
+//screen-loader
+@keyframes contentLoad {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }    
 }

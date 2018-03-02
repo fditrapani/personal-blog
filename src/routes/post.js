@@ -14,7 +14,6 @@ class Post extends Component {
       isLoaded: false,
       isNotFound: false,
       postData: {},
-      contentWrapperClass: "post__content-wrapper--loading",
     };
   }
 
@@ -48,7 +47,6 @@ class Post extends Component {
             this.setState({
               postData: data,
               isLoaded: true,
-              contentWrapperClass: "post__content-wrapper--loaded"
             });
           });
         }
@@ -69,7 +67,7 @@ class Post extends Component {
       const data = this.state.postData;
 
       return (
-        <div className={ "post__content-wrapper " + this.state.contentWrapperClass }>
+        <div className="post__content-wrapper">
           <h1 className="post__title">{ data.title }<ReadingTime content={ data.content } fullView={ true } /></h1>
           
           <FeaturedImage 
