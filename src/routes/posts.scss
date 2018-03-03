@@ -1,0 +1,8 @@
+@import "../sass/components/colours";
+
+.post-listing__wrapper {
+	@media (min-width: 700px) {
+	    width: 80%; 
+	    margin: 0 auto;
+    }
+}

@@ -67,20 +67,24 @@ class Post extends Component {
       const data = this.state.postData;
 
       return (
-        <div className="post__content-wrapper">
+        <div className="app-shell__content-wrapper">
           <h1 className="post__title">{ data.title }<ReadingTime content={ data.content } fullView={ true } /></h1>
           
-          <FeaturedImage 
-            imageUrl={ data.featured_image } />
+          <div className="post__image">
+            <FeaturedImage 
+              imageUrl={ data.featured_image }
+              altText={ "Featured image for " + data.title } />
+          </div>
 
           <div className="container">
             <div className="content">
                <div dangerouslySetInnerHTML={{ __html: data.content}} />
 
+
                <div className="divider">
                  <Button
                    to="/"
-                   style="primary"
+                   buttonStyle="primary"
                  >
                    View all posts
                  </Button>

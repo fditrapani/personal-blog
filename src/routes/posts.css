@@ -1,0 +1,4 @@
+@media (min-width: 700px) {
+  .post-listing__wrapper {
+    width: 80%;
+    margin: 0 auto; } }

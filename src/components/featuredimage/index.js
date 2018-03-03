@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from '../logo'
 import "./featured-image.css";
 
 export default class FeaturedImage extends React.Component {
@@ -8,27 +7,29 @@ export default class FeaturedImage extends React.Component {
 
 	  this.state = {
 	    imageClass: " featured-image--not-loaded",
+	    wrapperClass: " featured-image-wrapper--not-loaded",
 	  };
 	}
 
 	loadImage = () => {
 	  this.setState({
 	    imageClass: " featured-image--loaded",
+	    wrapperClass: " featured-image-wrapper--loaded",
 	  });
 	}
 
 	render() { 
+		const image = this.props.imageUrl;
+
 		return (
-		  <div className="container--image">
-		      <div className="featured-image-wrapper">
-		        <Logo logoClass="featured-image__loader" />
-		        <img 
-		          className={ "featured-image" + this.state.imageClass }
-		          onLoad={ this.loadImage }
-		          alt="Featured stuff"
-		          src={ this.props.imageUrl } />
-		      </div>
-		    </div>
+	      <div className={ "featured-image-wrapper" + this.state.wrapperClass }>
+	        <img 
+	          className={ "featured-image" + this.state.imageClass }
+	          onLoad={ this.loadImage }
+	          alt={ "Featured image: " + this.props.altText }
+	          src={ image } 
+	          srcSet={ `${ image + "?w=800" } 800w, ${ image + "?w=1600" } 1600w, ${ image + "?w=3200" } 3200w` } />
+	      </div>
 		);
 	}
 };

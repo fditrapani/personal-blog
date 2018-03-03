@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import _ from "lodash";
-import ReadingTime from "../reading-time";
-import * as styles from "./post-link.scss";
-
+import ReadingTime from "../readingtime";
+import "./post-listing.css";
+import FeaturedImage from "../featuredimage"
 
 export default class PostListing extends React.Component {
   static propTypes = {
@@ -21,7 +20,7 @@ export default class PostListing extends React.Component {
   isVisited( url ) {
      if ( localStorage.getItem('visited-' + url ) ) {
         return (
-          <span className={ styles.visited }>
+          <span className="post-listing__visited">
             Viewed
           </span> 
         )
@@ -29,16 +28,13 @@ export default class PostListing extends React.Component {
     return null;
   }
 
-  showImage ( image, bool ) {
+  showImage ( image, bool, text ) {
     if ( bool ) {
       return (
-        <div className={ styles.imageWrapper }>
-          <img 
-            className={ styles.image }
-            aria-hidden="true"
-            src={ image } 
-            srcSet={ `${ image + "?w=800" } 800w, ${ image + "?w=1600" } 1600w, ${ image + "?w=3200" } 3200w` }
-          />
+        <div className="post-listing__imageWrapper">
+          <FeaturedImage 
+            imageUrl={ image } 
+            altText={ text } />
         </div>
       );
     }
@@ -48,24 +44,24 @@ export default class PostListing extends React.Component {
 
   render() { 
     const post = this.props.post;
-    const imageRaw = _.get(post, "featured_image", 0);
+    const imageRaw = post.featured_image;
     const image =  imageRaw.substring( 0, imageRaw.indexOf("?") );
-    const id = _.get(post, "ID", 0);
-    const title = _.get(post, "title", 0);
-    const slug = _.get(post, "slug", 0);
-    const url = `/articles/${id}/${slug}`;
-    const content = _.get(post, "content", 0);
+    const id = post.ID;
+    const title = post.title;
+    const slug = post.slug;
+    const url = `/post/${id}/${slug}`;
+    const content = post.content;
 
     return (
         <Link 
           to={ url } 
-          className={ styles.article + ( (this.props.embedded) ? " " + styles.related : "" ) }
+          className={ "post-listing" + ( (this.props.embedded) ? " post-listing--related" : "" ) }
         >
 
-          { this.showImage ( image, this.props.isFeatured ) }
+          { this.showImage ( image, this.props.isFeatured, title ) }
 
-          <div className={ styles.content } >
-            <div className={ styles.title } >
+          <div className="post-listing__content" >
+            <div className="post-listing__title" >
               { title }&nbsp;{ this.isVisited( url ) }
             </div>
 

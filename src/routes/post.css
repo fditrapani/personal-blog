@@ -2,6 +2,18 @@
   animation: contentLoad 0.3s ease-in-out;
   animation-fill-mode: backwards; }
 
+.post__image {
+  margin-bottom: 2rem; }
+  @media (min-width: 550px) {
+    .post__image {
+      margin-left: auto;
+      margin-right: auto; } }
+  @media (min-width: 900px) {
+    .post__image {
+      max-width: 1200px;
+      width: 90%;
+      margin-bottom: 2.5rem; } }
+
 .post__title {
   text-align: center;
   font-weight: 900;

@@ -941,6 +941,10 @@ body, #root {
   .app-shell__nav-link:active:after {
     background: #282828; }
 
+.app-shell__content-wrapper {
+  animation: contentLoad 0.3s ease-in-out;
+  animation-fill-mode: backwards; }
+
 @keyframes contentLoad {
   0% {
     opacity: 0; }
@@ -1029,7 +1033,6 @@ body, #root {
 
 .fade-appear-active,
 .fade-enter-active {
-  transition: opacity .6s .2s ease-out;
   opacity: 1; }
 
 .fade-exit {

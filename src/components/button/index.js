@@ -5,15 +5,15 @@ import "./button.css";
 
 export default class Button extends React.Component {
   static propTypes = {
-    style: PropTypes.string,
+    buttonStyle: PropTypes.string,
   }
 
   static defaultProps = {
-    style: "base",
+    buttonStyle: "base",
   };
 
   getStyle = () => {
-  	switch( this.props.style ) {
+  	switch( this.props.buttonStyle ) {
   		case "primary":
   			return "button--primary";
 		default:
