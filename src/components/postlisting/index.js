@@ -6,6 +6,14 @@ import "./post-listing.css";
 import FeaturedImage from "../featuredimage"
 
 export default class PostListing extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      isVisited: false,
+    };
+  }
+
   static propTypes = {
     post: PropTypes.object,
     isFeatured: PropTypes.bool, 
@@ -17,8 +25,16 @@ export default class PostListing extends React.Component {
     embedded: false,
   };
 
+  componentDidMount() {
+    const post = this.props.post;
+    const url = `/post/${ post.ID }/${ post.slug }`;
+    if ( localStorage.getItem('visited-' + url ) ) {
+      this.setState({ isVisited: true, });
+    }
+  }
+
   isVisited( url ) {
-     if ( localStorage.getItem('visited-' + url ) ) {
+     if ( this.state.isVisited ) {
         return (
           <span className="post-listing__visited">
             Viewed
