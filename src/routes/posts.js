@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ProgressIndicator from '../components/progressindicator';
-import { Redirect } from 'react-router-dom';
 import PostListing from '../components/postlisting';
 import './posts.css';
 
@@ -10,7 +9,6 @@ class Posts extends Component {
 
     this.state = {
       isLoaded: false,
-      isNotFound: false,
       postData: {},
     };
   }
@@ -23,23 +21,11 @@ class Posts extends Component {
           if (response.status !== 200) {
             console.log('Looks like there was a problem. Status Code: ' +
               response.status);
-
-            switch( response.status ) {
-              case 404:
-                this.setState({ isNotFound: true, });
-                break
-              default:
-                console.log("Redirect to the broke page");
-                break
-            }
-
             return;
           }
 
           // Examine the text in the response
           response.json().then( data => {
-            console.log(data);
-
             this.setState({
               postData: data,
               isLoaded: true,
@@ -85,10 +71,6 @@ class Posts extends Component {
   }
 
   render() {
-    if( this.state.isNotFound ) {
-      return <Redirect to='/404'/>;
-    }
-
     return (
       <div>
         { this.renderProgressIndicator() }

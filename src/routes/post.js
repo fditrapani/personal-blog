@@ -42,8 +42,6 @@ class Post extends Component {
 
           // Examine the text in the response
           response.json().then( data => {
-            console.log(data);
-
             this.setState({
               postData: data,
               isLoaded: true,
