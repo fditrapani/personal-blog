@@ -1,16 +1,14 @@
 .progress-indicator-wrapper {
   position: absolute;
   width: 100%;
-  min-height: 220px;
-  /* top: auto; */
-  /* left: 0vw; */ }
+  min-height: 220px; }
 
 .progress-indicator {
   position: relative;
   margin: 100px auto 0;
   background: #d4d4d4;
-  width: 6rem;
-  height: 6rem;
+  width: 64px;
+  height: 64px;
   border-radius: 100%;
   z-index: 2;
   border: 2px solid #d4d4d4;

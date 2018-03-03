@@ -4,16 +4,14 @@
     position: absolute;
     width: 100%;
     min-height: 220px;
-    /* top: auto; */
-    /* left: 0vw; */
 }
 
 .progress-indicator {
     position: relative;
     margin: 100px auto 0;
     background: $background__stroke;
-    width: 6rem;
-    height: 6rem;
+    width: 64px;
+    height: 64px;
     border-radius: 100%;
     z-index: 2;
     border: 2px solid $background__stroke;
