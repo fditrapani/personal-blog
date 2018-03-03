@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from "../logo";
-import "./progress-indicator.css";
 
 export default class ProgressIndicator extends React.Component {
   render() { 

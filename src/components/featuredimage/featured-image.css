@@ -20,9 +20,6 @@
   .featured-image-wrapper--not-loaded:after {
     display: none; }
 
-.featured-image-wrapper--loaded {
-  background: #fff; }
-
 @keyframes load {
   0% {
     opacity: 0.4; }

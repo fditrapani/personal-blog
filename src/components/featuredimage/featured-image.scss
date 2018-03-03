@@ -29,10 +29,6 @@
     }
 }
 
-.featured-image-wrapper--loaded {
-    background: $white;
-}
-
 @keyframes load {
   0% { opacity: 0.4; }
   20% { opacity: 1; }
