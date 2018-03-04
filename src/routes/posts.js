@@ -48,7 +48,6 @@ class Posts extends Component {
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData.posts;
-      console.log( data );
 
       return (
         <div className="app-shell__content-wrapper">
