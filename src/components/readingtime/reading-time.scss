@@ -3,7 +3,7 @@
 .reading-time__duration {
 	font-size: 1.6rem;
 	font-weight: normal;
-	color: $text-light;
+	color: $text-light--accessible;
 	text-align: right;
 	width: 80px;
 }
@@ -12,7 +12,7 @@
 .reading-time__minutes {
 	font-size: 1.6rem;
 	font-weight: normal;
-	color: $text-light;
+	color: $text-light--accessible;
 	text-align: center;
 	display: block;
 	margin-top: 5px;
