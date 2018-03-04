@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import FeaturedImage from '../components/featuredimage'
-import Button from '../components/button'
 import ProgressIndicator from '../components/progressindicator'
-import { Redirect } from 'react-router-dom'
 import './post.css';
 
 class About extends Component {
