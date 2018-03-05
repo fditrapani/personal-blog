@@ -1,0 +1,7 @@
+@import "../sass/components/colours";
+
+.error-message {
+	border-bottom: 16px solid $background__stroke;
+	padding: 3rem 0;
+	margin: 3rem 0 6rem;
+}
