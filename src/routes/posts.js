@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ProgressIndicator from '../components/progressindicator';
 import PostListing from '../components/postlisting';
+import { Helmet } from "react-helmet";
 import './posts.css';
+
 
 class Posts extends Component {
   constructor() {
@@ -51,6 +53,10 @@ class Posts extends Component {
 
       return (
         <div className="app-shell__content-wrapper">
+          <Helmet>
+              <title>{ "Filippo Di Trapani" }</title>
+              <meta name="description" content="A designer website by Filippo Di Trapani."/>
+          </Helmet>
           <div className="post-listing__wrapper">
                {
                  data.map( (post, index) => {

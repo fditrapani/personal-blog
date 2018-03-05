@@ -4,7 +4,8 @@ import FeaturedImage from '../components/featuredimage'
 import Button from '../components/button'
 import ProgressIndicator from '../components/progressindicator'
 import { Redirect } from 'react-router-dom'
-import './post.css';
+import { Helmet } from "react-helmet"
+import './post.css'
 
 class Post extends Component {
   constructor() {
@@ -66,6 +67,11 @@ class Post extends Component {
 
       return (
         <div className="app-shell__content-wrapper">
+          <Helmet>
+              <title>{ data.title + " | Filippo Di Trapani" }</title>
+              <meta name="description" content={ data.excerpt.replace(/<\/?[^>]+(>|$)/g, "") }/>
+          </Helmet>
+
           <h1 className="post__title">{ data.title }<ReadingTime content={ data.content } fullView={ true } /></h1>
           
           <div className="post__image">

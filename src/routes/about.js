@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import FeaturedImage from '../components/featuredimage'
 import ProgressIndicator from '../components/progressindicator'
-import './post.css';
+import { Helmet } from "react-helmet";
+import './post.css'
 
 class About extends Component {
   constructor() {
@@ -53,6 +54,11 @@ class About extends Component {
 
         return (
           <div className="app-shell__content-wrapper">
+            <Helmet>
+                <title>{ "Filippo Di Trapani" }</title>
+                <meta name="description" content="A designer website by Filippo Di Trapani."/>
+            </Helmet>
+
             <h1 className="post__title">{ data.title }</h1>
             
             <div className="post__image">
