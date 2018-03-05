@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ReadingTime from '../components/readingtime/';
 import FeaturedImage from '../components/featuredimage'
-import Button from '../components/button'
 import ProgressIndicator from '../components/progressindicator'
 import { Redirect } from 'react-router-dom'
 import { Helmet } from "react-helmet"
+import Related from "../components/related"
 import './post.css'
 
 class Post extends Component {
@@ -20,7 +20,22 @@ class Post extends Component {
 
   componentDidMount() {
     localStorage.setItem( 'visited-'+ window.location.pathname, true );
+    this.loadData();
+  }
 
+  componentWillReceiveProps( nextProps ) {
+    if( nextProps.match.url !== this.props.match.url ){
+      this.setState({
+        isLoaded: false,
+        isNotFound: false,
+        postData: {},
+      }, () => {
+        this.loadData();
+      });
+    }
+  }
+
+  loadData = () => {
     //Fetch API request here
     fetch(
       'https://public-api.wordpress.com/rest/v1.1/sites/filippodt.blog/posts/' + this.props.match.params.id
@@ -86,12 +101,7 @@ class Post extends Component {
 
 
                <div className="divider">
-                 <Button
-                   to="/"
-                   buttonStyle="primary"
-                 >
-                   View all posts
-                 </Button>
+                 <Related preLoadedData={ data } />
                </div>
              </div>
           </div>

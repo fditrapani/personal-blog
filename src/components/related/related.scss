@@ -1,0 +1,30 @@
+@import "../../sass/components/colours";
+
+.related__posts {
+	border-top: 1px solid $background__stroke;
+	margin-bottom: 2.6rem;
+}
+
+.related__loading::after {
+  animation: changeLetter .3s linear infinite alternate;
+  content: '';
+}
+
+@keyframes changeLetter {
+  0% {
+    content: "";
+  }
+  33% {
+    content: ".";
+  }
+  66% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
+
+.related__noposts {
+  margin-bottom: 2.6rem;
+}
