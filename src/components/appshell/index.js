@@ -6,7 +6,7 @@ class AppShell extends Component {
   componentWillReceiveProps() {
       setTimeout(function() { 
         this.refs.appShellContainer.scrollTop = 0; 
-      }.bind(this), 200);
+      }.bind(this), 300);
   }
   
   render() {

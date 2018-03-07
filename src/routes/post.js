@@ -14,6 +14,7 @@ class Post extends Component {
     this.state = {
       isLoaded: false,
       isNotFound: false,
+      unload: false,
       postData: {},
     };
   }
@@ -25,15 +26,19 @@ class Post extends Component {
 
   componentWillReceiveProps( nextProps ) {
     if( nextProps.match.url !== this.props.match.url ){
+      this.setState( { unload: true });
+
       // Animate content out before changing shit...
       
-      this.setState({
-        isLoaded: false,
-        isNotFound: false,
-        postData: {},
-      }, () => {
-        this.loadData();
-      });
+      setTimeout( () => {
+        this.setState({
+          isLoaded: false,
+          isNotFound: false,
+          postData: {},
+        }, () => {
+          this.loadData();
+        });
+      }, 500);
     }
   }
 
@@ -61,6 +66,7 @@ class Post extends Component {
           // Examine the text in the response
           response.json().then( data => {
             this.setState({
+              unload: false,
               postData: data,
               isLoaded: true,
             });
@@ -83,7 +89,7 @@ class Post extends Component {
       const data = this.state.postData;
 
       return (
-        <div className="app-shell__content-wrapper">
+        <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
           <Helmet>
               <title>{ data.title + " | Filippo Di Trapani" }</title>
               <meta name="description" content={ data.excerpt.replace(/<\/?[^>]+(>|$)/g, "") }/>
