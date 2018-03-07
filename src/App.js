@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import initReactFastclick from 'react-fastclick'
 import AppShell from './components/appshell/';
 import Posts from './routes/posts';
 import Post from './routes/post';
@@ -12,6 +13,7 @@ class App extends Component {
     const location = this.props.location;
     const currentKey = location.pathname.split('/')[1] || '/'
     const timeout = { enter: 800, exit: 800 }
+    initReactFastclick();
 
     return (
       <AppShell location={ location }>

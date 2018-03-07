@@ -27,7 +27,6 @@ class Post extends Component {
   componentWillReceiveProps( nextProps ) {
     if( nextProps.match.url !== this.props.match.url ){
       this.setState( { unload: true });
-
       // Animate content out before changing shit...
       
       setTimeout( () => {
@@ -38,7 +37,7 @@ class Post extends Component {
         }, () => {
           this.loadData();
         });
-      }, 500);
+      }, 300);
     }
   }
 
