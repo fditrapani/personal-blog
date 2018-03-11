@@ -86,20 +86,28 @@ class Post extends Component {
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
+      const title = data.title;
+      const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
+      const imageURL = data.featured_image;
 
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
           <Helmet>
-              <title>{ data.title + " | Filippo Di Trapani" }</title>
-              <meta name="description" content={ data.excerpt.replace(/<\/?[^>]+(>|$)/g, "") }/>
+              <title>{ title + " | Filippo Di Trapani" }</title>
+              <meta name="description" content={ description }/>
+              <meta property="og:url"                content={ "https://adoring-bohr-dec37f.netlify.com/post/" + data.ID + "/" + data.slug } />
+              <meta property="og:type"               content="article" />
+              <meta property="og:title"              content={ title } />
+              <meta property="og:description"        content={ description } />
+              <meta property="og:image"              content={ imageURL } />
           </Helmet>
 
-          <h1 className="post__title">{ data.title }<ReadingTime content={ data.content } fullView={ true } /></h1>
+          <h1 className="post__title">{ title }<ReadingTime content={ data.content } fullView={ true } /></h1>
           
           <div className="post__image">
             <FeaturedImage 
-              imageUrl={ data.featured_image }
-              altText={ "Featured image for " + data.title } />
+              imageUrl={ imageURL }
+              altText={ "Featured image for " + title } />
           </div>
 
           <div className="container">
