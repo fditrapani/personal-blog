@@ -99,7 +99,7 @@ class Post extends Component {
               <meta property="og:type"               content="article" />
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />
-              <meta property="og:image"              content={ imageURL } />
+              <meta property="og:image"              content={ imageURL + "&w=1200" } />
           </Helmet>
 
           <h1 className="post__title">{ title }<ReadingTime content={ data.content } fullView={ true } /></h1>
