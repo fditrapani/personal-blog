@@ -37,7 +37,7 @@ class Post extends Component {
         }, () => {
           this.loadData();
         });
-      }, 300);
+      }, 200);
     }
   }
 

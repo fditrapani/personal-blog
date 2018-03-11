@@ -30,7 +30,7 @@ body, #root {
   flex-grow: 1;
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
-  animation: contentLoad 1s 0.3s ease-in-out;
+  animation: contentLoad 1s 0.1s ease-in-out;
   animation-fill-mode: backwards;
 }
 
