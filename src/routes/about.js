@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FeaturedImage from '../components/featuredimage'
 import ProgressIndicator from '../components/progressindicator'
 import { Helmet } from "react-helmet";
+import { config } from "../config"
 import './post.css'
 
 class About extends Component {
@@ -20,7 +21,7 @@ class About extends Component {
 
       //Fetch API request here
       fetch(
-        'https://public-api.wordpress.com/rest/v1.1/sites/filippodt.blog/posts/1780'
+        'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts/1780'
       ).then( response => {
             if (response.status !== 200) {
               console.log('Looks like there was a problem. Status Code: ' +

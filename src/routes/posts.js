@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ProgressIndicator from '../components/progressindicator';
 import PostListing from '../components/postlisting';
 import { Helmet } from "react-helmet";
+import { config } from "../config"
 import './posts.css';
 
 
@@ -18,7 +19,7 @@ class Posts extends Component {
   componentDidMount() {
     //Fetch API request here
     fetch(
-      'https://public-api.wordpress.com/rest/v1.1/sites/fditrapani.wordpress.com/posts'
+      'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts'
     ).then( response => {
           if (response.status !== 200) {
             console.log('Looks like there was a problem. Status Code: ' +

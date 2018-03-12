@@ -5,6 +5,7 @@ import ProgressIndicator from '../components/progressindicator'
 import { Redirect } from 'react-router-dom'
 import { Helmet } from "react-helmet"
 import Related from "../components/related"
+import { config } from "../config"
 import './post.css'
 
 class Post extends Component {
@@ -44,7 +45,7 @@ class Post extends Component {
   loadData = () => {
     //Fetch API request here
     fetch(
-      'https://public-api.wordpress.com/rest/v1.1/sites/filippodt.blog/posts/' + this.props.match.params.id
+      'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts/' + this.props.match.params.id
     ).then( response => {
           if (response.status !== 200) {
             console.log('Looks like there was a problem. Status Code: ' +
@@ -95,7 +96,7 @@ class Post extends Component {
           <Helmet>
               <title>{ title + " | Filippo Di Trapani" }</title>
               <meta name="description" content={ description }/>
-              <meta property="og:url"                content={ "https://adoring-bohr-dec37f.netlify.com/post/" + data.ID + "/" + data.slug } />
+              <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />
               <meta property="og:type"               content="article" />
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />

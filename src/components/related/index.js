@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PostListing from "../postlisting";
 import Button from "../button";
+import { config } from "../../config"
 import "./related.css";
 
 export default class Related extends React.Component {
@@ -42,7 +43,7 @@ export default class Related extends React.Component {
     const tags = Object.keys(this.props.preLoadedData.categories)[0];
     
     fetch(
-      `https://public-api.wordpress.com/rest/v1.1/sites/fditrapani.wordpress.com/posts?category=${ tags }`
+      `https://public-api.wordpress.com/rest/v1.1/sites/${ config.wordpress_url }/posts?category=${ tags }`
     ).then( response => {
       return response.json();
     }).then( data => {
