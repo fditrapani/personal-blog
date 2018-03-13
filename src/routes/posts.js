@@ -28,9 +28,15 @@ class Posts extends Component {
         postData: JSON.parse( localData ),
         isLoaded: true,
       } );
+
+      this.fetchData(); 
       return;
     }
 
+    this.fetchData();    
+  }
+
+  fetchData = () => {
     fetch(
       'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts'
     ).then( response => {
