@@ -22,7 +22,7 @@ class Post extends Component {
 
   componentDidMount() {
     localStorage.setItem( 'visited-'+ window.location.pathname, true );
-    this.loadData();
+    this.getData();
   }
 
   componentWillReceiveProps( nextProps ) {
@@ -36,13 +36,36 @@ class Post extends Component {
           isNotFound: false,
           postData: {},
         }, () => {
-          this.loadData();
+          this.getData();
         });
       }, 200);
     }
   }
 
-  loadData = () => {
+  getData = () => {
+    const localData = localStorage.getItem( "Data" );
+
+    if ( localData ) {
+      const dataObject = JSON.parse( localData );
+      const postObject = dataObject.find( x => x.ID == this.props.match.params.id ); 
+      
+      if( postObject  ) {
+        this.setState({
+          unload: false,
+          postData: postObject,
+          isLoaded: true,
+        });
+        return;
+      }
+
+      this.fetchData(); 
+      return;
+    }
+
+    this.fetchData();    
+  }
+
+  fetchData = () => {
     //Fetch API request here
     fetch(
       'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts/' + this.props.match.params.id

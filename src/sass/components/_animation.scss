@@ -1,6 +1,7 @@
 .fade-appear,
 .fade-enter {
   opacity: 0;
+  transition: opacity 0.3s 0.2s ease-out;
 }
 
 .fade-appear-active,
@@ -10,9 +11,9 @@
 
 .fade-exit {
   opacity: 1;
-  transition: opacity .1s ease-out;
 }
 
 .fade-exit-active {
   opacity: 0;
+  transition: opacity .2s ease-out;
 }

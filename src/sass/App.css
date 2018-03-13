@@ -852,7 +852,7 @@ body, #root {
   overflow-y: scroll;
   /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
-  animation: contentLoad 1s 0.3s ease-in-out;
+  animation: contentLoad 0.2s ease-in-out 0.2s;
   animation-fill-mode: backwards; }
 
 .app-shell__navigation {
@@ -1029,15 +1029,16 @@ body, #root {
 
 .fade-appear,
 .fade-enter {
-  opacity: 0; }
+  opacity: 0;
+  transition: opacity 0.3s 0.2s ease-out; }
 
 .fade-appear-active,
 .fade-enter-active {
   opacity: 1; }
 
 .fade-exit {
-  opacity: 1;
-  transition: opacity .2s ease-out; }
+  opacity: 1; }
 
 .fade-exit-active {
-  opacity: 0; }
+  opacity: 0;
+  transition: opacity .2s ease-out; }

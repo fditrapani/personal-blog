@@ -16,8 +16,7 @@ body, #root {
 	flex-grow: 1;
 	height: 100%;
 	display: flex;
-	flex-direction: column;
-	
+	flex-direction: column;	
 }
 
 @media (max-width: 650px) { 
@@ -30,7 +29,7 @@ body, #root {
   flex-grow: 1;
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
-  animation: contentLoad 1s 0.1s ease-in-out;
+  animation: contentLoad 0.2s ease-in-out 0.2s;
   animation-fill-mode: backwards;
 }
 
