@@ -17,7 +17,20 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    //Fetch API request here
+    this.getData();
+  }
+
+  getData = () => {
+    const localData = localStorage.getItem( "Data" );
+
+    if ( localData ) {
+      this.setState( { 
+        postData: JSON.parse( localData ),
+        isLoaded: true,
+      } );
+      return;
+    }
+
     fetch(
       'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts'
     ).then( response => {
@@ -30,9 +43,13 @@ class Posts extends Component {
           // Examine the text in the response
           response.json().then( data => {
             this.setState({
-              postData: data,
+              postData: data.posts,
               isLoaded: true,
             });
+
+            //Add to local storage
+            localStorage.setItem( "Data", JSON.stringify( data.posts ));
+            return;
           });
         }
       )
@@ -40,7 +57,6 @@ class Posts extends Component {
         console.log('Fetch Error :-S', err);
       });
   }
-
 
   renderProgressIndicator = () => {
     if ( ! this.state.isLoaded ) {
@@ -50,7 +66,7 @@ class Posts extends Component {
 
   renderContent = () => {
     if ( this.state.isLoaded ) {
-      const data = this.state.postData.posts;
+      const data = this.state.postData;
 
       return (
         <div className="app-shell__content-wrapper">
