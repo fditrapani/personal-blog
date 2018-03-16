@@ -114,7 +114,7 @@ class Post extends Component {
       const data = this.state.postData;
       const title = data.title;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
-      const imageURL = data.featured_image;
+      const imageURL = data.post_thumbnail.URL;
 
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>

@@ -77,8 +77,13 @@ class Posts extends Component {
       return (
         <div className="app-shell__content-wrapper">
           <Helmet>
-              <title>{ "Filippo Di Trapani" }</title>
+              <title>"All posts | Filippo Di Trapani"</title>
               <meta name="description" content="A designer website by Filippo Di Trapani."/>
+              <meta property="og:url"                content={ config.url } />
+              <meta property="og:type"               content="website" />
+              <meta property="og:title"              content={ "All posts | Filippo Di Trapani" } />
+              <meta property="og:description"        content={ "A designer website by Filippo Di Trapani." } />
+              <meta property="og:image"              content={ "/images/filippodt-com.jpg" } />
           </Helmet>
           <div className="post-listing__wrapper">
                {
