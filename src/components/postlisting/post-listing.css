@@ -19,8 +19,7 @@
 
 .post-listing__content {
   display: flex;
-  justify-content: flex-end;
-  align-items: center; }
+  justify-content: flex-end; }
 
 .post-listing__title {
   width: 100%; }

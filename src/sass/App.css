@@ -1030,7 +1030,7 @@ body, #root {
 .fade-appear,
 .fade-enter {
   opacity: 0;
-  transition: opacity 0.3s 0.2s ease-out; }
+  transition: opacity 0.2s 0.3s ease-out; }
 
 .fade-appear-active,
 .fade-enter-active {
