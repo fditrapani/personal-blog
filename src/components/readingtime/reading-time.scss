@@ -1,15 +1,19 @@
 @import "../../sass/components/colours";
 
-.reading-time__duration {
+.reading-time__listing {
 	font-size: 1.6rem;
 	font-weight: normal;
 	color: $text-light--accessible;
 	text-align: right;
 	width: 80px;
+
+	@media (min-width: 650px) {
+		width: 120px;
+	}
 }
 
 
-.reading-time__minutes {
+.reading-time__post {
 	font-size: 1.6rem;
 	font-weight: normal;
 	color: $text-light--accessible;

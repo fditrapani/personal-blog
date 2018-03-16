@@ -10,7 +10,12 @@
 	font-size: 2.4rem;
 	line-height: 1.3;
 
-	&:active {
+	&:hover .reading-time__listing {
+		color: $interactive;
+	}
+
+	&:active,
+	&:active .reading-time__listing {
 		color: $text;
 	}
 }
@@ -23,6 +28,7 @@
 .post-listing__content {
 	display: flex;	
 	justify-content: flex-end;
+	align-items: center;
 }
 
 .post-listing__title {

@@ -17,15 +17,15 @@ export default class ReadingTime extends React.Component {
 
     if ( this.props.fullView ){
       return (
-        <span className="reading-time__minutes">
+        <span className="reading-time__post">
           { durationTime } minute read
         </span>
       );
     }
     
     return (
-      <span className="reading-time__duration">
-        { durationTime } min{ ( durationTime > 1 )? "s" : null }
+      <span className="reading-time__listing">
+         { durationTime } min read
       </span>
     );
   }
