@@ -80,7 +80,7 @@ export default class Related extends React.Component {
       return (
         <div className="related__container">
           <h2 className="related__noposts">Keep reading</h2>
-          <Button to="/" buttonStyle="primary">View all articles</Button>
+          <Button to="/" buttonStyle="primary">View all posts</Button>
         </div>
       )
     }
@@ -88,12 +88,12 @@ export default class Related extends React.Component {
     if ( this.state.relatedLoaded ) {
       return (
         <div className="related__container">
-          <h2>Other articles you might&nbsp;like</h2>
+          <h2>Other posts you might&nbsp;like</h2>
           <div className="related__posts">
             { this.state.relatedPosts }
           </div>
           <Button to="/" buttonStyle="primary">
-            View all articles
+            View all posts
           </Button>
         </div>
       )
@@ -101,7 +101,7 @@ export default class Related extends React.Component {
 
     return (
       <div className="related__container">
-        <h2 className="related__loading">Looking for related&nbsp;articles</h2>
+        <h2 className="related__loading">Looking for related&nbsp;posts</h2>
       </div>
     );
   }
