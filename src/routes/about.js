@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import FeaturedImage from '../components/featuredimage'
-import ProgressIndicator from '../components/progressindicator'
+import FeaturedImage from '../components/featuredimage';
+import ProgressIndicator from '../components/progressindicator';
 import { Helmet } from "react-helmet";
-import { config } from "../config"
-import './post.css'
+import { config } from "../config";
+import './post.css';
 
 class About extends Component {
   constructor() {
@@ -79,8 +79,22 @@ class About extends Component {
     }
 
     render() {
+      const data = this.state.postData;
+
       return (
         <div>
+          <Helmet>
+              <title>Flow: An online journal by Filippo Di Trapani</title>
+              <meta name="description"               content="Personal website for designer based in Ottawa, 
+                  Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
+              <meta property="og:url"                content={ config.url } />
+              <meta property="og:type"               content="website" />
+              <meta property="og:title"              content="Flow: An online journal by Filippo Di Trapani" />
+              <meta property="og:description"        content="Personal website for designer based in Ottawa, 
+                  Canada. Take a peak into his process as he share's his thoughts and experiences on design." />
+              <meta property="og:image"              content={ data.featured_image + "&w=1200" } />
+          </Helmet>
+
           { this.renderProgressIndicator() }
           { this.renderContent() }
         </div>
