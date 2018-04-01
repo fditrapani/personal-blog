@@ -49,7 +49,7 @@ class Post extends Component {
 
     if ( localData ) {
       const dataObject = JSON.parse( localData );
-      const postObject = dataObject.find( x => x.ID == this.props.match.params.id ); 
+      const postObject = dataObject.find( x => x.ID === this.props.match.params.id ); 
       
       if( postObject  ) {
         this.setState({
@@ -115,7 +115,7 @@ class Post extends Component {
       const title = data.title;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
       const imageURL = data.post_thumbnail.URL;
-
+      
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
           <Helmet>

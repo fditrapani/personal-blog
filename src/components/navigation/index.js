@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class Navigation extends Component {
   render() { 
     const location = this.props.location.pathname;
+    //console.log( navigator.onLine );
 
     return( 
       <nav className="app-shell__navigation">
