@@ -4,9 +4,7 @@ import '../../sass/App.css';
 
 class AppShell extends Component {
   componentWillReceiveProps() {
-      setTimeout(function() { 
-        this.refs.appShellContainer.scrollTop = 0; 
-      }.bind(this), 200);
+    this.refs.appShellContainer.scrollTop = 0;
   }
   
   render() {

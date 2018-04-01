@@ -885,7 +885,8 @@ body, #root {
   overflow: hidden; }
 
 .app-shell__nav-icon-link {
-  height: 25px; }
+  height: 25px;
+  padding-right: 20px; }
 
 .app-shell__nav-icon {
   width: 16px; }
