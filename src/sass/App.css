@@ -942,6 +942,9 @@ body, #root {
   .app-shell__nav-link:active:after {
     background: #282828; }
 
+.app-shell__content-wrapper {
+  animation-fill-mode: backwards; }
+
 @keyframes contentLoad {
   0% {
     opacity: 0; }

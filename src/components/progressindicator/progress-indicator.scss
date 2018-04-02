@@ -15,8 +15,8 @@
     border-radius: 100%;
     z-index: 2;
     border: 2px solid $background__stroke;
-    animation: showLogo 0.6s ease-out 0.8s;
-    animation-fill-mode: backwards;
+    /*animation: showLogo 0.6s ease-out 0.8s;
+    animation-fill-mode: backwards;*/
 
     &:after,
     &:before {

@@ -31,16 +31,14 @@ class Post extends Component {
       this.setState( { unload: true });
       // Animate content out before changing shit...
       
-      setTimeout( () => {
-        localStorage.setItem( 'visited-'+ window.location.pathname, true );
-        this.setState({
-          isLoaded: false,
-          isNotFound: false,
-          postData: {},
-        }, () => {
-          this.getData();
-        });
-      }, 200);
+      localStorage.setItem( 'visited-'+ window.location.pathname, true );
+      this.setState({
+        isLoaded: false,
+        isNotFound: false,
+        postData: {},
+      }, () => {
+        this.getData();
+      });
     }
   }
 
