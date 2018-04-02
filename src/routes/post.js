@@ -62,7 +62,6 @@ class Post extends Component {
           postData: postObject,
           isLoaded: true,
         });
-        return;
       }
 
       this.fetchData(); 
