@@ -47,7 +47,14 @@ class Post extends Component {
 
     if ( localData ) {
       const dataObject = JSON.parse( localData );
-      const postObject = dataObject.find( x => x.ID === this.props.match.params.id ); 
+      const postObject = dataObject.find( x => {
+        if( Number(this.props.match.params.id)  === Number(x.ID) ) {
+          return x;
+        }
+
+        return false;
+      }); 
+      
       
       if( postObject  ) {
         this.setState({
