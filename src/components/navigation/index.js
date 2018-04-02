@@ -3,9 +3,21 @@ import Logo from '../logo'
 import { Link } from 'react-router-dom';
 
 class Navigation extends Component {
+
+  showOffline = () => {
+    if ( ! navigator.onLine ) {
+      return (
+        <span className="app-shell__nav-offline">
+          offline
+        </span>
+      );
+    }
+
+    return null;
+  }
+
   render() { 
     const location = this.props.location.pathname;
-    //console.log( navigator.onLine );
 
     return( 
       <nav className="app-shell__navigation">
@@ -13,7 +25,9 @@ class Navigation extends Component {
   
           <Link to="/" className="app-shell__nav-icon-link">
             <Logo logoClass="app-shell__nav-icon" />
-          </Link>
+          </Link> 
+
+          { this.showOffline() }
   
           <ul className="app-shell__nav-wrapper">
             <li className="app-shell__nav-item">
