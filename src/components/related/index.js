@@ -40,7 +40,35 @@ export default class Related extends React.Component {
   }
 
   loadRelatedArticles() {
+    const localData = localStorage.getItem( "Data" );
     const tags = Object.keys(this.props.preLoadedData.categories)[0];
+
+    if ( localData ) {
+      const dataObject = JSON.parse( localData );
+      let dataArray = [];
+
+      const hideRelatedObject = dataObject.find( x => {
+        if ( Object.values( x.categories )[0].name === tags ) {
+          dataArray.push( 
+            <div key={ x.ID } >
+              <PostListing post={ x } embedded={ true }/>
+            </div>
+          );
+        } 
+      }); 
+
+      shuffleArray( dataArray );
+
+      const hideRelated = ( dataArray.length < 1 ) || false;
+
+      this.setState({
+        relatedPosts: dataArray.slice(0,3),
+        hideRelated: hideRelated,
+        relatedLoaded: true,
+      });
+
+      return;
+    }
     
     fetch(
       `https://public-api.wordpress.com/rest/v1.1/sites/${ config.wordpress_url }/posts?category=${ tags }`
