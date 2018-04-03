@@ -116,9 +116,12 @@ class Post extends Component {
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
-      const title = data.title;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
       const imageURL = data.post_thumbnail.URL;
+      const title = data.title;
+      let htmlTitle = title;
+      const lastIndex = htmlTitle.lastIndexOf(" ");
+      htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
       
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
@@ -132,7 +135,10 @@ class Post extends Component {
               <meta property="og:image"              content={ imageURL + "&w=1200" } />
           </Helmet>
 
-          <h1 className="post__title">{ title }<ReadingTime content={ data.content } fullView={ true } /></h1>
+          <h1 className="post__title">
+            <span dangerouslySetInnerHTML={{ __html: htmlTitle }} />
+            <ReadingTime content={ data.content } fullView={ true } />
+          </h1>
           
           <div className="post__image">
             <FeaturedImage 
