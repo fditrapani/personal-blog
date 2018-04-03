@@ -5,12 +5,10 @@ import Posts from './routes/posts';
 import Post from './routes/post';
 import About from './routes/about';
 import NotFound from './routes/404';
-import initReactFastclick from 'react-fastclick';
 
 class App extends Component {
   render() {
     const location = this.props.location;
-    initReactFastclick();
 
     return (
       <AppShell location={ location }>
