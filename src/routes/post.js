@@ -129,6 +129,8 @@ class Post extends Component {
               <title>{ title + " | Filippo Di Trapani" }</title>
               <meta name="description" content={ description }/>
               <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />
+              <meta name="twitter:image"             content={ config.url + "/post/" + data.ID + "/" + data.slug } />
+              <meta name="twitter:creator"           content="@filippodt" />
               <meta property="og:type"               content="article" />
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />
