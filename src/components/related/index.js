@@ -47,15 +47,19 @@ export default class Related extends React.Component {
       const dataObject = JSON.parse( localData );
       let dataArray = [];
 
-      const hideRelatedObject = dataObject.find( x => {
+      dataObject.find( x => {
         if ( Object.values( x.categories )[0].name === tags ) {
-          dataArray.push( 
-            <div key={ x.ID } >
-              <PostListing post={ x } embedded={ true }/>
-            </div>
-          );
+          if( x.ID  !== this.props.preLoadedData.ID ) {
+            dataArray.push( 
+              <div key={ x.ID } >
+                <PostListing post={ x } embedded={ true }/>
+              </div>
+            );
+          }
         } 
       }); 
+
+      console.log( dataArray  );
 
       shuffleArray( dataArray );
 
