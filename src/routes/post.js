@@ -122,6 +122,8 @@ class Post extends Component {
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
+
+      console.log ( config.url + "/post/" + data.ID + "/" + data.slug );
       
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
@@ -129,12 +131,12 @@ class Post extends Component {
               <title>{ title + " | Filippo Di Trapani" }</title>
               <meta name="description" content={ description }/>
               <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />
-              <meta name="twitter:image"             content={ config.url + "/post/" + data.ID + "/" + data.slug } />
-              <meta name="twitter:creator"           content="@filippodt" />
               <meta property="og:type"               content="article" />
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />
-              <meta property="og:image"              content={ imageURL + "&w=1200" } />
+              <meta property="og:image"              content={ imageURL + "?w=1200" } />
+              <meta name="twitter:image"             content={ imageURL } />
+              <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
 
           <h1 className="post__title">
