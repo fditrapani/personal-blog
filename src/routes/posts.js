@@ -85,8 +85,8 @@ class Posts extends Component {
               <meta property="og:title"              content="Flow: An online journal by Filippo Di Trapani" />
               <meta property="og:description"        content="Personal website for designer based in Ottawa, 
                   Canada. Take a peak into his process as he share's his thoughts and experiences on design." />
-              <meta name="twitter:image"             content={ "/images/filippodt-com.jpg" } />
-              <meta name="twitter:creator"           content="@filippodt" />
+              <meta property="twitter:image"             content={ "/images/filippodt-com.jpg" } />
+              <meta property="twitter:creator"           content="@filippodt" />
           </Helmet>
           <div className="post-listing__wrapper">
                {
