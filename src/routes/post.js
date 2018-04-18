@@ -123,8 +123,6 @@ class Post extends Component {
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
-
-      console.log ( twitterImageURL );
       
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
