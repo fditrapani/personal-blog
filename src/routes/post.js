@@ -118,12 +118,13 @@ class Post extends Component {
       const data = this.state.postData;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
       const imageURL = data.post_thumbnail.URL;
+      const twitterImageURL = imageURL.replace("https:", "http:");;
       const title = data.title;
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
 
-      console.log ( config.url + "/post/" + data.ID + "/" + data.slug );
+      console.log ( twitterImageURL );
       
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
@@ -135,8 +136,8 @@ class Post extends Component {
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />
               <meta property="og:image"              content={ imageURL + "?w=1200" } />
-              <meta property="twitter:image"             content={ imageURL } />
-              <meta property="twitter:creator"           content="@filippodt" />
+              <meta name="twitter:image"             content={ twitterImageURL } />
+              <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
 
           <h1 className="post__title">
