@@ -6,6 +6,10 @@
     overflow: hidden;
     background: $background__stroke;
 
+    .post__content-wrapper & {
+        margin-bottom: 1.5em;
+    }
+
     @media (min-width: 900px) { 
         border: 10px solid $white;
         box-sizing: border-box;

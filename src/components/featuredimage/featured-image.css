@@ -3,6 +3,8 @@
   padding: 45% 20px 0;
   overflow: hidden;
   background: #d4d4d4; }
+  .post__content-wrapper .featured-image-wrapper {
+    margin-bottom: 1.5em; }
   @media (min-width: 900px) {
     .featured-image-wrapper {
       border: 10px solid #fff;

@@ -974,7 +974,8 @@ body, #root {
   color: #2e2a2b; }
   .content h1, .content h2, .content h3, .content h4, .content h5 {
     font-weight: 900;
-    color: #2e2a2b; }
+    color: #2e2a2b;
+    margin-top: 1em; }
   .content p {
     font-family: Georgia;
     line-height: 1.6; }

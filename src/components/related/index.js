@@ -120,7 +120,7 @@ export default class Related extends React.Component {
     if ( this.state.relatedLoaded ) {
       return (
         <div className="related__container">
-          <h2>Other posts you might&nbsp;like</h2>
+          <h2 className="related__title">Other posts you might&nbsp;like</h2>
           <div className="related__posts">
             { this.state.relatedPosts }
           </div>

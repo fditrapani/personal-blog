@@ -5,6 +5,10 @@
 	margin-bottom: 2.6rem;
 }
 
+h2.related__title {
+  margin-top: 0;
+}
+
 .related__loading::after {
   animation: changeLetter .3s linear infinite alternate;
   content: '';
