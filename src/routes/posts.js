@@ -86,7 +86,7 @@ class Posts extends Component {
               <meta property="og:description"        content="Personal website for designer based in Ottawa, 
                   Canada. Take a peak into his process as he share's his thoughts and experiences on design." />
               <meta property="og:image"             content={ config.url + "/images/filippodt-com.jpg" } />
-              <meta name="twitter:image"             content={ config.non_https_url + "/images/filippodt-com.jpg" } />
+              <meta name="twitter:image"             content={ "http://filippodt.blog/wp-content/uploads/2018/04/filippodt-com.jpg" } />
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
           <div className="post-listing__wrapper">
