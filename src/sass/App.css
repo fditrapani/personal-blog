@@ -985,7 +985,7 @@ body, #root {
         font-size: 2.2rem; } }
     @media (min-width: 900px) {
       .content p {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         line-height: 1.7; } }
   .content a:hover {
     text-decoration: none; }
