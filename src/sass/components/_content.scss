@@ -1,6 +1,4 @@
 .content {
-	max-width: 900px;
-	margin: 0 auto;
 	color: $text;
 
 	h1, h2, h3, h4, h5 {
@@ -90,4 +88,9 @@
 	border-top: 16px solid $background__stroke;
 	padding-top: 5rem;
 	margin: 6rem 0 6rem;
+}
+
+.content-wrapper {
+	max-width: 900px;
+	margin: 0 auto;
 }

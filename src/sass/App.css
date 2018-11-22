@@ -970,8 +970,6 @@ body, #root {
     transform: translateY(0); } }
 
 .content {
-  max-width: 900px;
-  margin: 0 auto;
   color: #2e2a2b; }
   .content h1, .content h2, .content h3, .content h4, .content h5 {
     font-weight: 900;
@@ -1034,6 +1032,10 @@ body, #root {
   border-top: 16px solid #d4d4d4;
   padding-top: 5rem;
   margin: 6rem 0 6rem; }
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto; }
 
 .fade-appear,
 .fade-enter {

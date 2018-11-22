@@ -159,7 +159,7 @@ class Post extends Component {
           </div>
 
           <div className="container">
-            <div className="content">
+            <div className="content content-wrapper">
                <div dangerouslySetInnerHTML={{ __html: data.content}} />
 
 

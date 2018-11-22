@@ -1,0 +1,176 @@
+.content {
+  color: #2e2a2b; }
+  .content h1, .content h2, .content h3, .content h4, .content h5 {
+    font-weight: 900;
+    color: #2e2a2b;
+    margin-top: 1em; }
+  .content p {
+    font-family: Georgia;
+    line-height: 1.6; }
+    @media (min-width: 550px) {
+      .content p {
+        font-size: 2.2rem; } }
+    @media (min-width: 900px) {
+      .content p {
+        font-size: 2.4rem;
+        line-height: 1.7; } }
+  .content a:hover {
+    text-decoration: none; }
+  .content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box; }
+  .content figure {
+    margin: 0 0 2.2rem;
+    width: 100% !important; }
+  .content figcaption {
+    margin-top: 10px; }
+  .content ol, .content ul {
+    font-family: Georgia;
+    line-height: 1.6; }
+    @media (min-width: 550px) {
+      .content ol, .content ul {
+        font-size: 2.2rem;
+        margin-left: 1em; } }
+    @media (min-width: 900px) {
+      .content ol, .content ul {
+        font-size: 2.6rem; } }
+  .content ul li {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 25px;
+    color: #2e2a2b; }
+  .content blockquote {
+    font-style: oblique;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 1em;
+    border-left: 8px solid #d4d4d4; }
+    @media (min-width: 550px) {
+      .content blockquote {
+        padding-left: 1.5em; } }
+  .content .error_wrapper {
+    border-bottom: 16px solid #d4d4d4;
+    padding: 3rem 0;
+    margin: 3rem 0 6rem; }
+
+.divider {
+  border-top: 16px solid #d4d4d4;
+  padding-top: 5rem;
+  margin: 6rem 0 6rem; }
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto; }
+
+.grid {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 2em; }
+
+.intro {
+  margin-top: 3em; }
+
+.intro__paragraph {
+  margin-bottom: 0; }
+
+.avatar-wrapper {
+  grid-column: 2 / 2; }
+
+.avatar {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 100%;
+  overflow: hidden; }
+
+.avatar__image {
+  display: block;
+  width: 100%; }
+
+.intro__copy {
+  grid-column: 3 / 11; }
+  .intro__copy .title {
+    margin-top: 0; }
+
+.background-title {
+  grid-column: 3 / 11; }
+
+.background-copy {
+  grid-column: 3 / 9; }
+
+.background-image {
+  grid-column: 9 / 13; }
+
+.background-image__graphic {
+  display: block;
+  width: 100%; }
+
+.brand {
+  background: #ffd000;
+  padding: 100px 0 150px;
+  position: relative; }
+  .brand:before, .brand:after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: 15px;
+    background: #000; }
+  .brand:after {
+    bottom: 40px; }
+
+.brand__logo {
+  grid-column: 5 / 9;
+  width: 100%; }
+
+.career-section {
+  grid-column: 3 / 9;
+  border-left: 1px solid #ccc;
+  padding-left: 50px;
+  position: relative; }
+  .career-section:before {
+    position: absolute;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    top: 0;
+    content: '';
+    display: block;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$background+50,cecece+100 */
+    background: #f2f2f2;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #f2f2f2 50%, #d6d6d6 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f2f2f2 50%, #d6d6d6 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f2f2f2 50%, #d6d6d6 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$background', endColorstr='#d6d6d6',GradientType=1 );
+    /* IE6-9 */ }
+
+.career-highlight {
+  position: relative; }
+  .career-highlight:after {
+    display: block;
+    content: '';
+    width: 35px;
+    height: 35px;
+    left: -17px;
+    top: 0;
+    position: absolute;
+    background: #f2f2f2;
+    border-radius: 100%;
+    box-shadow: 0px 2px 20px #E0E0E0; }
+
+.career-title {
+  grid-column: 3 / 13; }
+
+.career-year {
+  grid-column: 9 / 13; }
