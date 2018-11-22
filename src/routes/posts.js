@@ -78,6 +78,7 @@ class Posts extends Component {
         <div className="app-shell__content-wrapper">
           <Helmet>
               <title>Flow: An online journal by Filippo Di Trapani</title>
+              <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href="https://filippodt.blog/feed/" />              
               <meta name="description"               content="Personal website for designer based in Ottawa, 
                   Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
               <meta property="og:url"                content={ config.url } />

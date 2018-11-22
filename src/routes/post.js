@@ -128,6 +128,7 @@ class Post extends Component {
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
           <Helmet>
               <title>{ title + " | Filippo Di Trapani" }</title>
+              <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href="https://filippodt.blog/feed/" />
               <meta name="description" content={ description }/>
               <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />
               <meta property="og:type"               content="article" />
