@@ -56,8 +56,8 @@ export default class Related extends React.Component {
               </div>
             );
           }
-        } 
-        return null;
+        }
+        return dataArray; 
       }); 
 
       shuffleArray( dataArray );

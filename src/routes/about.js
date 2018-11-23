@@ -29,12 +29,12 @@ class About extends Component {
           <div className="grid intro">
             <div className="avatar-wrapper">
               <div className="avatar">
-                <img className="avatar__image" src="/images/avatar.png" alt="Filippo"s/>
+                <img className="avatar__image" src="/images/avatar.png" alt="Filippo"/>
               </div>
             </div>
 
             <div className="intro__copy content">
-              <h2 className="title">Hello there!</h2>
+              <h1 className="intro__title">Howzit!</h1>
               <p className="intro__paragraph">My name is Filippo and I’m a designer that works with digital products. My mission in life is to help people improve their lives with technology. This is my personal site and I use it to share my thoughts, experiments, and work. Keep reading to learn a little more about myself.</p>
             </div>
           </div>
