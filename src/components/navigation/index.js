@@ -3,7 +3,6 @@ import Logo from '../logo'
 import { Link } from 'react-router-dom';
 
 class Navigation extends Component {
-
   showOffline = () => {
     if ( ! navigator.onLine ) {
       return (
@@ -49,9 +48,11 @@ class Navigation extends Component {
             </li>
           </ul>
         </div>  
+
+       
       </nav>
     )
   }
 }
 
-export default Navigation
+export default Navigation;
