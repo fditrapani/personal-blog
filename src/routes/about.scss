@@ -19,6 +19,10 @@
 	}
 }
 
+.grid--career {
+	display: grid;
+}
+
 .intro {
 	margin-top: 3rem;
 
@@ -151,7 +155,7 @@
 	position: relative;
 
 	@media (min-width: 650px) {
-		grid-column: 3 / 10;
+		grid-column: 2 / 9;
 	}
 	@media (min-width: 1200px) {
 		grid-column: 3 / 9;
@@ -176,17 +180,25 @@
 }
 
 .career-title {
-	grid-column: 3 / 13;
+
+	@media (min-width: 650px) {
+		grid-column: 2 / 9;
+	}
+	@media (min-width: 1200px) {
+		grid-column: 3 / 13;
+	}
 }
 
 .career-year {	
+	display: none;
 
 	@media (min-width: 650px) {
+		display: block;
 		font-weight: 900;
-		font-size: 6rem;
+		font-size: 8rem;
 		color: #e1e1e1;
-		grid-column: 10 / 13;
-		margin-top: -20px;
+		grid-column: 9 / 13;
+		margin-top: -30px;
 	}
 
 	@media (min-width: 1200px) {

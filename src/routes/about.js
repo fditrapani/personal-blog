@@ -63,7 +63,7 @@ class About extends Component {
             </div>
           </div>
 
-          <div className="grid">
+          <div className="grid grid--career">
             <div className="career-section career-title content">
               <h2>Career</h2>
             </div>
@@ -79,6 +79,27 @@ class About extends Component {
             <div className="career-section career-highlight content">
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
             </div>
+
+            <div className="career-year">
+              <p>2004</p>
+            </div>
+
+            <div className="career-section career-highlight content">
+              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+            </div>
+
+            <div className="career-year">
+              <p>2008</p>
+            </div>
+
+            <div className="career-section career-highlight content">
+              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+            </div>
+
+            <div className="career-year">
+              <p>2011</p>
+            </div>
+
           </div>
         
         </div>

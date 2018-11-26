@@ -34,8 +34,6 @@ export default class Related extends React.Component {
         relatedPosts: [],
         relatedLoaded: false,
       });
-
-      this.loadRelatedArticles();
     }
   }
 
@@ -56,8 +54,8 @@ export default class Related extends React.Component {
               </div>
             );
           }
-        }
-        return dataArray; 
+        } 
+        return null; 
       }); 
 
       shuffleArray( dataArray );

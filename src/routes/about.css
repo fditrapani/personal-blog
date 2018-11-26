@@ -81,6 +81,9 @@
       max-width: 1200px;
       grid-column-gap: 2em; } }
 
+.grid--career {
+  display: grid; }
+
 .intro {
   margin-top: 3rem; }
   @media (min-width: 650px) {
@@ -182,7 +185,7 @@
   position: relative; }
   @media (min-width: 650px) {
     .career-section {
-      grid-column: 3 / 10; } }
+      grid-column: 2 / 9; } }
   @media (min-width: 1200px) {
     .career-section {
       grid-column: 3 / 9; } }
@@ -201,19 +204,26 @@
     border-radius: 100%;
     border: 1px solid #ccc; }
 
-.career-title {
-  grid-column: 3 / 13; }
-
 @media (min-width: 650px) {
-  .career-year {
-    font-weight: 900;
-    font-size: 6rem;
-    color: #e1e1e1;
-    grid-column: 10 / 13;
-    margin-top: -20px; } }
+  .career-title {
+    grid-column: 2 / 9; } }
 
 @media (min-width: 1200px) {
-  .career-year {
-    grid-column: 9 / 13;
-    font-size: 8rem;
-    margin-top: -30px; } }
+  .career-title {
+    grid-column: 3 / 13; } }
+
+.career-year {
+  display: none; }
+  @media (min-width: 650px) {
+    .career-year {
+      display: block;
+      font-weight: 900;
+      font-size: 8rem;
+      color: #e1e1e1;
+      grid-column: 9 / 13;
+      margin-top: -30px; } }
+  @media (min-width: 1200px) {
+    .career-year {
+      grid-column: 9 / 13;
+      font-size: 8rem;
+      margin-top: -30px; } }
