@@ -14,7 +14,25 @@ class App extends Component {
     this.refs.appShellContainer.scrollTop = 0;
   }
 
+  componentDidMount(){
+    window.ga('create', 'UA-22176787-1', 'auto');
+  }
+
+  setPageAndSendToGA = url => {
+    window.ga('set', 'page', url);
+    window.ga('send', 'pageview');
+  };
+
+  trackGoogleAnalytics = location => {
+      if (window.ga) {
+        let url = location.pathname;
+        this.setPageAndSendToGA(url);
+      }
+    };
+
   render() {
+    this.trackGoogleAnalytics(this.props.location);
+
     return (
       <div className="app-shell">
         <Navigation location={ this.props.location } />
