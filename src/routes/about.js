@@ -80,10 +80,6 @@ class About extends Component {
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
             </div>
 
-            <div className="career-year">
-              <p>2004</p>
-            </div>
-
             <div className="career-section career-highlight content">
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
             </div>
