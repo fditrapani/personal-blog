@@ -113,6 +113,12 @@ class Post extends Component {
     }
   }
 
+  encodeHTMLentities(str) {
+      return str.replace(/&#(\d+);/g, function(match, dec) {
+        return String.fromCharCode(dec);
+      });
+    }
+
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
@@ -123,11 +129,13 @@ class Post extends Component {
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
+
+      const convertedTitle = this.encodeHTMLentities(title);
       
       return (
         <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
           <Helmet>
-              <title>{ title + " | Filippo Di Trapani" }</title>
+              <title>{ convertedTitle + " | Filippo Di Trapani" }</title>
               <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href="https://filippodt.blog/feed/" />
               <meta name="description" content={ description }/>
               <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />

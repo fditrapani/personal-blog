@@ -15,9 +15,6 @@ class App extends Component {
   }
 
   render() {
-    const { children } = this.props;
-    const location = this.props.location;
-
     return (
       <div className="app-shell">
         <Navigation location={ this.props.location } />
