@@ -40,16 +40,21 @@
 	}
 }
 
+.intro__title--about {
+	margin-top: 0.5em;
+}
+
 .intro__paragraph {
 	margin-bottom: 0;
 }
 
 .avatar-wrapper {
-	max-width: 150px;
-	margin: 0 auto;
+	max-width: 170px;
+	margin: 0 auto 2em;
 
 	@media (min-width: 650px) {
 		display: none;
+		margin-bottom: 0;
 	}
 	
 	@media (min-width: 1200px) {
@@ -150,11 +155,16 @@
 
 .career-section {
 	
-	border-left: 1px solid #ccc;
+	border-left: 1px solid #222;
 	padding-left: 50px;
 	position: relative;
 
+	&:first-child{
+		padding-bottom: 1em;
+	}
+
 	@media (min-width: 650px) {
+		padding-bottom: 40px	;
 		grid-column: 2 / 9;
 	}
 	@media (min-width: 1200px) {
@@ -165,27 +175,15 @@
 .career-highlight {
 	position: relative;
 
-	&:after {
-		display: block;
-	    content: '';
-	    width: 11px;
-	    height: 11px;
-	    left: -6px;
-	    top: 12px;
-	    position: absolute;
-	    background: #ffd000;
-	    border-radius: 100%;
-	}
 	&:before {
 		display: block;
 		content: '';
 		width: 40px;
 		height: 1px;
 		left: 0;
-		top: 17px;
+		top: 12px;
 		position: absolute;
-		border-top: 2px solid #ffd000;
-		border-radius: 100%;
+		background: #222;
 	}
 }
 
@@ -195,19 +193,51 @@
 		grid-column: 2 / 9;
 	}
 	@media (min-width: 1200px) {
-		grid-column: 3 / 13;
+		grid-column: 3 / 9;
 	}
 }
 
 .career-year {	
-	display: none;
+	display: block;
+	font-weight: 900;
+	font-size: 5em;
+	color: #e1e1e1;
+	padding-bottom: 0;
+
+	p {
+		margin-bottom: 0;
+	}
 
 	@media (min-width: 650px) {
-		display: block;
-		font-weight: 900;
-		font-size: 5em;
-		color: #e1e1e1;
+		border-left: 0;
 		grid-column: 9 / 13;
 		margin-top: -40px;
+		font-size: 3.8em;
+		&:nth-child(2) {
+			grid-row: 2/3;
+		}
+
 	}	
+
+	@media (min-width: 865px) {
+		font-size: 6em;
+		margin-top: -48px;
+	}
+}
+
+.this-site{ 
+	background: #222;
+	padding: 2em 0;
+	color: #fff;
+}
+
+
+.this-site-content {
+	grid-column: 1/13;
+	color: #fff;
+}
+
+h2.this-site-title {
+	color: #fff !important;
+	margin-top:0;
 }

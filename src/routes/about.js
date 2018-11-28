@@ -34,7 +34,7 @@ class About extends Component {
             </div>
 
             <div className="intro__copy content">
-              <h1 className="intro__title">Howzit!</h1>
+              <h1 className="intro__title intro__title--about">Howzit!</h1>
               <p className="intro__paragraph">My name is Filippo and I’m a designer that works with digital products. My mission in life is to help people improve their lives with technology. This is my personal site and I use it to share my thoughts, experiments, and work. Keep reading to learn a little more about myself.</p>
             </div>
           </div>
@@ -68,23 +68,19 @@ class About extends Component {
               <h2>Career</h2>
             </div>
 
-            <div className="career-section career-highlight content">
-              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
-            </div>
-
-            <div className="career-year">
+            <div className="career-year career-section">
               <p>2000</p>
             </div>
 
             <div className="career-section career-highlight content">
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
-            </div>
+            </div>      
 
             <div className="career-section career-highlight content">
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
             </div>
 
-            <div className="career-year">
+            <div className="career-year career-section">
               <p>2008</p>
             </div>
 
@@ -92,10 +88,25 @@ class About extends Component {
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
             </div>
 
-            <div className="career-year">
+            <div className="career-section career-highlight content">
+              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+            </div>
+
+            <div className="career-year career-section">
               <p>2011</p>
             </div>
 
+          </div>
+
+          <div className="this-site">
+            <div className="grid grid--site">
+              <div className="this-site-content content">
+                <h2 className="this-site-title">Under the hood</h2>
+                <p>Hello</p>
+                <p>Hello</p>
+                <p>Hello</p>
+              </div>
+            </div>
           </div>
         
         </div>
