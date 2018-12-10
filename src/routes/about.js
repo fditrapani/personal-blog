@@ -68,6 +68,8 @@ class About extends Component {
               <h2>Career</h2>
             </div>
 
+          </div>
+          <div className="grid grid--career">
             <div className="career-year career-section">
               <p>2000</p>
             </div>
@@ -79,32 +81,29 @@ class About extends Component {
             <div className="career-section career-highlight content">
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
             </div>
-
+          </div>
+          <div className="grid grid--career">
             <div className="career-year career-section">
               <p>2008</p>
             </div>
-
             <div className="career-section career-highlight content">
               <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
             </div>
-
-            <div className="career-section career-highlight content">
-              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
-            </div>
-
+          </div>
+          <div className="grid grid--career">
+            
             <div className="career-year career-section">
               <p>2011</p>
             </div>
-
+            <div className="career-section career-highlight content">
+              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+            </div>
           </div>
 
           <div className="this-site">
             <div className="grid grid--site">
               <div className="this-site-content content">
-                <h2 className="this-site-title">Under the hood</h2>
-                <p>Hello</p>
-                <p>Hello</p>
-                <p>Hello</p>
+                <h2 className="this-site-title error-message">“You can reach timelessness if you look for the essence of things and not the appearance. The appearance is transitory — the appearance is fashion, the appearance is trendiness — but the essence is timeless.” — Massimo Vignelli</h2>
               </div>
             </div>
           </div>
