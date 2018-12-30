@@ -276,7 +276,8 @@
 .inspiration {
   background: rgba(40, 40, 40, 0.2);
   padding: 2em 0;
-  color: #fff; }
+  color: #fff;
+  overflow: hidden; }
   @media (min-width: 650px) {
     .inspiration {
       padding: 3em 0; } }
@@ -326,14 +327,20 @@
   left: 0;
   width: 100%;
   padding: 5px 10px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  line-height: 1.2em; }
   @media (min-width: 1200px) {
     .inspiration__label {
       font-size: 1em; } }
 
 .inpsiration__grid-item {
   position: relative;
-  align-self: end; }
+  align-self: end;
+  overflow: hidden; }
+  .inpsiration__grid-item img {
+    transition: all 8s ease; }
+  .inpsiration__grid-item img:hover {
+    transform: scale(1.2); }
 
 .inspiration__bourdain {
   grid-column: 2/3;
@@ -370,7 +377,11 @@
   padding: 0;
   font-size: 2.5rem;
   line-height: 1.4em;
-  font-weight: 111; }
+  font-weight: 100; }
+  @media (min-width: 1200px) {
+    .inspiration__quote-text {
+      font-size: 3rem;
+      line-height: 1.4em; } }
 
 .this-site-content {
   grid-column: 2/12;

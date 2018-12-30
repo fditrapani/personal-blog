@@ -21,6 +21,8 @@ class About extends Component {
       this.image = this.refs.BackgroundImageGraphic;
       this.logoContainer = this.refs.LogoContainer;
       this.logo = this.refs.Logo;
+      this.quote = this.refs.Quote;
+      this.quoteContainer = this.refs.QuoteContainer;
       this.thanksContainer = this.refs.ThanksContainer;
       this.thanks = this.refs.Thanks;
 
@@ -32,18 +34,29 @@ class About extends Component {
     }
 
     handleScroll = () => {
-      const logoPosition = (this.appShell.scrollTop - (this.logoContainer.offsetTop/1.5) )/3;
-      const thanksPosition = (this.thanksContainer.offsetTop - this.appShell.scrollTop) - (this.appShell.clientHeight - this.thanksContainer.clientHeight + 50);
+      const appShellScrollTop = this.appShell.scrollTop;
+      const appShellClientHeight = this.appShell.clientHeight;
+      const imageContainerOffset = this.imageContainer.offsetTop;
+      const thanksContainerOffset = this.thanksContainer.offsetTop;
+      const quoteContainerOffset = this.quoteContainer.offsetTop;
+      const logoPosition = (appShellScrollTop - (this.logoContainer.offsetTop/1.5) )/3;
+      const thanksPosition = (thanksContainerOffset - appShellScrollTop) - (appShellClientHeight - this.thanksContainer.clientHeight + 50);
+      const quotePosition = (quoteContainerOffset - appShellScrollTop)/2 - (appShellClientHeight - this.quoteContainer.clientHeight + 50)/2;
 
-      if( this.imageContainer.offsetTop < ( this.appShell.scrollTop + this.imageContainer.clientHeight ) ) {
-        this.image.setAttribute("style", "transform: translateY(-" + ( (this.appShell.scrollTop - (this.imageContainer.offsetTop/1.5) )/2.5 ) + "px)");
+
+      if( imageContainerOffset < ( appShellScrollTop + this.imageContainer.clientHeight ) ) {
+        this.image.setAttribute("style", "transform: translateY(-" + ( (appShellScrollTop - (imageContainerOffset/1.5) )/2.5 ) + "px)");
       }
 
       if( logoPosition < 0 ) {
         this.logo.setAttribute("style", "transform: translateY(" + logoPosition + "px)");
       }
 
-      if( (this.thanksContainer.offsetTop - this.appShell.scrollTop) < this.appShell.clientHeight ) {
+      if( (quoteContainerOffset - appShellScrollTop) < ( appShellClientHeight + 100 ) && quotePosition > 0 ) {
+        this.quote.setAttribute("style", "transform: translateY(" + quotePosition + "px); opacity:" + ( (appShellScrollTop + this.quoteContainer.clientHeight/1.5 )/quoteContainerOffset ) + ";");
+      }        
+
+      if( (thanksContainerOffset - appShellScrollTop) < ( appShellClientHeight + 100 ) ) {
         this.thanks.setAttribute("style", "transform: translateY(-" + thanksPosition + "px)");
       }        
     }
@@ -150,8 +163,8 @@ class About extends Component {
                 <p className="inspiration__label">Anthony Bourdain</p>
               </div>              
 
-              <div className="inspiration__quote">
-                <blockquote className="inspiration__quote-text">
+              <div ref="QuoteContainer" className="inspiration__quote">
+                <blockquote ref="Quote" className="inspiration__quote-text">
                   “The discipline of Design is one and can be applied to many different subjects, regardless of style. Design discipline is above and beyond any style. All style requires discipline in order to be expressed. Very often people think that Design is a particular style.”   <em>— Massimo Vignelli</em>
                 </blockquote>
               </div>
