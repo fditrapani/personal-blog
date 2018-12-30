@@ -16,37 +16,35 @@ class About extends Component {
 
 
     componentDidMount() {
-      const appShell = document.getElementsByClassName("app-shell__content")[0];
-      appShell.addEventListener('scroll', this.handleScroll, true);
+      this.appShell = document.getElementsByClassName("app-shell__content")[0];
+      this.imageContainer = this.refs.BackgroundImageContainer;
+      this.image = this.refs.BackgroundImageGraphic;
+      this.logoContainer = this.refs.LogoContainer;
+      this.logo = this.refs.Logo;
+      this.thanksContainer = this.refs.ThanksContainer;
+      this.thanks = this.refs.Thanks;
+
+      this.appShell.addEventListener('scroll', this.handleScroll, true);
     }
 
     componentWillUnmount() {
-      const appShell = document.getElementsByClassName("app-shell__content")[0];
-      appShell.removeEventListener('scroll', this.handleScroll, true);
+      this.appShell.removeEventListener('scroll', this.handleScroll, true);
     }
 
     handleScroll = () => {
-      const appShell = document.getElementsByClassName("app-shell__content")[0];
-      const imageContainer = this.refs.BackgroundImageContainer;
-      const image = this.refs.BackgroundImageGraphic;
-      const logoContainer = this.refs.LogoContainer;
-      const logo = this.refs.Logo;
-      const thanksContainer = this.refs.ThanksContainer;
-      const thanks = this.refs.Thanks;
+      const logoPosition = (this.appShell.scrollTop - (this.logoContainer.offsetTop/1.5) )/3;
+      const thanksPosition = (this.thanksContainer.offsetTop - this.appShell.scrollTop) - (this.appShell.clientHeight - this.thanksContainer.clientHeight + 50);
 
-      const logoPosition = (appShell.scrollTop - (logoContainer.offsetTop/1.5) )/3;
-      const thanksPosition = (thanksContainer.offsetTop - appShell.scrollTop) - (appShell.clientHeight - thanksContainer.clientHeight + 50);
-
-      if( imageContainer.offsetTop < ( appShell.scrollTop + imageContainer.clientHeight ) ) {
-        image.setAttribute("style", "transform: translateY(-" + ( (appShell.scrollTop - (imageContainer.offsetTop/1.5) )/2.5 ) + "px)");
+      if( this.imageContainer.offsetTop < ( this.appShell.scrollTop + this.imageContainer.clientHeight ) ) {
+        this.image.setAttribute("style", "transform: translateY(-" + ( (this.appShell.scrollTop - (this.imageContainer.offsetTop/1.5) )/2.5 ) + "px)");
       }
 
       if( logoPosition < 0 ) {
-        logo.setAttribute("style", "transform: translateY(" + logoPosition + "px)");
+        this.logo.setAttribute("style", "transform: translateY(" + logoPosition + "px)");
       }
 
-      if( (thanksContainer.offsetTop - appShell.scrollTop) < appShell.clientHeight ) {
-        thanks.setAttribute("style", "transform: translateY(-" + thanksPosition + "px)");
+      if( (this.thanksContainer.offsetTop - this.appShell.scrollTop) < this.appShell.clientHeight ) {
+        this.thanks.setAttribute("style", "transform: translateY(-" + thanksPosition + "px)");
       }        
     }
 

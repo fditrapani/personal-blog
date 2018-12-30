@@ -175,14 +175,10 @@
       max-height: 750px;
       overflow: visible; } }
 
-.background-image__graphic {
-  display: block;
-  width: 100%; }
-
 .background-image__graphics {
   display: block;
   width: 100%;
-  margin-bottom: 10px; }
+  margin-bottom: 5px; }
 
 .brand {
   background: #ffd000;
