@@ -158,9 +158,6 @@
 
 .background-copy {
   grid-column: 2 / 9; }
-  @media (min-width: 650px) {
-    .background-copy {
-      margin-bottom: 1em; } }
   @media (min-width: 1200px) {
     .background-copy {
       grid-column: 3 / 9; } }
@@ -182,6 +179,11 @@
   display: block;
   width: 100%; }
 
+.background-image__graphics {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px; }
+
 .brand {
   background: #ffd000;
   padding: 100px 0;
@@ -194,8 +196,11 @@
   display: block; }
   @media (min-width: 650px) {
     .brand__logo {
-      grid-column: 5 / 9;
+      grid-column: 4 / 10;
       width: 100%; } }
+  @media (min-width: 1200px) {
+    .brand__logo {
+      grid-column: 5 / 9; } }
   .brand__logo path {
     fill: #282828; }
 

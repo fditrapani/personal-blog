@@ -121,10 +121,6 @@
 .background-copy {
 	grid-column: 2 / 9;
 
-	@media (min-width: 650px) {
-		margin-bottom: 1em;
-	}
-
 	@media (min-width: 1200px) {
 		grid-column: 3 / 9;
 	}
@@ -150,6 +146,12 @@
 	width: 100%;
 }
 
+.background-image__graphics {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
 .brand {
 	background: $primary-colour;
 	padding: 100px 0;
@@ -163,8 +165,12 @@
 	display: block;
 
 	@media (min-width: 650px) {
-		grid-column: 5 / 9;
+		grid-column: 4 / 10;
 		width: 100%;
+	}
+
+	@media (min-width: 1200px) {
+		grid-column: 5 / 9;
 	}
 
 	path {
