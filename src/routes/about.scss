@@ -110,10 +110,6 @@
 	}
 }
 
-.background {
-	overflow: hidden;
-}
-
 .background-title {
 	grid-column: 2 / 11;
 
@@ -170,11 +166,38 @@
 		grid-column: 5 / 9;
 		width: 100%;
 	}
+
+	path {
+		fill: $dark-colour;
+	}
 	
 }
 
+#eyes-open {
+	animation: blink 1.5s infinite;
+	animation-fill-mode: backwards;
+}
+
+//screen-loader
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+    	opacity: 1;	
+    }
+
+    100% {
+        opacity: 0;
+    }    
+}
+
+/*= Career
+================================================== */
+
 .career-section {	
-	border-left: 1px solid #222;
+	border-left: 1px solid $dark-colour;
 	padding-left: 50px;
 	position: relative;
 
@@ -207,7 +230,6 @@
 }
 
 .career-title {
-
 	@media (min-width: 650px) {
 		grid-column: 2 / 9;
 	}

@@ -150,9 +150,6 @@
 .intro__copy .title {
   margin-top: 0; }
 
-.background {
-  overflow: hidden; }
-
 .background-title {
   grid-column: 2 / 11; }
   @media (min-width: 1200px) {
@@ -199,9 +196,25 @@
     .brand__logo {
       grid-column: 5 / 9;
       width: 100%; } }
+  .brand__logo path {
+    fill: #282828; }
 
+#eyes-open {
+  animation: blink 1.5s infinite;
+  animation-fill-mode: backwards; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*= Career
+================================================== */
 .career-section {
-  border-left: 1px solid #222;
+  border-left: 1px solid #282828;
   padding-left: 50px;
   position: relative; }
   .career-section:first-child {
