@@ -197,7 +197,12 @@
 /*= Career
 ================================================== */
 
-.career-section {	
+.career {
+	background: $background;
+	position: relative;
+}
+
+.career-section {
 	border-left: 1px solid $dark-colour;
 	padding-left: 50px;
 	position: relative;
@@ -332,10 +337,22 @@
 	}
 }
 
+.inpsiration__link {
+	color: $white;
+
+	&:hover {
+		color: $interactive;
+	}
+
+	&:active {
+		color: $white;
+	}
+}
+
 .inspiration__label {
 	margin: 0;
 	font-size: 0.8em;
-	background: rgba($black, 0.6);
+	background: rgba($interactive, 0.6);
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -346,6 +363,23 @@
 
 	@media (min-width: 1200px) {
 		font-size: 1em;
+	}
+
+	&:after {
+		content: "+";
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		display: block;
+		padding: 5px 10px;
+	}
+
+	.inpsiration__link:hover & {
+		background: rgba($white, 0.9);
+	}
+
+	.inpsiration__link:active & {
+		background: rgba($interactive, 0.6);
 	}
 }
 

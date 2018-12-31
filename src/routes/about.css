@@ -214,6 +214,10 @@
 
 /*= Career
 ================================================== */
+.career {
+  background: #f2f2f2;
+  position: relative; }
+
 .career-section {
   border-left: 1px solid #282828;
   padding-left: 50px;
@@ -318,10 +322,17 @@
       .inspiration__title h2 {
         margin: 0; } }
 
+.inpsiration__link {
+  color: #fff; }
+  .inpsiration__link:hover {
+    color: #038f08; }
+  .inpsiration__link:active {
+    color: #fff; }
+
 .inspiration__label {
   margin: 0;
   font-size: 0.8em;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(3, 143, 8, 0.6);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -332,6 +343,17 @@
   @media (min-width: 1200px) {
     .inspiration__label {
       font-size: 1em; } }
+  .inspiration__label:after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    padding: 5px 10px; }
+  .inpsiration__link:hover .inspiration__label {
+    background: rgba(255, 255, 255, 0.9); }
+  .inpsiration__link:active .inspiration__label {
+    background: rgba(3, 143, 8, 0.6); }
 
 .inpsiration__grid-item {
   position: relative;

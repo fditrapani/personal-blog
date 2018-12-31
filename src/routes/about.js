@@ -45,7 +45,7 @@ class About extends Component {
 
 
       if( imageContainerOffset < ( appShellScrollTop + this.imageContainer.clientHeight ) ) {
-        this.image.setAttribute("style", "transform: translateY(-" + ( (appShellScrollTop - (imageContainerOffset/1.5) )/2.5 ) + "px)");
+        this.image.setAttribute("style", "transform: translateY(-" + appShellScrollTop/3  + "px)");
       }
 
       if( logoPosition < 0 ) {
@@ -53,7 +53,7 @@ class About extends Component {
       }
 
       if( (quoteContainerOffset - appShellScrollTop) < ( appShellClientHeight + 100 ) && quotePosition > 0 ) {
-        this.quote.setAttribute("style", "transform: translateY(" + quotePosition + "px); opacity:" + ( (appShellScrollTop + this.quoteContainer.clientHeight/1.5 )/quoteContainerOffset ) + ";");
+        this.quote.setAttribute("style", "transform: translateY(" + quotePosition + "px); opacity:" + ( (appShellScrollTop + this.quoteContainer.clientHeight * 0.75 )/quoteContainerOffset ) + ";");
       }        
 
       if( (thanksContainerOffset - appShellScrollTop) < ( appShellClientHeight + 100 ) ) {
@@ -110,40 +110,41 @@ class About extends Component {
             </div>
           </div>
 
-          <div className="grid grid--career">
-            <div className="career-section career-title content">
-              <h2>Career</h2>
+          <div className="career">
+            <div className="grid grid--career">
+              <div className="career-section career-title content">
+                <h2>Career</h2>
+              </div>
             </div>
+            <div className="grid grid--career">
+              <div className="career-year career-section">
+                <p>2000</p>
+              </div>
 
-          </div>
-          <div className="grid grid--career">
-            <div className="career-year career-section">
-              <p>2000</p>
-            </div>
+              <div className="career-section career-highlight content">
+                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+              </div>      
 
-            <div className="career-section career-highlight content">
-              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
-            </div>      
-
-            <div className="career-section career-highlight content">
-              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+              <div className="career-section career-highlight content">
+                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+              </div>
             </div>
-          </div>
-          <div className="grid grid--career">
-            <div className="career-year career-section">
-              <p>2008</p>
+            <div className="grid grid--career">
+              <div className="career-year career-section">
+                <p>2008</p>
+              </div>
+              <div className="career-section career-highlight content">
+                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+              </div>
             </div>
-            <div className="career-section career-highlight content">
-              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
-            </div>
-          </div>
-          <div className="grid grid--career">
-            
-            <div className="career-year career-section">
-              <p>2011</p>
-            </div>
-            <div className="career-section career-highlight content">
-              <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+            <div className="grid grid--career">
+              
+              <div className="career-year career-section">
+                <p>2011</p>
+              </div>
+              <div className="career-section career-highlight content">
+                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+              </div>
             </div>
           </div>
 
@@ -154,8 +155,10 @@ class About extends Component {
               </div>
 
               <div className="inpsiration__grid-item inspiration__bruce">
-                  <img src="/images/bruce-lee.jpg" className="inspiration__image" alt="Howdy"/>
-                  <p className="inspiration__label">Bruce Lee</p>
+                  <a href="https://vimeo.com/3191188" target="_blank" rel="noopener noreferrer" className="inpsiration__link">
+                    <img src="/images/bruce-lee.jpg" className="inspiration__image" alt="Howdy"/>
+                    <p className="inspiration__label">Bruce Lee</p>
+                  </a>
               </div>
 
               <div className="inpsiration__grid-item inspiration__bourdain">
@@ -170,13 +173,17 @@ class About extends Component {
               </div>
 
               <div className="inpsiration__grid-item inspiration__badu">
-                <img src="/images/erykah-badu.jpg" className="inspiration__image" alt="Howdy"/>
-                <p className="inspiration__label">Erykah Badu</p>
+                <a href="https://vimeo.com/28372985" target="_blank" rel="noopener noreferrer" className="inpsiration__link">
+                  <img src="/images/erykah-badu.jpg" className="inspiration__image" alt="Howdy"/>
+                  <p className="inspiration__label">Erykah Badu</p>
+                </a>
               </div>              
 
               <div className="inpsiration__grid-item inspiration__quincy">
-                <img src="/images/quincy.jpg" className="inspiration__image" alt="Howdy"/>
-                <p className="inspiration__label">Quincy Jones</p>
+                <a href="https://www.gq.com/story/quincy-jones-has-a-story" target="_blank" rel="noopener noreferrer" className="inpsiration__link">
+                  <img src="/images/quincy.jpg" className="inspiration__image" alt="Howdy"/>
+                  <p className="inspiration__label">Quincy Jones</p>
+                </a>
               </div>
             </div>
           </div>
