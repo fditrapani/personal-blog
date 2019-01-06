@@ -44,7 +44,7 @@ class About extends Component {
       const quotePosition = (quoteContainerOffset - appShellScrollTop)/2 - (appShellClientHeight - this.quoteContainer.clientHeight + 50)/2;
 
 
-      if( imageContainerOffset < ( appShellScrollTop + this.imageContainer.clientHeight ) ) {
+      if( appShellScrollTop > ( appShellScrollTop - this.imageContainer.clientHeight/2 ) && appShellScrollTop < (imageContainerOffset + this.imageContainer.clientHeight) ) {
         this.image.setAttribute("style", "transform: translateY(-" + appShellScrollTop/3  + "px)");
       }
 
@@ -97,9 +97,9 @@ class About extends Component {
 
             <div ref="BackgroundImageContainer" onScroll={() => console.log('scroll')} className="background-image">
               <div ref="BackgroundImageGraphic" className="background-image__graphic">
-                <img className="background-image__graphics" src="/images/image-1.jpg" alt="Family" />
-                <img className="background-image__graphics" src="/images/image-2.jpg" alt="Family" />
-                <img className="background-image__graphics" src="/images/image-3.jpg" alt="Family" />
+                <img className="background-image__graphics" src="/images/image-1.jpg" alt="My wife Stephanie, daughter Stella, and two sons: Andrea and Alessio" />
+                <img className="background-image__graphics" src="/images/image-2.jpg" alt="Stella and Andrea" />
+                <img className="background-image__graphics" src="/images/image-3.jpg" alt="Alessio" />
               </div>
             </div>
           </div>
@@ -154,17 +154,15 @@ class About extends Component {
                   <h2>Inspiration</h2>
               </div>
 
-              <div className="inpsiration__grid-item inspiration__bruce">
-                  <a href="https://vimeo.com/3191188" target="_blank" rel="noopener noreferrer" className="inpsiration__link">
-                    <img src="/images/bruce-lee.jpg" className="inspiration__image" alt="Howdy"/>
-                    <p className="inspiration__label">Bruce Lee</p>
-                  </a>
-              </div>
+              <a href="https://vimeo.com/3191188" target="_blank" rel="noopener noreferrer"  className="inpsiration__grid-item inspiration__bruce inpsiration__link">
+                  <img src="/images/bruce-lee.jpg" className="inspiration__image" alt="Howdy"/>
+                  <p className="inspiration__label">Bruce Lee</p>
+              </a>
 
-              <div className="inpsiration__grid-item inspiration__bourdain">
+              <a href="https://www.businessinsider.com/anthony-bourdain-at-noma-2014-4" target="_blank" rel="noopener noreferrer" className="inpsiration__grid-item inspiration__bourdain inpsiration__link">
                 <img src="/images/bourdain.jpg" className="inspiration__image" alt="Howdy"/>
                 <p className="inspiration__label">Anthony Bourdain</p>
-              </div>              
+              </a>              
 
               <div ref="QuoteContainer" className="inspiration__quote">
                 <blockquote ref="Quote" className="inspiration__quote-text">
@@ -172,19 +170,15 @@ class About extends Component {
                 </blockquote>
               </div>
 
-              <div className="inpsiration__grid-item inspiration__badu">
-                <a href="https://vimeo.com/28372985" target="_blank" rel="noopener noreferrer" className="inpsiration__link">
+              <a href="https://vimeo.com/28372985" target="_blank" rel="noopener noreferrer" className="inpsiration__grid-item inspiration__badu inpsiration__link">
                   <img src="/images/erykah-badu.jpg" className="inspiration__image" alt="Howdy"/>
-                  <p className="inspiration__label">Erykah Badu</p>
-                </a>
-              </div>              
+                  <p className="inspiration__label">Erykah Badu</p>               
+              </a>              
 
-              <div className="inpsiration__grid-item inspiration__quincy">
-                <a href="https://www.gq.com/story/quincy-jones-has-a-story" target="_blank" rel="noopener noreferrer" className="inpsiration__link">
+              <a href="https://www.gq.com/story/quincy-jones-has-a-story" target="_blank" rel="noopener noreferrer"  className="inpsiration__grid-item inpsiration__link inspiration__quincy">
                   <img src="/images/quincy.jpg" className="inspiration__image" alt="Howdy"/>
                   <p className="inspiration__label">Quincy Jones</p>
-                </a>
-              </div>
+              </a>
             </div>
           </div>
           <div ref="ThanksContainer" className="thanks">

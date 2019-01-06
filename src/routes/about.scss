@@ -129,7 +129,7 @@
 .background-image {
 	margin-bottom: 30px;
 	grid-column: 9 / 13;
-	max-height: 450px;
+	max-height: 500px;
 	background-size: 400px;
 	position: relative;
 	overflow: hidden;
@@ -313,11 +313,6 @@
 	}
 }
 
-.inspiration__image {
-	width: 100%;
-	display: block;
-}
-
 .inspiration__title {
 	grid-column: 1/3;
 	grid-row: 1/2;
@@ -339,9 +334,10 @@
 
 .inpsiration__link {
 	color: $white;
+	background: $interactive;
 
 	&:hover {
-		color: $interactive;
+		color: $white;
 	}
 
 	&:active {
@@ -349,10 +345,31 @@
 	}
 }
 
+.inspiration__image {
+	width: 100%;
+	display: block;
+	filter: grayscale(30%);
+
+	.inpsiration__link {
+		transition: all 0.5s ease;
+
+	}
+	.inpsiration__link:hover & {
+		filter: grayscale(100%) contrast(200%);
+		opacity: 0.5;
+	}
+
+	.inpsiration__link:active & {
+		filter: grayscale(30%) contrast(100%);	
+		opacity: 1;
+		transition: all 0.1s ease;		
+	}
+}
+
 .inspiration__label {
 	margin: 0;
 	font-size: 0.8em;
-	background: rgba($interactive, 0.6);
+	background: rgba($dark-colour, 0.6);
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -375,11 +392,11 @@
 	}
 
 	.inpsiration__link:hover & {
-		background: rgba($white, 0.9);
+		background: rgba($interactive, 0.9);
 	}
 
 	.inpsiration__link:active & {
-		background: rgba($interactive, 0.6);
+		background: rgba($dark-colour, 0.6);
 	}
 }
 
@@ -387,15 +404,6 @@
 	position: relative;
 	align-self: end;
 	overflow: hidden;
-
-	img {
-		transition: all 8s ease;
-	}
-
-	img:hover {
-		transform: scale(1.2);
-		
-	}
 }	
 
 .inspiration__bourdain {

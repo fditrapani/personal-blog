@@ -165,7 +165,7 @@
 .background-image {
   margin-bottom: 30px;
   grid-column: 9 / 13;
-  max-height: 450px;
+  max-height: 500px;
   background-size: 400px;
   position: relative;
   overflow: hidden; }
@@ -304,10 +304,6 @@
       grid-row-gap: 2em;
       margin: 0 auto; } }
 
-.inspiration__image {
-  width: 100%;
-  display: block; }
-
 .inspiration__title {
   grid-column: 1/3;
   grid-row: 1/2; }
@@ -323,16 +319,31 @@
         margin: 0; } }
 
 .inpsiration__link {
-  color: #fff; }
+  color: #fff;
+  background: #038f08; }
   .inpsiration__link:hover {
-    color: #038f08; }
+    color: #fff; }
   .inpsiration__link:active {
     color: #fff; }
+
+.inspiration__image {
+  width: 100%;
+  display: block;
+  filter: grayscale(30%); }
+  .inspiration__image .inpsiration__link {
+    transition: all 0.5s ease; }
+  .inpsiration__link:hover .inspiration__image {
+    filter: grayscale(100%) contrast(200%);
+    opacity: 0.5; }
+  .inpsiration__link:active .inspiration__image {
+    filter: grayscale(30%) contrast(100%);
+    opacity: 1;
+    transition: all 0.1s ease; }
 
 .inspiration__label {
   margin: 0;
   font-size: 0.8em;
-  background: rgba(3, 143, 8, 0.6);
+  background: rgba(40, 40, 40, 0.6);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -351,18 +362,14 @@
     display: block;
     padding: 5px 10px; }
   .inpsiration__link:hover .inspiration__label {
-    background: rgba(255, 255, 255, 0.9); }
+    background: rgba(3, 143, 8, 0.9); }
   .inpsiration__link:active .inspiration__label {
-    background: rgba(3, 143, 8, 0.6); }
+    background: rgba(40, 40, 40, 0.6); }
 
 .inpsiration__grid-item {
   position: relative;
   align-self: end;
   overflow: hidden; }
-  .inpsiration__grid-item img {
-    transition: all 8s ease; }
-  .inpsiration__grid-item img:hover {
-    transform: scale(1.2); }
 
 .inspiration__bourdain {
   grid-column: 2/3;
