@@ -61,6 +61,12 @@
 .avatar__image {
 	display: block;
 	width: 100%;
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: rotate(360deg);
+		transition: all 0.6s ease;
+	}
 }
 
 .intro__title {	
