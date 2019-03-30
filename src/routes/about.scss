@@ -96,14 +96,12 @@
 .intro__paragraph {
 	margin-bottom: 0;
 
-
 	@media (min-width: 1200px) {
 		font-size: 3rem !important;
 	}
 }
 
-.intro__copy {	
-
+.intro__copy {
 	@media (min-width: 650px) {
 		grid-column: 2 / 9;
 	}
@@ -178,7 +176,6 @@
 	path {
 		fill: $dark-colour;
 	}
-	
 }
 
 #eyes-open {
@@ -209,7 +206,7 @@
 	position: relative;
 }
 
-.career-section {
+.career-section {	
 	border-left: 1px solid $dark-colour;
 	padding-left: 50px;
 	position: relative;
