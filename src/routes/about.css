@@ -107,6 +107,7 @@
 .avatar {
   border-radius: 100%;
   overflow: hidden;
+  position: relative;
   margin-bottom: 20px; }
   @media (min-width: 1200px) {
     .avatar {
@@ -359,14 +360,23 @@
     .inspiration__label {
       font-size: 1em; } }
   .inspiration__label:after {
-    content: "+";
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(-45deg);
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 10px;
+    bottom: 12px;
     display: block;
-    padding: 5px 10px; }
+    padding: 0;
+    transition: transform 0.3s ease; }
   .inpsiration__link:hover .inspiration__label {
     background: rgba(3, 143, 8, 0.9); }
+  .inpsiration__link:hover .inspiration__label:after {
+    transform: translateX(40px) rotate(-45deg); }
   .inpsiration__link:active .inspiration__label {
     background: rgba(40, 40, 40, 0.6); }
 
@@ -441,7 +451,11 @@ h2.this-site-title {
   overflow: hidden; }
 
 .thanks__title {
-  font-weight: 900; }
+  font-weight: 900;
+  margin-bottom: 0.3em; }
+
+.thanks__subtitle {
+  margin-bottom: 2em; }
 
 .social-icon {
   display: inline-block;

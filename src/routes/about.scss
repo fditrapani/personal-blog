@@ -51,6 +51,7 @@
 .avatar {
 	border-radius: 100%;
 	overflow: hidden;
+	position: relative;
 	margin-bottom: 20px;
 	
 	@media (min-width: 1200px) {
@@ -389,16 +390,27 @@
 	}
 
 	&:after {
-		content: "+";
+		content: "";
+		width: 6px;
+		height: 6px;
+		border: 2px solid $white;
+		border-top: 0;
+		border-left: 0;
+		transform: rotate(-45deg);
 		position: absolute;
-		right: 0;
-		bottom: 0;
+		right: 10px;
+		bottom: 12px;
 		display: block;
-		padding: 5px 10px;
+		padding: 0;
+		transition: transform 0.3s ease;
 	}
 
 	.inpsiration__link:hover & {
 		background: rgba($interactive, 0.9);
+	}
+
+	.inpsiration__link:hover &:after {
+		transform: translateX(40px) rotate(-45deg);
 	}
 
 	.inpsiration__link:active & {
@@ -492,6 +504,11 @@ h2.this-site-title {
 
 .thanks__title {
 	font-weight: 900;
+	margin-bottom: 0.3em;
+}
+
+.thanks__subtitle {
+	margin-bottom: 2em;
 }
 
 .social-icon {

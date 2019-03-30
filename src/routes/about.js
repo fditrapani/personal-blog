@@ -76,9 +76,12 @@ class About extends Component {
               </div>
             </div>
 
+            <div className="intro__title content">
+              <h1 className="intro__title-copy">Welcome!</h1>
+            </div>
+
             <div className="intro__copy content">
-              <h1 className="intro__title intro__title--about">Howzit!</h1>
-              <p className="intro__paragraph">My name is Filippo and I’m a designer that works with digital products. My mission in life is to help people improve their lives with technology. This is my personal site and I use it to share my thoughts, experiments, and work. Keep reading to learn a little more about myself.</p>
+              <p className="intro__paragraph">My name is Filippo and I’m a designer that works with digital products. I am based out of Ottawa, Canada and work out of my home office for a company called <a href="https://automattic.com" target="_blank">Automattic</a>. I created this page so you can learn a little about me &mdash; I hope you like it!</p>
             </div>
           </div>
 
@@ -90,9 +93,9 @@ class About extends Component {
 
           <div className="grid">
             <div className="background-copy content">
-              <p>I was born and raised in Johannesburg, South Africa, by two loving parents. I wouldn't be where I am today if it wasn't for them and truly appreciate everything they have done, and continue to do for me today. Growing up in an Italian household, I not only ate really well but also learned a lot about craftsmanship, hard work, responsibility, and passion.</p>
+              <p>Although Canada is my home now, I haven't always lived here. I was born and raised as a proud Italian in Johannesburg, South Africa. Both my parents were Italian immigrants living in Johannesburg where they first met and started their family together. Growing up in an Italian household, I not only ate really well but also learned a lot about craftsmanship, hard work, responsibility, and passion.</p>
 
-              <p>Ottawa, Canada is where I now call home. I have lived in the nation's capital for over twenty years — a little over half my life. It's where I honed my craft, met my wife, and had three beautiful children. As you can imagine life is pretty hectic with three kids so I don't get a lot of free time these days but when I do, I enjoy running, cooking, playing my bass guitar, working on my house, or watching movies.</p>
+              <p>In my late teens, my parents decided to leave South Africa and our whole family moved to Ottawa, Canada. I had a short stint of living in Italy but for the most part have been here since I left South Africa and call Ottawa home. It's where I honed my craft, met my wife, and had three beautiful children — Stella, Andrea, and Alessio. I spend most of my free time hanging out with them but also enjoy enjoy running, cooking, making music, working on my house, and watching movies.</p>
             </div>
 
             <div ref="BackgroundImageContainer" onScroll={() => console.log('scroll')} className="background-image">
@@ -118,15 +121,15 @@ class About extends Component {
             </div>
             <div className="grid grid--career">
               <div className="career-year career-section">
-                <p>2000</p>
+                <p>2004</p>
               </div>
 
               <div className="career-section career-highlight content">
-                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+                <p>Started as a traditional graphic designer working on print pieces for museums, non-profits, and small businesses.</p>
               </div>      
 
               <div className="career-section career-highlight content">
-                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+                <p>Dabbled in front-end development designing and building websites for fun &mdash; plus a little extra cash on the side.</p>
               </div>
             </div>
             <div className="grid grid--career">
@@ -134,16 +137,56 @@ class About extends Component {
                 <p>2008</p>
               </div>
               <div className="career-section career-highlight content">
-                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+                <p>Transitioned to a digital agency and worked on web based projects full time with a focus on front-end development and interaction design.</p>
+              </div>
+
+              <div className="career-section career-highlight content">
+                <p>Started using "Planning docs" to document the web experience with wireframes, flow charts, and information architecture diagrams.</p>
               </div>
             </div>
             <div className="grid grid--career">
-              
               <div className="career-year career-section">
                 <p>2011</p>
               </div>
               <div className="career-section career-highlight content">
-                <p>I started my career as a graphic designer  working on print pieces for museums, non-profits, and small businesses.</p>
+                <p>Got my first job as a product designer at a holding company which gave me exposure to lots of different brands and digital mediums.</p>
+              </div>
+              <div className="career-section career-highlight content">
+                <p>Worked in an Agile environment producing designs for mobile apps, kiosks, TV, web, print, and processes.</p>
+              </div>
+            </div>
+
+            <div className="grid grid--career">
+              <div className="career-year career-section">
+                <p>2014</p>
+              </div>
+              <div className="career-section career-highlight content">
+                <p>Worked at scale for the first time and also leveled up my programming game in rails and javascript.</p>
+              </div>
+              <div className="career-section career-highlight content">
+                <p>Got over the fear of writing as a designer and began practing when ever I could get the chance.</p>
+              </div>
+            </div>
+
+            <div className="grid grid--career">
+              <div className="career-year career-section">
+                <p>2016</p>
+              </div>
+              <div className="career-section career-highlight content">
+                <p>Dove into operations and designed successful outcomes for people on my team.</p>
+              </div>
+
+              <div className="career-section career-highlight content">
+                <p>Defined, managed, and delivered a product roadmap for a cross functional team of designers, developers, marketers, copywriters, salespeople, and business analysts.</p>
+              </div>
+            </div>
+
+            <div className="grid grid--career">
+              <div className="career-year career-section">
+                <p>2017</p>
+              </div>
+              <div className="career-section career-highlight content">
+                <p>Started working remote at a fully distributed company and took on my first people management role.</p>
               </div>
             </div>
           </div>
@@ -184,6 +227,7 @@ class About extends Component {
           <div ref="ThanksContainer" className="thanks">
             <div ref="Thanks">
               <h2 className="thanks__title">Thank you for visiting</h2>
+              <p className="thanks__subtitle">Connect with me online</p>
 
 
               <a href="https://twitter.com/filippodt" target="_blank" rel="noopener noreferrer" className="social-icon social-icon--twitter">
