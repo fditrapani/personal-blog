@@ -95,7 +95,7 @@ class About extends Component {
             <div className="background-copy content">
               <p>Although Canada is my home now, I haven't always lived here. I was born and raised as a proud Italian in Johannesburg, South Africa. Both my parents were Italian immigrants living in Johannesburg where they first met and started their family together. Growing up in an Italian household, I not only ate really well but also learned a lot about craftsmanship, hard work, responsibility, and passion.</p>
 
-              <p>In my late teens, my parents decided to leave South Africa and our whole family moved to Ottawa, Canada. I had a short stint of living in Italy but for the most part have been here since I left South Africa and call Ottawa home. It's where I honed my craft, met my wife, and had three beautiful children — Stella, Andrea, and Alessio. I spend most of my free time hanging out with them but also enjoy enjoy running, cooking, making music, working on my house, and watching movies.</p>
+              <p>In my late teens, my parents decided to leave South Africa and our whole family moved to Ottawa, Canada. I had a short stint of living in Italy but for the most part have been here since I left South Africa and call Ottawa home. It's where I honed my craft, met my wife, and had three beautiful children — Stella, Andrea, and Alessio. I spend most of my free time hanging out with them but also enjoy enjoy running, cooking, making music, working on my house, and watching movies.</p>
             </div>
 
             <div ref="BackgroundImageContainer" onScroll={() => console.log('scroll')} className="background-image">
@@ -209,7 +209,7 @@ class About extends Component {
 
               <div ref="QuoteContainer" className="inspiration__quote">
                 <blockquote ref="Quote" className="inspiration__quote-text">
-                  “The discipline of Design is one and can be applied to many different subjects, regardless of style. Design discipline is above and beyond any style. All style requires discipline in order to be expressed. Very often people think that Design is a particular style.”   <em>— Massimo Vignelli</em>
+                  “The discipline of Design is one and can be applied to many different subjects, regardless of style. Design discipline is above and beyond any style. All style requires discipline in order to be expressed. Very often people think that Design is a particular style.”   <em>— Massimo Vignelli</em>
                 </blockquote>
               </div>
 
@@ -227,6 +227,8 @@ class About extends Component {
           <div ref="ThanksContainer" className="thanks">
             <div ref="Thanks">
               <h2 className="thanks__title">Thank you for visiting</h2>
+              <p className="thanks__subtitle">Connect with me online</p>
+
 
               <a href="https://twitter.com/filippodt" target="_blank" rel="noopener noreferrer" className="social-icon social-icon--twitter">
                 <svg viewBox="0 0 400 400"><title>Twitter</title><path d="M153.6,301.6c94.3,0,145.9-78.2,145.9-145.9,0-2.2,0-4.4-.1-6.6A104.47,104.47,0,0,0,325,122.5a103.93,103.93,0,0,1-29.5,8.1,51.59,51.59,0,0,0,22.6-28.4,102,102,0,0,1-32.6,12.4,51.29,51.29,0,0,0-88.7,35.1,56.68,56.68,0,0,0,1.3,11.7A145.61,145.61,0,0,1,92.4,107.8a51.48,51.48,0,0,0,15.9,68.5,51.87,51.87,0,0,1-23.2-6.4v.7a51.39,51.39,0,0,0,41.1,50.3,51.58,51.58,0,0,1-23.1.9A51.28,51.28,0,0,0,151,257.4a102.85,102.85,0,0,1-63.7,22,98.68,98.68,0,0,1-12.2-.7,145.86,145.86,0,0,0,78.5,22.9"/></svg>
