@@ -198,12 +198,12 @@ class About extends Component {
               </div>
 
               <a href="https://vimeo.com/3191188" target="_blank" rel="noopener noreferrer"  className="inpsiration__grid-item inspiration__bruce inpsiration__link">
-                  <img src="/images/bruce-lee.jpg" className="inspiration__image" alt="Howdy"/>
+                  <img src="/images/bruce-lee.jpg" className="inspiration__image" alt="Bruce Lee: Martial artist"/>
                   <p className="inspiration__label">Bruce Lee</p>
               </a>
 
               <a href="https://www.businessinsider.com/anthony-bourdain-at-noma-2014-4" target="_blank" rel="noopener noreferrer" className="inpsiration__grid-item inspiration__bourdain inpsiration__link">
-                <img src="/images/bourdain.jpg" className="inspiration__image" alt="Howdy"/>
+                <img src="/images/bourdain.jpg" className="inspiration__image" alt="Anthony Bourdain: TV personality and Chef"/>
                 <p className="inspiration__label">Anthony Bourdain</p>
               </a>              
 
@@ -214,12 +214,12 @@ class About extends Component {
               </div>
 
               <a href="https://vimeo.com/28372985" target="_blank" rel="noopener noreferrer" className="inpsiration__grid-item inspiration__badu inpsiration__link">
-                  <img src="/images/erykah-badu.jpg" className="inspiration__image" alt="Howdy"/>
+                  <img src="/images/erykah-badu.jpg" className="inspiration__image" alt="Erykah Badu: Musician and artist"/>
                   <p className="inspiration__label">Erykah Badu</p>               
               </a>              
 
               <a href="https://www.gq.com/story/quincy-jones-has-a-story" target="_blank" rel="noopener noreferrer"  className="inpsiration__grid-item inpsiration__link inspiration__quincy">
-                  <img src="/images/quincy.jpg" className="inspiration__image" alt="Howdy"/>
+                  <img src="/images/quincy.jpg" className="inspiration__image" alt="Quincy Jones: Producer and musician"/>
                   <p className="inspiration__label">Quincy Jones</p>
               </a>
             </div>
@@ -227,8 +227,6 @@ class About extends Component {
           <div ref="ThanksContainer" className="thanks">
             <div ref="Thanks">
               <h2 className="thanks__title">Thank you for visiting</h2>
-              <p className="thanks__subtitle">Connect with me online</p>
-
 
               <a href="https://twitter.com/filippodt" target="_blank" rel="noopener noreferrer" className="social-icon social-icon--twitter">
                 <svg viewBox="0 0 400 400"><title>Twitter</title><path d="M153.6,301.6c94.3,0,145.9-78.2,145.9-145.9,0-2.2,0-4.4-.1-6.6A104.47,104.47,0,0,0,325,122.5a103.93,103.93,0,0,1-29.5,8.1,51.59,51.59,0,0,0,22.6-28.4,102,102,0,0,1-32.6,12.4,51.29,51.29,0,0,0-88.7,35.1,56.68,56.68,0,0,0,1.3,11.7A145.61,145.61,0,0,1,92.4,107.8a51.48,51.48,0,0,0,15.9,68.5,51.87,51.87,0,0,1-23.2-6.4v.7a51.39,51.39,0,0,0,41.1,50.3,51.58,51.58,0,0,1-23.1.9A51.28,51.28,0,0,0,151,257.4a102.85,102.85,0,0,1-63.7,22,98.68,98.68,0,0,1-12.2-.7,145.86,145.86,0,0,0,78.5,22.9"/></svg>

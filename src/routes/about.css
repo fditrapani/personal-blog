@@ -457,11 +457,7 @@
   overflow: hidden; }
 
 .thanks__title {
-  font-weight: 900;
-  margin-bottom: 0.3em; }
-
-.thanks__subtitle {
-  margin-bottom: 2em; }
+  font-weight: 900; }
 
 .social-icon {
   display: inline-block;
