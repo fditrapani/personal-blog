@@ -14,7 +14,6 @@ class About extends Component {
       };
     }    
 
-
     componentDidMount() {
       this.appShell = document.getElementsByClassName("app-shell__content")[0];
       this.imageContainer = this.refs.BackgroundImageContainer;
@@ -81,7 +80,7 @@ class About extends Component {
             </div>
 
             <div className="intro__copy content">
-              <p className="intro__paragraph">My name is Filippo and I’m a designer that works with digital products. I am based out of Ottawa, Canada and work out of my home office for a company called <a href="https://automattic.com" target="_blank">Automattic</a>. I created this page so you can learn a little about me &mdash; I hope you like it!</p>
+              <p className="intro__paragraph">My name is Filippo and I’m a designer that works with digital products. I am based out of Ottawa, Canada and work out of my home office for a company called <a href="https://automattic.com">Automattic</a>. I created this page so you can learn a little about me &mdash; I hope you like it!</p>
             </div>
           </div>
 
