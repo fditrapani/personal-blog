@@ -92,9 +92,9 @@ class About extends Component {
 
           <div className="grid">
             <div className="background-copy content">
-              <p>Although Canada is my home now, I haven't always lived here. I was born and raised as a proud Italian in Johannesburg, South Africa. Both my parents were Italian immigrants living in Johannesburg where they first met and started their family together. Growing up in an Italian household, I not only ate really well but also learned a lot about craftsmanship, hard work, responsibility, and passion.</p>
+              <p>Although Canada is my home now, I haven't always lived here. I was born and raised a proud Italian in Johannesburg, South Africa. Both my parents were Italian immigrants living in Johannesburg when they first met and eventually started their family together. Growing up in an Italian household, I not only ate really well but also learned a lot about craftsmanship, hard work, responsibility, and passion.</p>
 
-              <p>In my late teens, my parents decided to leave South Africa and our whole family moved to Ottawa, Canada. I had a short stint of living in Italy but for the most part have been here since I left South Africa and call Ottawa home. It's where I honed my craft, met my wife, and had three beautiful children — Stella, Andrea, and Alessio. I spend most of my free time hanging out with them but also enjoy enjoy running, cooking, making music, working on my house, and watching movies.</p>
+              <p>In my late teens, my parents decided to leave South Africa and our whole family moved to Ottawa, Canada. I had a short stint of living in Italy but for the most part have been in Ottawa since I left South Africa. It's where I honed my craft, met my wife, and had three beautiful children — Stella, Andrea, and Alessio. I spend most of my free time hanging out with them but also enjoy enjoy running, cooking, making music, working on my house, and watching movies.</p>
             </div>
 
             <div ref="BackgroundImageContainer" onScroll={() => console.log('scroll')} className="background-image">
