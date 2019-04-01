@@ -501,11 +501,3 @@
 
 .social-icon--linkedin svg {
   transform: scale(0.6); }
-
-@keyframes contentLoad {
-  0% {
-    opacity: 0;
-    transform: translateY(300); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
