@@ -62,7 +62,7 @@ class About extends Component {
 
     renderContent = () => {
       return (
-        <div className="app-shell__content-wrapper">
+        <div className="app-shell__content-wrapper about__content-wrapper">
           <Helmet>
               <title>{ "Filippo Di Trapani" }</title>
               <meta name="description" content="A designer website by Filippo Di Trapani."/>
