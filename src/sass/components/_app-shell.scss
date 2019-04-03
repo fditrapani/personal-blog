@@ -28,7 +28,7 @@ body, #root {
 
 .app-shell__content-wrapper {
 	width: 100%;
-	height: 650px;
+	height: calc( 100vh -200px );
 	overflow-y: scroll; 
     -webkit-overflow-scrolling: touch;
 
