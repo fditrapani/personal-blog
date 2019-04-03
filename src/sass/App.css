@@ -848,19 +848,21 @@ body, #root {
   .app-shell {
     flex-direction: column-reverse; } }
 
+.app-shell__content-wrapper {
+  width: 100%;
+  height: calc( 100vh - 50px);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
 .app-shell__content {
   flex-grow: 1;
-  overflow-y: scroll;
-  /* has to be scroll, not auto */
-  -webkit-overflow-scrolling: touch;
-  animation: contentLoad 0.2s ease-in-out 0.2s;
-  animation-fill-mode: backwards; }
+  position: relative; }
 
 .app-shell__navigation {
   background: #ffd000;
   box-sizing: border-box;
   box-shadow: 0 -3px 10px #000;
-  z-index: 1;
+  z-index: 10;
   animation: navLoad 0.5s ease-out;
   animation-fill-mode: backwards; }
   @media (max-width: 650px) {
@@ -870,12 +872,6 @@ body, #root {
 
 .page-main {
   position: relative; }
-
-.fade-exit {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; }
 
 .app-shell__nav-content {
   display: flex;
@@ -948,14 +944,45 @@ body, #root {
   .app-shell__nav-link:active:after {
     background: #282828; }
 
-.app-shell__content-wrapper {
-  animation-fill-mode: backwards; }
+.my-node-enter,
+.my-node-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
 
-@keyframes contentLoad {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+.my-node-enter {
+  opacity: 0;
+  transform: translateY(400px);
+  z-index: 2;
+  background: #f2f2f2; }
+
+.my-node-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.2s 0.1s ease-out; }
+
+.my-node-exit {
+  opacity: 1;
+  z-index: 1; }
+  .my-node-exit:after {
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 200%;
+    height: 200%;
+    display: block;
+    background: #000;
+    z-index: 0;
+    opacity: 0;
+    content: ''; }
+
+.my-node-exit-active {
+  transform: scale(0.98);
+  transition: all 0.2s; }
+  .my-node-exit-active.my-node-exit:after {
+    opacity: 0.6;
+    transition: all 0.2s; }
 
 @keyframes navLoad {
   0% {

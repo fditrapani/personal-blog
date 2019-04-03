@@ -15,7 +15,6 @@ class Post extends Component {
     this.state = {
       isLoaded: false,
       isNotFound: false,
-      unload: false,
       postData: {},
     };
   }
@@ -26,11 +25,7 @@ class Post extends Component {
   }
 
   componentWillReceiveProps( nextProps ) {
-    if( nextProps.match.url !== this.props.match.url ){
-
-      this.setState( { unload: true });
-      // Animate content out before changing shit...
-      
+    if( nextProps.match.url !== this.props.match.url ){      
       localStorage.setItem( 'visited-'+ window.location.pathname, true );
       this.setState({
         isLoaded: false,
@@ -58,7 +53,6 @@ class Post extends Component {
       
       if( postObject  ) {
         this.setState({
-          unload: false,
           postData: postObject,
           isLoaded: true,
         });
@@ -95,7 +89,6 @@ class Post extends Component {
           // Examine the text in the response
           response.json().then( data => {
             this.setState({
-              unload: false,
               postData: data,
               isLoaded: true,
             });
@@ -133,7 +126,7 @@ class Post extends Component {
       const convertedTitle = this.encodeHTMLentities(title);
       
       return (
-        <div className={ "post__content-wrapper" + ( this.state.unload ? " post__content-wrapper--unload" : "" ) }>
+        <div className="app-shell__content-wrapper">
           <Helmet>
               <title>{ convertedTitle + " | Filippo Di Trapani" }</title>
               <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href="https://filippodt.blog/feed/" />

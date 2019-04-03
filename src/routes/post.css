@@ -1,11 +1,3 @@
-.post__content-wrapper {
-  animation: contentLoad 0.3s ease-in-out;
-  animation-fill-mode: backwards; }
-
-.post__content-wrapper--unload {
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0; }
-
 .post__image {
   margin-bottom: 2rem; }
   @media (min-width: 550px) {
