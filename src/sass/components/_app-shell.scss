@@ -28,9 +28,13 @@ body, #root {
 
 .app-shell__content-wrapper {
 	width: 100%;
-	height: calc( 100vh - 50px);
+	height: calc( 100vh );
 	overflow-y: scroll; 
     -webkit-overflow-scrolling: touch;
+
+    @media (max-width: 650px) { 
+    	height: calc( 100vh - 50px);
+    }
 }
 
 .app-shell__content {

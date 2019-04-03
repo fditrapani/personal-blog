@@ -10,8 +10,18 @@ import Navigation from './components/navigation/';
 import './sass/App.css';
 
 class App extends Component {
+  componentWillReceiveProps() {
+    // setTimeout( () => {
+    //   this.refs.appShellContainer.scrollTop = 0;
+    // }, 400 );
+
+    //document.getElementsByClassName("app-shell__content-wrapper").style.height= (window.screen.height - 50) +"px";
+    //this.refs.appShellContainer.scrollTop = 0;
+  }
+
   componentDidMount(){
     window.ga('create', 'UA-22176787-1', 'auto');
+    
   }
 
   setPageAndSendToGA = url => {
@@ -28,6 +38,9 @@ class App extends Component {
 
   render() {
     this.trackGoogleAnalytics(this.props.location);
+    //document.getElementsByClassName("app-shell__content-wrapper").style.width = '500px';
+
+    
 
     return (
       <div className="app-shell">
