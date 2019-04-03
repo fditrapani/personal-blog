@@ -850,7 +850,7 @@ body, #root {
 
 .app-shell__content-wrapper {
   width: 100%;
-  height: calc( 100vh -80px);
+  height: calc( 100vh - 60px);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
   @media (min-width: 650px) {
