@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./reading-time.css";
+import "./reading-time.scss";
 
 export default class ReadingTime extends React.Component {
   static propTypes = {

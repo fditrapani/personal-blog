@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PostListing from "../postlisting";
 import Button from "../button";
 import { config } from "../../config"
-import "./related.css";
+import "./related.scss";
 
 export default class Related extends React.Component {
   static propTypes = {

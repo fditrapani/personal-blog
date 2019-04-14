@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReadingTime from "../readingtime";
-import "./post-listing.css";
+import "./post-listing.scss";
 import FeaturedImage from "../featuredimage"
 
 export default class PostListing extends React.Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { config } from "../config";
-import './about.css';
+import './about.scss';
 
 class About extends Component {
   constructor() {

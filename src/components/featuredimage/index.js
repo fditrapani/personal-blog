@@ -1,5 +1,5 @@
 import React from 'react';
-import "./featured-image.css";
+import "./featured-image.scss";
 
 export default class FeaturedImage extends React.Component {
 	constructor() {

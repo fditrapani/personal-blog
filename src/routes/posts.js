@@ -3,7 +3,7 @@ import ProgressIndicator from '../components/progressindicator';
 import PostListing from '../components/postlisting';
 import { Helmet } from "react-helmet";
 import { config } from "../config"
-import './posts.css';
+import './posts.scss';
 
 
 class Posts extends Component {

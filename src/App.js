@@ -7,7 +7,7 @@ import About from './routes/about';
 import NotFound from './routes/404';
 
 import Navigation from './components/navigation/';
-import './sass/App.css';
+import './sass/App.scss';
 
 class App extends Component {
   componentWillReceiveProps() {

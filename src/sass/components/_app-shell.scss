@@ -1,7 +1,7 @@
 @import "colours";
 
 html {
-  height: 100%
+  height: 100%;
 }
 
 body, #root {
@@ -173,11 +173,15 @@ body, #root {
   transform: translateY( 400px );
   z-index: 2;
   background: $background;
+
+  @media (min-width: 1400px) { 
+  	transform: translateY( 0 ) scale(1.1);
+  }
 }
 
 .my-node-enter-active {
   opacity: 1;
-  transform: translateY( 0 );
+  transform: translateY( 0 ) scale(1);
   transition: all 0.2s 0.1s ease-out;
 }
 
@@ -201,12 +205,23 @@ body, #root {
 
 .my-node-exit-active {
   transform: scale(0.98);
-  transition: all 0.2s;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.1s 0.2s;  
 
   &.my-node-exit:after {
   	opacity: 0.6;
   	transition: all 0.2s;
   }
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
 
 @keyframes navLoad {

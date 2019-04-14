@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom'
 import { Helmet } from "react-helmet"
 import Related from "../components/related"
 import { config } from "../config"
-import './post.css'
+import './post.scss'
 
 class Post extends Component {
   constructor() {
