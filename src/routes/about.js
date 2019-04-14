@@ -15,7 +15,7 @@ class About extends Component {
     }    
 
     componentDidMount() {
-      this.appShell = document.getElementsByClassName("app-shell__content")[0];
+      this.appShell = document.getElementsByClassName("app-shell__content-wrapper")[0];
       this.imageContainer = this.refs.BackgroundImageContainer;
       this.image = this.refs.BackgroundImageGraphic;
       this.logoContainer = this.refs.LogoContainer;
