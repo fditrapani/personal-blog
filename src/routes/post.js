@@ -112,6 +112,30 @@ class Post extends Component {
       });
     }
 
+  showReadingTime = ( content, show ) => {
+    if( show ) {
+      return (
+        <ReadingTime content={ content } fullView={ true } />
+      )
+    }
+
+    return false;
+  }
+
+  showFeaturedImage = ( url, title, show ) => {
+    if( show ) {
+      return (
+        <div className="post__image">
+          <FeaturedImage 
+            imageUrl={ url }
+            altText={ "Featured image for " + title } />
+        </div>
+      )
+    }
+
+    return false;
+  }
+
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
@@ -124,6 +148,8 @@ class Post extends Component {
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
 
       const convertedTitle = this.encodeHTMLentities(title);
+
+      console.log ( (data.categories.Portfolio)? "yes" : "no" );
       
       return (
         <div className="app-shell__content-wrapper">
@@ -142,14 +168,10 @@ class Post extends Component {
 
           <h1 className="post__title">
             <span dangerouslySetInnerHTML={{ __html: htmlTitle }} />
-            <ReadingTime content={ data.content } fullView={ true } />
+            { this.showReadingTime( data.content, (data.categories.Portfolio)? false : true ) } 
           </h1>
           
-          <div className="post__image">
-            <FeaturedImage 
-              imageUrl={ imageURL }
-              altText={ "Featured image for " + title } />
-          </div>
+          { this.showFeaturedImage( imageURL, title, (data.categories.Portfolio)? false : true ) } 
 
           <div className="container">
             <div className="content content-wrapper">
