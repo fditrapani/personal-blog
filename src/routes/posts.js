@@ -38,7 +38,7 @@ class Posts extends Component {
 
   fetchData = () => {
     fetch(
-      'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts'
+      'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?category=Articles'
     ).then( response => {
           if (response.status !== 200) {
             console.log('Looks like there was a problem. Status Code: ' +
