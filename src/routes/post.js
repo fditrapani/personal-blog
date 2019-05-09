@@ -136,6 +136,16 @@ class Post extends Component {
     return false;
   }
 
+  showRelatedContent = ( data, show ) => {
+    if( show ) {
+      return (
+        <Related preLoadedData={ data } />
+      )
+    }
+
+    return false;
+  }
+
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
@@ -145,6 +155,8 @@ class Post extends Component {
       const title = data.title;
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
+      const isPortfolio = (data.categories.Portfolio)? true : false;
+      const isArticle = (data.categories.Articles)? true : false;
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
 
       const convertedTitle = this.encodeHTMLentities(title);
@@ -168,10 +180,10 @@ class Post extends Component {
 
           <h1 className="post__title">
             <span dangerouslySetInnerHTML={{ __html: htmlTitle }} />
-            { this.showReadingTime( data.content, (data.categories.Portfolio)? false : true ) } 
+            { this.showReadingTime( data.content, isArticle ) } 
           </h1>
           
-          { this.showFeaturedImage( imageURL, title, (data.categories.Portfolio)? false : true ) } 
+          { this.showFeaturedImage( imageURL, title, isArticle ) } 
 
           <div className="container">
             <div className="content content-wrapper">
@@ -179,7 +191,7 @@ class Post extends Component {
 
 
                <div className="divider">
-                 <Related preLoadedData={ data } />
+                 { this.showRelatedContent( data, isArticle ) }
                </div>
              </div>
           </div>
