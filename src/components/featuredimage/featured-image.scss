@@ -2,7 +2,7 @@
 
 .featured-image-wrapper {
     position: relative;
-    padding: 45% 20px 0;
+    padding: 46% 20px 0;
     overflow: hidden;
     background: $background__stroke;
 
@@ -13,6 +13,7 @@
     @media (min-width: 900px) { 
         border: 10px solid $white;
         box-sizing: border-box;
+        padding-top: 45%;
     }
 }
 
