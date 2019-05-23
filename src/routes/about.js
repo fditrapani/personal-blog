@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { config } from "../config";
 import '../sass/routes/about.scss';
+import Related from "../components/related";
+import PostListing from '../components/postlisting';
 
 class About extends Component {
   constructor() {
@@ -15,6 +17,8 @@ class About extends Component {
     }    
 
     componentDidMount() {
+      this.getData();
+
       this.appShell = document.getElementsByClassName("app-shell__content-wrapper")[0];
       this.imageContainer = this.refs.BackgroundImageContainer;
       this.image = this.refs.BackgroundImageGraphic;
@@ -30,6 +34,96 @@ class About extends Component {
 
     componentWillUnmount() {
       this.appShell.removeEventListener('scroll', this.handleScroll, true);
+    }
+
+    getData = () => {
+      const localData = localStorage.getItem( "Data" );
+
+      if ( localData ) {
+        const dataObject = JSON.parse( localData );
+        const postObject = dataObject.find( x => {
+          if( Number(this.props.match.params.id)  === Number(x.ID) ) {
+            return x;
+          }
+
+          return false;
+        }); 
+        
+        
+        if( postObject  ) {
+          this.setState({
+            postData: postObject,
+            isLoaded: true,
+          });
+        }
+
+        this.fetchData(); 
+        return;
+      }
+
+      this.fetchData();    
+    }
+
+    fetchData = () => {
+      //Fetch API request here
+      fetch(
+        'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?tag=featured'
+      ).then( response => {
+            if (response.status !== 200) {
+              console.log('Looks like there was a problem. Status Code: ' +
+                response.status);
+
+              switch( response.status ) {
+                case 404:
+                  this.setState({ isNotFound: true, });
+                  break
+                default:
+                  console.log("Redirect to the broke page");
+                  break
+              }
+
+              return;
+            }
+
+            // Examine the text in the response
+            response.json().then( data => {
+              this.setState({
+                postData: data,
+                isLoaded: true,
+              });
+            });
+          }
+        )
+        .catch( err => {
+          console.log('Fetch Error :-S', err);
+        });
+    }
+
+    showRelatedContent = ( data, show ) => {
+      const dataArray = data.posts;
+      let posts = "";
+
+      if( this.state.isLoaded ) {
+
+        let posts = dataArray.map( (post, index) => { 
+            return (          
+             <div key={ post.ID }>
+               <PostListing 
+                  post={ post }
+                  isFeatured={ false }
+                  embedded={ true } />
+             </div>
+             )
+         })
+
+        return (
+        <div className="tales-listing">
+          { posts }
+        </div>
+        );
+      }
+
+      return false
     }
 
     handleScroll = () => {
@@ -61,6 +155,8 @@ class About extends Component {
     }
 
     renderContent = () => {
+      const data = this.state.postData;
+
       return (
         <div className="app-shell__content-wrapper about__content-wrapper">
           <Helmet>
@@ -190,6 +286,15 @@ class About extends Component {
             </div>
           </div>
 
+          <div className="tales">
+            <div className="grid grid--tales">
+              <div className="content tales-section">
+                <h2 className="tales-title">Tales from the trenches</h2>
+                { this.showRelatedContent( data ) }
+              </div>
+            </div>
+          </div>
+
           <div className="inspiration">
             <div className="grid grid--inspiration">
               <div className="inpsiration__grid-item inspiration__title">
@@ -198,29 +303,25 @@ class About extends Component {
 
               <a href="https://vimeo.com/3191188" target="_blank" rel="noopener noreferrer"  className="inpsiration__grid-item inspiration__bruce inpsiration__link">
                   <img src="/images/bruce-lee.jpg" className="inspiration__image" alt="Bruce Lee: Martial artist"/>
-                  <p className="inspiration__label">Bruce Lee</p>
               </a>
 
               <a href="https://www.businessinsider.com/anthony-bourdain-at-noma-2014-4" target="_blank" rel="noopener noreferrer" className="inpsiration__grid-item inspiration__bourdain inpsiration__link">
                 <img src="/images/bourdain.jpg" className="inspiration__image" alt="Anthony Bourdain: TV personality and Chef"/>
-                <p className="inspiration__label">Anthony Bourdain</p>
               </a>              
+
+              <a href="https://vimeo.com/28372985" target="_blank" rel="noopener noreferrer" className="inpsiration__grid-item inspiration__badu inpsiration__link">
+                  <img src="/images/erykah-badu.jpg" className="inspiration__image" alt="Erykah Badu: Musician and artist"/>
+              </a>              
+
+              <a href="https://www.gq.com/story/quincy-jones-has-a-story" target="_blank" rel="noopener noreferrer"  className="inpsiration__grid-item inpsiration__link inspiration__quincy">
+                  <img src="/images/quincy.jpg" className="inspiration__image" alt="Quincy Jones: Producer and musician"/>
+              </a>
 
               <div ref="QuoteContainer" className="inspiration__quote">
                 <blockquote ref="Quote" className="inspiration__quote-text">
                   “The discipline of Design is one and can be applied to many different subjects, regardless of style. Design discipline is above and beyond any style. All style requires discipline in order to be expressed. Very often people think that Design is a particular style.”   <em>— Massimo Vignelli</em>
                 </blockquote>
               </div>
-
-              <a href="https://vimeo.com/28372985" target="_blank" rel="noopener noreferrer" className="inpsiration__grid-item inspiration__badu inpsiration__link">
-                  <img src="/images/erykah-badu.jpg" className="inspiration__image" alt="Erykah Badu: Musician and artist"/>
-                  <p className="inspiration__label">Erykah Badu</p>               
-              </a>              
-
-              <a href="https://www.gq.com/story/quincy-jones-has-a-story" target="_blank" rel="noopener noreferrer"  className="inpsiration__grid-item inpsiration__link inspiration__quincy">
-                  <img src="/images/quincy.jpg" className="inspiration__image" alt="Quincy Jones: Producer and musician"/>
-                  <p className="inspiration__label">Quincy Jones</p>
-              </a>
             </div>
           </div>
           <div ref="ThanksContainer" className="thanks">
