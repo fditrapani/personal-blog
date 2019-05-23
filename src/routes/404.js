@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './404.scss'
+import '../sass/routes/404.scss'
 
 class NotFound extends Component {
   render() {
