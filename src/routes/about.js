@@ -286,7 +286,7 @@ class About extends Component {
             </div>
           </div>
 
-          <div className="tales">
+          <div id="tales" className="tales">
             <div className="grid grid--tales">
               <div className="content tales-section">
                 <h2 className="tales-title">Tales from the trenches</h2>
