@@ -47,7 +47,7 @@ export default class PostListing extends React.Component {
   showImage ( image, bool, text ) {
     if ( bool ) {
       return (
-        <div className="post-listing__imageWrapper">
+        <div className="post-listing__image-wrapper">
           <FeaturedImage 
             imageUrl={ image } 
             altText={ text } />

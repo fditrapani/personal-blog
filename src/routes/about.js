@@ -37,19 +37,16 @@ class About extends Component {
     }
 
     getData = () => {
-      const localData = localStorage.getItem( "Data" );
+      this.fetchData();  
+
+      const localData = localStorage.getItem( "Featured" );
 
       if ( localData ) {
         const dataObject = JSON.parse( localData );
         const postObject = dataObject.find( x => {
-          if( Number(this.props.match.params.id)  === Number(x.ID) ) {
-            return x;
-          }
-
-          return false;
+           return false;
         }); 
-        
-        
+
         if( postObject  ) {
           this.setState({
             postData: postObject,
@@ -91,6 +88,9 @@ class About extends Component {
                 postData: data,
                 isLoaded: true,
               });
+
+              //Add to local storage
+              localStorage.setItem( "Featured", JSON.stringify( data.posts ));
             });
           }
         )
@@ -99,25 +99,26 @@ class About extends Component {
         });
     }
 
-    showRelatedContent = ( data, show ) => {
-      const dataArray = data.posts;
+    showRelatedContent = () => {
       let posts = "";
 
       if( this.state.isLoaded ) {
+        const data = this.state.postData;
+        const dataArray = data.posts;
 
         let posts = dataArray.map( (post, index) => { 
             return (          
-             <div key={ post.ID }>
+             <div className="tale" key={ post.ID }>
                <PostListing 
                   post={ post }
-                  isFeatured={ false }
+                  isFeatured={ true }
                   embedded={ true } />
              </div>
              )
          })
 
         return (
-        <div className="tales-listing">
+        <div className="tales-listing grid grid--tales">
           { posts }
         </div>
         );
@@ -152,6 +153,21 @@ class About extends Component {
       if( (thanksContainerOffset - appShellScrollTop) < ( appShellClientHeight + 100 ) ) {
         this.thanks.setAttribute("style", "transform: translateY(-" + thanksPosition + "px)");
       }        
+    }
+
+    renderTales = () => {
+      if( this.state.isLoaded ) {
+        return(
+          <div className="tales">
+            <div className="grid content">
+              <h2 className="tales-title">Tales from the trenches</h2>
+            </div>                
+            { this.showRelatedContent() }
+          </div>
+        )
+      }
+
+      return false;
     }
 
     renderContent = () => {
@@ -286,14 +302,7 @@ class About extends Component {
             </div>
           </div>
 
-          <div className="tales">
-            <div className="grid grid--tales">
-              <div className="content tales-section">
-                <h2 className="tales-title">Tales from the trenches</h2>
-                { this.showRelatedContent( data ) }
-              </div>
-            </div>
-          </div>
+          { this.renderTales() }
 
           <div className="inspiration">
             <div className="grid grid--inspiration">
