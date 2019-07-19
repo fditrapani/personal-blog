@@ -63,6 +63,15 @@
 	    list-style-position: outside;
 	    margin-left: 25px;
 	    color: $text;
+
+	    @media (min-width: 550px) {
+	    	font-size: 2.2rem;
+	    }
+
+	    @media (min-width: 900px) {
+	    	font-size: 2.4rem;
+	    	line-height: 1.7;
+	    }
 	}
 
 	blockquote {
