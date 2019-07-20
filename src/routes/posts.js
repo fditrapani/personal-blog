@@ -108,8 +108,7 @@ class Posts extends Component {
       return null;
     }
 
-    for(var i = 1; i <= totalPages; i++) {
-      
+    for(var i = 1; i <= totalPages; i++) {      
       elements.push( 
         <li className="pagination__item" key={ i }>
           <Link 

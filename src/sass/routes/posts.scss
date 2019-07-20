@@ -22,14 +22,12 @@
 	&:first-child{
 		border: 0;
 	}
-
 }
 
 .pagination__link {
 	display: block;
 	padding: 0px 15px;	
 	line-height: 1.3em;
-
 	text-decoration: none;
 	color: $text-light--accessible;
 
