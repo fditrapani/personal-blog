@@ -157,10 +157,7 @@ class Post extends Component {
       const lastIndex = htmlTitle.lastIndexOf(" ");
       const isArticle = (data.categories.Articles)? true : false;
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
-
       const convertedTitle = this.encodeHTMLentities(title);
-
-      console.log ( (data.categories.Portfolio)? "yes" : "no" );
       
       return (
         <div className="app-shell__content-wrapper">
