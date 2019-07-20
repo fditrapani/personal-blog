@@ -3,6 +3,7 @@ import ProgressIndicator from '../components/progressindicator';
 import PostListing from '../components/postlisting';
 import { Helmet } from "react-helmet";
 import { config } from "../config"
+import { Link } from 'react-router-dom';
 import '../sass/routes/posts.scss';
 
 
@@ -13,6 +14,8 @@ class Posts extends Component {
     this.state = {
       isLoaded: false,
       postData: {},
+      feedUrl: 'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?category=Articles&number=' + config.postsPerPage,
+      totalPages: 0,
     };
   }
 
@@ -21,25 +24,36 @@ class Posts extends Component {
   }
 
   getData = () => {
-    const localData = localStorage.getItem( "Data" );
+    let storageName = "Data";
+    const pageNumber = this.props.match.params.page;
+    let url = this.state.feedUrl;
 
-    if ( localData ) {
-      this.setState( { 
-        postData: JSON.parse( localData ),
-        isLoaded: true,
-      } );
-
-      this.fetchData(); 
-      return;
+    if( pageNumber ){
+      url += '&offset=' + ( ( this.props.match.params.page * config.postsPerPage ) - config.postsPerPage );
+      storageName += " " + pageNumber;
     }
 
-    this.fetchData();    
+    const localData = localStorage.getItem( storageName );
+    const totalPages = localStorage.getItem( "totalPages");
+
+    if ( localData ) {
+      const jsonData = JSON.parse( localData )
+      
+      this.setState( { 
+        postData: jsonData,
+        isLoaded: true,
+        totalPages: totalPages,
+      } );
+
+      this.fetchData( url ); 
+      return;
+    }    
+
+    this.fetchData( url );    
   }
 
-  fetchData = () => {
-    fetch(
-      'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?category=Articles'
-    ).then( response => {
+  fetchData = ( url  ) => {
+    fetch( url ).then( response => {
           if (response.status !== 200) {
               console.log('Looks like there was a problem. Status Code: ' +
               response.status);
@@ -48,19 +62,33 @@ class Posts extends Component {
 
           // Examine the text in the response
           response.json().then( data => {
+            let storageName = "Data";
+            const pageNumber = this.props.match.params.page;
+            const totalPages = Math.ceil( data.found / config.postsPerPage );
+
+            if( pageNumber ) {
+              storageName += " " + pageNumber;
+            }
+
+            if( data.found === 0 ) {
+              this.fetchData( this.state.feedUrl );
+            }
+
             this.setState({
               postData: data.posts,
               isLoaded: true,
+              totalPages: totalPages,
             });
 
             //Add to local storage
-            localStorage.setItem( "Data", JSON.stringify( data.posts ));
+            localStorage.setItem( "totalPages", totalPages);
+            localStorage.setItem( storageName, JSON.stringify( data.posts ));
             return;
           });
         }
       )
       .catch( err => {
-        console.log('Fetch Error :-S', err);
+        console.log( 'Fetch Error :-S', err );
       });
   }
 
@@ -68,6 +96,36 @@ class Posts extends Component {
     if ( ! this.state.isLoaded ) {
       return <ProgressIndicator />
     }
+  }
+
+  renderPagination = () => {
+    const totalPages = this.state.totalPages; 
+    const elements = [];
+    const pageParam = parseInt( this.props.match.params.page );
+    const pageNumber = ( pageParam && pageParam <= totalPages ) ? pageParam : 1;
+
+    if( totalPages < 2 ) {
+      return null;
+    }
+
+    for(var i = 1; i <= totalPages; i++) {
+      
+      elements.push( 
+        <li className="pagination__item" key={ i }>
+          <Link 
+            className={ i === pageNumber ? "pagination__link pagination__link--active" : "pagination__link" } 
+            to={ "/page/" + i } >
+              { i }
+          </Link>
+        </li>
+      );
+    }
+
+    return (
+      <ul className="pagination">
+         { elements }
+       </ul> 
+    )
   }
 
   renderContent = () => {
@@ -101,7 +159,9 @@ class Posts extends Component {
                      </div>
                    );
                  })
-               }              
+               }
+
+               { this.renderPagination() }                            
           </div>
         </div>
       )

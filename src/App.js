@@ -44,6 +44,7 @@ class App extends Component {
               <Switch location={ this.props.location } >
                  <Route path="/" exact component={ Posts } />
                  <Route path="/about" component={ About } />
+                 <Route path="/page/:page" exact component={ Posts } />
                  <Route path="/post/:id/:slug" component={ Post } />
                  <Route component={ NotFound } />
               </Switch>

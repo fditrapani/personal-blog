@@ -155,7 +155,6 @@ class Post extends Component {
       const title = data.title;
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
-      const isPortfolio = (data.categories.Portfolio)? true : false;
       const isArticle = (data.categories.Articles)? true : false;
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
 

@@ -7,3 +7,40 @@
 	    max-width: 1200px;
     }
 }
+
+.pagination {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin: 40px 0;
+}
+
+.pagination__item {
+	list-style: none;
+	border-left: 1px solid $text-light;
+
+	&:first-child{
+		border: 0;
+	}
+
+}
+
+.pagination__link {
+	display: block;
+	padding: 0px 15px;	
+	line-height: 1.3em;
+
+	text-decoration: none;
+	color: $text-light--accessible;
+
+	&:hover {
+		color: $interactive;
+	}
+}
+
+.pagination__link--active,
+.pagination__link--active:hover {
+	font-weight: bold;
+	color: $dark-colour;
+	background: none;
+}
