@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { config } from "../config";
 import '../sass/routes/about.scss';
-import Related from "../components/related";
 import PostListing from '../components/postlisting';
 
 class About extends Component {
@@ -106,7 +105,7 @@ class About extends Component {
         const data = this.state.postData;
         const dataArray = data.posts;
 
-        let posts = dataArray.map( (post, index) => { 
+        posts = dataArray.map( (post, index) => { 
             return (          
              <div className="tale" key={ post.ID }>
                <PostListing 
@@ -171,8 +170,6 @@ class About extends Component {
     }
 
     renderContent = () => {
-      const data = this.state.postData;
-
       return (
         <div className="app-shell__content-wrapper about__content-wrapper">
           <Helmet>
