@@ -146,6 +146,15 @@ class Post extends Component {
     return false;
   }
 
+  shareButtonClick = () => {
+      navigator.share({
+          url: window.location.href,
+      })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error)
+      );
+  }
+
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
@@ -185,6 +194,11 @@ class Post extends Component {
             <div className="content content-wrapper">
                <div dangerouslySetInnerHTML={{ __html: data.content}} />
 
+               { navigator.share && (
+                  <button className="button--primary" onClick={ this.shareButtonClick }>
+                    Share
+                  </button>
+                ) }
 
                <div className="divider">
                  { this.showRelatedContent( data, isArticle ) }
