@@ -8,10 +8,12 @@ import "./related.scss";
 export default class Related extends React.Component {
   static propTypes = {
     preLoadedData: PropTypes.object,
+    isCaseStudy: PropTypes.bool,
   }
 
   static defaultProps = {
     isFeatured: false,
+    isCaseStudy: false,
   };
 
   constructor() {
@@ -38,7 +40,9 @@ export default class Related extends React.Component {
   }
 
   loadRelatedArticles() {
-    const localData = localStorage.getItem( "Data" );
+    const isCaseStudy = this.props.isCaseStudy;
+    const storageType = isCaseStudy ? "Portfolio" : "Data";
+    const localData = localStorage.getItem( storageType );
     const tags = Object.keys(this.props.preLoadedData.categories)[0];
 
     if ( localData ) {
@@ -50,7 +54,7 @@ export default class Related extends React.Component {
           if( x.ID  !== this.props.preLoadedData.ID ) {
             dataArray.push( 
               <div key={ x.ID } >
-                <PostListing post={ x } embedded={ true }/>
+                <PostListing post={ x } embedded={ true } isCaseStudy={ isCaseStudy }/>
               </div>
             );
           }
@@ -86,7 +90,7 @@ export default class Related extends React.Component {
 
         return (
           <div key={ post.ID } >
-            <PostListing post={ post } embedded={ true }/>
+            <PostListing post={ post } embedded={ true } isCaseStudy={ isCaseStudy } />
           </div>
         )
       });
@@ -117,13 +121,27 @@ export default class Related extends React.Component {
     if ( this.state.relatedLoaded ) {
       return (
         <div className="related__container">
-          <h2 className="related__title">Other posts you might&nbsp;like</h2>
+          <h2 className="related__title">
+            { this.props.isCaseStudy ? 
+              ( "Read more case studies" ) : 
+              ( "Other posts you might like" )
+            }            
+          </h2>
           <div className="related__posts">
             { this.state.relatedPosts }
           </div>
-          <Button to="/" buttonStyle="primary">
-            View all posts
-          </Button>
+          { this.props.isCaseStudy ?
+           (
+            <Button to="/about" buttonStyle="primary">
+              Learn more about Filippo
+            </Button>
+           ) :
+           (
+              <Button to="/" buttonStyle="primary">
+                View all posts
+              </Button>
+            )
+          }
         </div>
       )
     }

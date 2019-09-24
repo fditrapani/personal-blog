@@ -63,7 +63,7 @@ class About extends Component {
     fetchData = () => {
       //Fetch API request here
       fetch(
-        'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?tag=featured'
+        'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?category=Portfolio'
       ).then( response => {
             if (response.status !== 200) {
               console.log('Looks like there was a problem. Status Code: ' +
@@ -89,7 +89,7 @@ class About extends Component {
               });
 
               //Add to local storage
-              localStorage.setItem( "Featured", JSON.stringify( data.posts ));
+              localStorage.setItem( "Portfolio", JSON.stringify( data.posts ));
             });
           }
         )
@@ -111,7 +111,8 @@ class About extends Component {
                <PostListing 
                   post={ post }
                   isFeatured={ true }
-                  embedded={ true } />
+                  embedded={ true }
+                  isCaseStudy={ true } />
              </div>
              )
          })
@@ -154,12 +155,12 @@ class About extends Component {
       }        
     }
 
-    renderTales = () => {
+    renderSelectedWorks = () => {
       if( this.state.isLoaded ) {
         return(
           <div className="tales">
             <div className="grid content">
-              <h2 className="tales-title">Tales from the trenches</h2>
+              <h2 className="tales-title">Selected works</h2>
             </div>                
             { this.showRelatedContent() }
           </div>
@@ -299,7 +300,7 @@ class About extends Component {
             </div>
           </div>
 
-          { this.renderTales() }
+          { this.renderSelectedWorks() }
 
           <div className="inspiration">
             <div className="grid grid--inspiration">

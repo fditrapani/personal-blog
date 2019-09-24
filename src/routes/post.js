@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import ReadingTime from '../components/readingtime/';
-import FeaturedImage from '../components/featuredimage'
-import ProgressIndicator from '../components/progressindicator'
-import { Redirect } from 'react-router-dom'
-import { Helmet } from "react-helmet"
-import Related from "../components/related"
-import { config } from "../config"
-import '../sass/routes/post.scss'
+import FeaturedImage from '../components/featuredimage';
+import ProgressIndicator from '../components/progressindicator';
+import { Redirect } from 'react-router-dom';
+import { Helmet } from "react-helmet";
+import Related from "../components/related";
+import { config } from "../config";
+import '../sass/routes/post.scss';
 
 class Post extends Component {
   constructor() {
@@ -38,7 +38,9 @@ class Post extends Component {
   }
 
   getData = () => {
-    const localData = localStorage.getItem( "Data" );
+    const dataSource = this.props.location.pathname.includes('casestudy')? "Portfolio" : "Data";
+    const localData = localStorage.getItem( dataSource );
+    console.log();
 
     if ( localData ) {
       const dataObject = JSON.parse( localData );
@@ -112,38 +114,54 @@ class Post extends Component {
       });
     }
 
-  showReadingTime = ( content, show ) => {
-    if( show ) {
+  renderSubTitle = ( content, isArticle, description ) => {
+    if ( isArticle ) {
       return (
         <ReadingTime content={ content } fullView={ true } />
       )
     }
 
-    return false;
+    //Portfolio title
+    return (
+      <span>
+        { description }
+      </span>
+    )
   }
 
-  showFeaturedImage = ( url, title, show ) => {
-    if( show ) {
+  renderTitle = ( htmlTitle, content, isArticle, description, year ) => {
+    if ( isArticle ) {
       return (
-        <div className="post__image">
-          <FeaturedImage 
-            imageUrl={ url }
-            altText={ "Featured image for " + title } />
+        <div className="post__title-wrapper">
+          <h1 className="post__title" dangerouslySetInnerHTML={{ __html: htmlTitle }} />
+          <h2 className="post__title--small">{ this.renderSubTitle( content, isArticle, description ) }</h2>
         </div>
       )
     }
 
-    return false;
+    //Portfolio: duplicate h1 because it's better than a nonsense div or span
+    return (
+      <div className="post__title-wrapper post__title-wrapper--portfolio">
+        <h1 className="post__title--small" dangerouslySetInnerHTML={{ __html: htmlTitle + " in " + year }} />  
+        <h2 className="post__title">{ this.renderSubTitle( content, isArticle, description ) }</h2>
+      </div>
+    )
   }
 
-  showRelatedContent = ( data, show ) => {
-    if( show ) {
-      return (
-        <Related preLoadedData={ data } />
-      )
-    }
+  showFeaturedImage = ( url, title ) => {
+    return (
+      <div className="post__image">
+        <FeaturedImage 
+          imageUrl={ url }
+          altText={ "Featured image for " + title } />
+      </div>
+    )
+  }
 
-    return false;
+  showRelatedContent = ( data, isCaseStudy ) => {
+      return (
+        <Related preLoadedData={ data } isCaseStudy={ isCaseStudy } />
+      )
   }
 
   shareButtonClick = () => {
@@ -155,16 +173,20 @@ class Post extends Component {
       );
   }
 
+
+
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
-      const imageURL = data.post_thumbnail.URL;
-      const twitterImageURL = imageURL.replace("https:", "http:");;
+      const imageURL = (data.post_thumbnail)? data.post_thumbnail.URL : config.siteBanner;
+      const twitterImageURL = (imageURL)? imageURL.replace("https:", "http:"): config.siteBanner;
       const title = data.title;
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
       const isArticle = (data.categories.Articles)? true : false;
+      const isCaseStudy = (data.categories.Portfolio)? true : false;
+      const year = new Date(data.date).getFullYear();
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
       const convertedTitle = this.encodeHTMLentities(title);
       
@@ -183,12 +205,9 @@ class Post extends Component {
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
 
-          <h1 className="post__title">
-            <span dangerouslySetInnerHTML={{ __html: htmlTitle }} />
-            { this.showReadingTime( data.content, isArticle ) } 
-          </h1>
-          
-          { this.showFeaturedImage( imageURL, title, isArticle ) } 
+          {  this.renderTitle( htmlTitle, data.content, isArticle, description, year ) }
+            
+          { this.showFeaturedImage( imageURL, title ) } 
 
           <div className="container">
             <div className="content content-wrapper">
@@ -201,7 +220,7 @@ class Post extends Component {
                 ) }
 
                <div className="divider">
-                 { this.showRelatedContent( data, isArticle ) }
+                 { this.showRelatedContent( data, isCaseStudy ) }
                </div>
              </div>
           </div>

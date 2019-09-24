@@ -18,16 +18,20 @@ export default class PostListing extends React.Component {
     post: PropTypes.object,
     isFeatured: PropTypes.bool, 
     embedded: PropTypes.bool,
+    isCaseStudy: PropTypes.bool,
   }
 
   static defaultProps = {
     isFeatured: false,
     embedded: false,
+    isCaseStudy: false,
   };
 
   componentDidMount() {
     const post = this.props.post;
-    const url = `/post/${ post.ID }/${ post.slug }`;
+    const directory = this.props.isCaseStudy ? 'casestudy' : 'post';
+    const url = `/${ directory }/${ post.ID }/${ post.slug }`;
+
     if ( localStorage.getItem('visited-' + url ) ) {
       this.setState({ isVisited: true, });
     }
@@ -64,7 +68,8 @@ export default class PostListing extends React.Component {
     const id = post.ID;
     const title = post.title;
     const slug = post.slug;
-    const url = `/post/${id}/${slug}`;
+    const directory = this.props.isCaseStudy ? 'casestudy' : 'post';
+    const url = `/${ directory }/${ id }/${ slug }`;
     const content = post.content;
 
     return (

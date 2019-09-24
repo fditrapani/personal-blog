@@ -16,12 +16,10 @@
     }
 }
 
-.post__title {
-	text-align: center;
-	font-weight: 900;
+.post__title-wrapper {
 	margin: 0 auto;
+	text-align: center;
 	padding: 3rem 0;
-	color: $text;
 	width: 90%; 
 
 	@media (min-width: 900px) {
@@ -36,5 +34,45 @@
 		display: block;
 		width: 100%;
 		text-align: center;
+	}
+}
+
+.post__title {
+	font-weight: 900;
+	color: $text;
+}
+
+.post__title--listing {
+	font-size: 1.6rem;
+	font-weight: normal;
+	color: $text-light--accessible;
+	text-align: right;
+	width: 60px;
+
+	@media (min-width: 650px) {
+		width: 120px;
+	}
+}
+
+.post__title--small {
+	font-size: 1.6rem;
+	font-weight: normal;
+	color: $text-light--accessible;
+	display: block;
+	margin: 5px 0 0;
+	width: 100%;
+	letter-spacing: 0.1rem;
+}
+
+.post__title-wrapper--portfolio {
+	text-align: left;
+	max-width: 900px;
+
+	.post__title {
+		margin-bottom: 0;
+	}
+
+	.post__title--small {
+		margin-bottom: 2rem;
 	}
 }

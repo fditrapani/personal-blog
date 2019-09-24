@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProgressIndicator from '../components/progressindicator';
 import PostListing from '../components/postlisting';
 import { Helmet } from "react-helmet";
-import { config } from "../config"
+import { config } from "../config";
 import { Link } from 'react-router-dom';
 import '../sass/routes/posts.scss';
 
