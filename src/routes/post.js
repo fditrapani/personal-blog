@@ -40,7 +40,6 @@ class Post extends Component {
   getData = () => {
     const dataSource = this.props.location.pathname.includes('casestudy')? "Portfolio" : "Data";
     const localData = localStorage.getItem( dataSource );
-    console.log();
 
     if ( localData ) {
       const dataObject = JSON.parse( localData );

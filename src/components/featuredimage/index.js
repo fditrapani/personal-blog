@@ -20,13 +20,14 @@ export default class FeaturedImage extends React.Component {
 
 	render() { 
 		const image = this.props.imageUrl;
+		const altText = this.props.altText ? this.props.altText : null;
 
 		return (
 	      <div className={ "featured-image-wrapper" + this.state.wrapperClass }>
 	        <img 
 	          className={ "featured-image" + this.state.imageClass }
 	          onLoad={ this.loadImage }
-	          alt=""
+	          alt={ altText }
 	          src={ image } 
 	          srcSet={ `${ image + "?w=800" } 800w, ${ image + "?w=1600" } 1600w, ${ image + "?w=3200" } 3200w` } />
 	      </div>
