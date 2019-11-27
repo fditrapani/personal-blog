@@ -1,1 +1,1 @@
-This is for the personal website of [Filippo Di Trapani](https://filippodt.com).
+This is for the personal website of [Filippo Di Trapani](https://filippodt.com). It's a React app powered by a WordPress.com website in the backend.
