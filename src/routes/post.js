@@ -142,7 +142,7 @@ class Post extends Component {
     return (
       <div className="post__title-wrapper post__title-wrapper--portfolio">
         <h1 className="post__title--small" dangerouslySetInnerHTML={{ __html: htmlTitle + " in " + year }} />  
-        <h2 className="post__title">{ this.renderSubTitle( content, isArticle, description ) }</h2>
+        <h2 className="post__title">{ this.renderSubTitle( content, isArticle, description.replace("&#8217;", "'") ) }</h2>
       </div>
     )
   }
