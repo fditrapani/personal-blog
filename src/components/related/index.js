@@ -90,7 +90,11 @@ export default class Related extends React.Component {
 
         return (
           <div key={ post.ID } >
-            <PostListing post={ post } embedded={ true } isCaseStudy={ isCaseStudy } />
+            <PostListing 
+              post={ post } 
+              embedded={ true } 
+              isCaseStudy={ isCaseStudy }
+              hideReadingTime={ true } />
           </div>
         )
       });

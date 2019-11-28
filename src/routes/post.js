@@ -122,9 +122,9 @@ class Post extends Component {
 
     //Portfolio title
     return (
-      <span>
+      <React.Fragment>
         { description }
-      </span>
+      </React.Fragment>
     )
   }
 
@@ -133,7 +133,6 @@ class Post extends Component {
       return (
         <div className="post__title-wrapper">
           <h1 className="post__title" dangerouslySetInnerHTML={{ __html: htmlTitle }} />
-          <h2 className="post__title--small">{ this.renderSubTitle( content, isArticle, description ) }</h2>
         </div>
       )
     }
