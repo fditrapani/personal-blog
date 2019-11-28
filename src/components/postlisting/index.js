@@ -84,8 +84,9 @@ export default class PostListing extends React.Component {
             <div className="post-listing__title" >
               <span dangerouslySetInnerHTML={{ __html: title }} />&nbsp;{ this.isVisited( url ) }
             </div>
-
+            { false && (
              <ReadingTime content={ content } />
+            ) }
           </div>
         </Link>
     );

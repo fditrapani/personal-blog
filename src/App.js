@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Posts from './routes/posts';
+import Work from './routes/work';
 import Post from './routes/post';
 import About from './routes/about';
 import NotFound from './routes/404';
@@ -45,6 +46,7 @@ class App extends Component {
                  <Route path="/" exact component={ About } />
                  <Route path="/about" component={ About } />
                  <Route path="/blog" exact component={ Posts } />
+                 <Route path="/work" exact component={ Work } />
                  <Route path="/page/:page" exact component={ Posts } />
                  <Route path="/post/:id/:slug" component={ Post } />
                  <Route path="/casestudy/:id/:slug" component={ Post } />

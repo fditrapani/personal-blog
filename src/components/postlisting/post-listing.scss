@@ -7,10 +7,32 @@
 	color: $text;
 	padding: 20px;
 	font-weight: 900;
-	font-size: 2.4rem;
+	font-size: 2rem;
 	line-height: 1.3;
 
+	@media (min-width: 650px) {
+		padding: 20px 0;
+	}
+
 	&:hover .reading-time__listing {
+		color: $interactive;
+	}
+
+	&:hover .featured-image-wrapper {
+		background: $interactive;
+	}
+
+	.featured-image {
+		transition: none;
+	}
+
+	&:hover .featured-image {
+		opacity: 0.5;
+		filter: grayscale(100%) contrast(200%);
+	}
+
+	&:hover .post-listing__visited,
+	&:hover .post__title--listing {
 		color: $interactive;
 	}
 
@@ -35,7 +57,7 @@
 }
 
 .post-listing__image-wrapper {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .post-listing__image {

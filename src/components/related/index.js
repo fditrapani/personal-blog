@@ -132,8 +132,8 @@ export default class Related extends React.Component {
           </div>
           { this.props.isCaseStudy ?
            (
-            <Button to="/about" buttonStyle="primary">
-              Learn more about Filippo
+            <Button to="/work" buttonStyle="primary">
+              View all work
             </Button>
            ) :
            (

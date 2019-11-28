@@ -140,8 +140,8 @@ class Post extends Component {
 
     //Portfolio: duplicate h1 because it's better than a nonsense div or span
     return (
-      <div className="post__title-wrapper post__title-wrapper--portfolio">
-        <h1 className="post__title--small" dangerouslySetInnerHTML={{ __html: htmlTitle + " in " + year }} />  
+      <div className="post__title-wrapper post__title-wrapper--portfolio">        
+        <h1 className="post__title--small" dangerouslySetInnerHTML={{ __html: htmlTitle + ": " + year }} />  
         <h2 className="post__title">{ this.renderSubTitle( content, isArticle, description.replace("&#8217;", "'") ) }</h2>
       </div>
     )

@@ -5,16 +5,16 @@ import { Helmet } from "react-helmet";
 import { config } from "../config";
 import { Link } from 'react-router-dom';
 import '../sass/routes/posts.scss';
+import '../sass/routes/work.scss';
 
-
-class Posts extends Component {
+class Work extends Component {
   constructor() {
     super();
 
     this.state = {
       isLoaded: false,
       postData: {},
-      feedUrl: 'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?category=Articles&number=' + config.postsPerPage,
+      feedUrl: 'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts?category=Portfolio&number=' + config.postsPerPage,
       totalPages: 0,
     };
   }
@@ -24,7 +24,7 @@ class Posts extends Component {
   }
 
   getData = () => {
-    let storageName = "Data";
+    let storageName = "WorkData";
     const pageNumber = this.props.match.params.page;
     let url = this.state.feedUrl;
 
@@ -34,7 +34,7 @@ class Posts extends Component {
     }
 
     const localData = localStorage.getItem( storageName );
-    const totalPages = localStorage.getItem( "totalPages");
+    const totalPages = localStorage.getItem( "totalWorks");
 
     if ( localData ) {
       const jsonData = JSON.parse( localData )
@@ -62,7 +62,7 @@ class Posts extends Component {
 
           // Examine the text in the response
           response.json().then( data => {
-            let storageName = "Data";
+            let storageName = "WorkData";
             const pageNumber = this.props.match.params.page;
             const totalPages = Math.ceil( data.found / config.postsPerPage );
 
@@ -81,7 +81,7 @@ class Posts extends Component {
             });
 
             //Add to local storage
-            localStorage.setItem( "totalPages", totalPages);
+            localStorage.setItem( "totalWorks", totalPages);
             localStorage.setItem( storageName, JSON.stringify( data.posts ));
             return;
           });
@@ -147,19 +147,24 @@ class Posts extends Component {
               <meta name="twitter:image"             content={ config.siteBanner } />
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
+          { this.props.type }
           <div className="post-listing__wrapper">
-            <h1 className="page-title">Latest posts</h1>
+            <h1 className="page-title">Selected Works</h1>
+               <div className="grid grid--work">
                {
                  data.map( (post, index) => {
                    return (
-                     <div key={ post.ID }>
-                       <PostListing 
-                          post={ post }
-                          isFeatured={ index === 0 ? true : false } />
-                     </div>
+                     <div className="tale" key={ post.ID }>
+                        <PostListing 
+                           post={ post }
+                           isFeatured={ true }
+                           isCaseStudy={ true }
+                           hideReadingTime={ true } />
+                      </div>
                    );
                  })
                }
+               </div>
 
                { this.renderPagination() }                            
           </div>
@@ -178,4 +183,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default Work;

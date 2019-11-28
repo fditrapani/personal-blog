@@ -1,0 +1,47 @@
+@import "../../sass/components/colours";
+
+/*= Thank you
+=========================================*/
+.thanks {
+	background: $dark-colour;
+	padding: 3em 0; 
+	color: $white;
+	text-align: center;
+	overflow: hidden;
+}
+
+.thanks__title {
+	font-weight: 900;
+}
+
+.social-icon {
+	display: inline-block;
+	width: 2em;
+	height: 2em;	
+	padding: 5px;
+	border-radius: 100%;
+	background: $interactive;
+	margin-left: 1em;
+
+	path {
+		fill: $white;
+	}
+
+	&:hover {
+		background: $white;
+
+		path {
+			fill: $interactive;
+		}
+	}
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.social-icon--linkedin {
+	svg {
+		transform: scale(0.6) translate(1px, -2px);
+	}
+}

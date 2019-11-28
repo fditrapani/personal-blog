@@ -1,5 +1,24 @@
 @import "../components/colours";
 
+.page-title {
+	font-size: 4.2rem;
+	font-weight: 900;
+	margin: 0;
+	padding: 20px 20px 0;
+	letter-spacing: 0;
+	text-align: left;
+
+	@media (min-width: 650px) {
+		width: 100%;
+		padding: 20px 20px 0;
+	}
+
+	@media (min-width: 700px) {
+		width: 100%;
+		padding: 40px 0 0px;
+	}
+}
+
 .post-listing__wrapper {
 	@media (min-width: 700px) {
 	    width: 80%; 
@@ -42,3 +61,4 @@
 	color: $dark-colour;
 	background: none;
 }
+
