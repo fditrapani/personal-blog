@@ -105,7 +105,7 @@ export default class Related extends React.Component {
       const hideRelated = ( posts.length < 1 ) || false;
       
       this.setState({
-        relatedPosts: posts.slice(0,3),
+        relatedPosts: this.props.isCaseStudy ? posts : posts.slice(0,3),
         hideRelated: hideRelated,
         relatedLoaded: true,
       });
@@ -127,8 +127,8 @@ export default class Related extends React.Component {
         <div className="related__container">
           <h2 className="related__title">
             { this.props.isCaseStudy ? 
-              ( "Read more case studies" ) : 
-              ( "Other posts you might like" )
+              ( <React.Fragment>Read more case&nbsp;studies</React.Fragment> ) : 
+              ( <React.Fragment>Other posts you might&nbsp;like</React.Fragment> )
             }            
           </h2>
           <div className="related__posts">
@@ -136,12 +136,12 @@ export default class Related extends React.Component {
           </div>
           { this.props.isCaseStudy ?
            (
-            <Button to="/work" buttonStyle="primary">
-              View all work
+            <Button to="/" buttonStyle="primary">
+              Learn more about me
             </Button>
            ) :
            (
-              <Button to="/" buttonStyle="primary">
+              <Button to="/blog" buttonStyle="primary">
                 View all posts
               </Button>
             )
