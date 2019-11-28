@@ -40,7 +40,7 @@ class Navigation extends Component {
   
             <li className="app-shell__nav-item">
               <Link
-                className={ "app-shell__nav-link" + ( location === "/about" ?  ' active' : '' ) }
+                className={ "app-shell__nav-link" + ( location === "/blog" ?  ' active' : '' ) }
                 to="/blog"
               >
                 Blog
