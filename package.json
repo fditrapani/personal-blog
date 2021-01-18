@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "chokidar": "^2.0.4",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.14.1",
     "node-sass-chokidar": "0.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
