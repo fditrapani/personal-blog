@@ -199,7 +199,6 @@ class Post extends Component {
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />
               <meta property="og:image"              content={ imageURL + "?w=1200" } />
-              <meta name="twitter:image"             content={ twitterImageURL } />
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
 
