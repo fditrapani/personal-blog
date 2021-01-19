@@ -188,6 +188,8 @@ class Post extends Component {
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
       const convertedTitle = this.encodeHTMLentities(title);
       
+      console.log( data.ID  );
+
       return (
         <div className="app-shell__content-wrapper">
           <Helmet>
@@ -199,8 +201,12 @@ class Post extends Component {
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />
               <meta property="og:image"              content={ imageURL + "?w=1200" } />
-              <meta name="twitter:image"             content={ twitterImageURL } />
-              <meta name="twitter:creator"           content="@filippodt" />
+              { data.ID === 2658 ? ( 
+                <meta name="twitter:image" content="https://filippodt.com/images/automattic.jpg" /> 
+              ) : ( 
+                <meta name="twitter:image" content={ twitterImageURL } /> 
+              ) }
+               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
 
           {  this.renderTitle( htmlTitle, data.content, isArticle, description, year ) }
