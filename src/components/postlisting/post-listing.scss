@@ -31,7 +31,11 @@
 		filter: grayscale(100%) contrast(200%);
 	}
 
-	&:hover .post-listing__visited,
+	&:hover .post-listing__visited {
+		
+	color: $interactive--light;
+	}
+
 	&:hover .post__title--listing {
 		color: $interactive;
 	}
@@ -73,13 +77,10 @@
 
 .post-listing__visited {
 	font-weight: normal;
+	color: $dark-colour;
 	font-size: 1.5rem;
 	padding: 3px 8px;
 	background: $white;
 	border-radius: 3px;
 	margin-left: 3px;
-
-	:hover & {
-	  color: $text;
-	}
 }

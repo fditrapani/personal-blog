@@ -48,7 +48,7 @@
 	padding: 0px 15px;	
 	line-height: 1.3em;
 	text-decoration: none;
-	color: $text-light--accessible;
+	color: $text-light;
 
 	&:hover {
 		color: $interactive;
@@ -58,7 +58,7 @@
 .pagination__link--active,
 .pagination__link--active:hover {
 	font-weight: bold;
-	color: $dark-colour;
+	color: $text;
 	background: none;
 }
 

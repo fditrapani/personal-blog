@@ -11,6 +11,9 @@
     "react-transition-group": "^2.7.1"
   },
   "scripts": {
+    "sass:watch": "sass --source-map -w /src /src",
+    "sass:dev": "sass --source-map -w /src /src",
+    "sass:release": "sass --stylecompressed -w /src /src",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
