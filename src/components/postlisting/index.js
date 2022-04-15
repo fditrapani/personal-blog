@@ -64,7 +64,7 @@ export default class PostListing extends React.Component {
 
   render() { 
     const post = this.props.post;
-    const image = post.post_thumbnail.URL;
+    const image = post.post_thumbnail ? post.post_thumbnail.URL : null;
     const id = post.ID;
     const title = post.title;
     const slug = post.slug;

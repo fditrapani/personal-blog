@@ -175,7 +175,7 @@ class Post extends Component {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
-      const imageURL = (data.post_thumbnail)? data.post_thumbnail.URL : config.siteBanner;
+      const imageURL = (data.post_thumbnail)? data.post_thumbnail.URL : false;
       const sharingImageURL = (imageURL)? imageURL.replace("https:", "http:"): config.siteBanner;
       const title = data.title;
       let htmlTitle = title;
@@ -202,7 +202,7 @@ class Post extends Component {
           </Helmet>
 
           {  this.renderTitle( htmlTitle, data.content, isArticle, description, year ) }
-          
+
           { imageURL && this.showFeaturedImage( imageURL, title ) } 
 
           <div className="container">
