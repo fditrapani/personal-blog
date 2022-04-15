@@ -16,13 +16,11 @@ export default class PostListing extends React.Component {
 
   static propTypes = {
     post: PropTypes.object,
-    isFeatured: PropTypes.bool, 
     embedded: PropTypes.bool,
     isCaseStudy: PropTypes.bool,
   }
 
   static defaultProps = {
-    isFeatured: false,
     embedded: false,
     isCaseStudy: false,
   };
@@ -48,20 +46,6 @@ export default class PostListing extends React.Component {
     return null;
   }
 
-  showImage ( image, bool, text ) {
-    if ( bool ) {
-      return (
-        <div className="post-listing__image-wrapper">
-          <FeaturedImage 
-            imageUrl={ image } 
-            altText={ text } />
-        </div>
-      );
-    }
-
-    return null;
-  }
-
   render() { 
     const post = this.props.post;
     const image = post.post_thumbnail.URL;
@@ -77,8 +61,6 @@ export default class PostListing extends React.Component {
           to={ url } 
           className={ "post-listing" + ( (this.props.embedded) ? " post-listing--related" : "" ) }
         >
-
-          { this.showImage ( image, this.props.isFeatured, title ) }
 
           <div className="post-listing__content" >
             <div className="post-listing__title" >

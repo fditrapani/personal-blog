@@ -148,14 +148,11 @@ class Posts extends Component {
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
           <div className="post-listing__wrapper">
-            <h1 className="page-title">Latest posts</h1>
                {
                  data.map( (post, index) => {
                    return (
                      <div key={ post.ID }>
-                       <PostListing 
-                          post={ post }
-                          isFeatured={ index === 0 ? true : false } />
+                       <PostListing post={ post } />
                      </div>
                    );
                  })
