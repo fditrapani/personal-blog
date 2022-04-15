@@ -58,10 +58,10 @@ class Navigation extends Component {
 
             <li className="app-shell__nav-item">
               <Link
-                className={ "app-shell__nav-link" + ( location === "/connect" ?  ' active' : '' ) }
-                to="/connect"
+                className={ "app-shell__nav-link" + ( location === "/contact" ?  ' active' : '' ) }
+                to="/contact"
               >
-                Connect
+                Contact
               </Link>
             </li>
           </ul>

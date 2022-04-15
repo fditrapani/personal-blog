@@ -5,7 +5,7 @@ import Posts from './routes/posts';
 import Work from './routes/work';
 import Post from './routes/post';
 import About from './routes/about';
-import Connect from './routes/connect';
+import Contact from './routes/contact';
 import NotFound from './routes/404';
 
 import Navigation from './components/navigation/';
@@ -47,7 +47,7 @@ class App extends Component {
                  <Route path="/" exact component={ Posts } />
                  <Route path="/about" component={ About } />
                  <Route path="/work" exact component={ Work } />
-                 <Route path="/connect" exact component={ Connect } />
+                 <Route path="/contact" exact component={ Contact } />
                  <Route path="/page/:page" exact component={ Posts } />
                  <Route path="/post/:id/:slug" component={ Post } />
                  <Route path="/casestudy/:id/:slug" component={ Post } />
