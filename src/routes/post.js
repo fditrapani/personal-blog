@@ -137,7 +137,7 @@ class Post extends Component {
       )
     }
 
-    //Portfolio: duplicate h1 because it's better than a nonsense div or span
+    // Portfolio: duplicate h1 because it's better than a nonsense div or span
     return (
       <div className="post__title-wrapper post__title-wrapper--portfolio">        
         <h1 className="post__title--small" dangerouslySetInnerHTML={{ __html: htmlTitle + ": " + year }} />  
@@ -171,14 +171,12 @@ class Post extends Component {
       );
   }
 
-
-
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
       const imageURL = (data.post_thumbnail)? data.post_thumbnail.URL : config.siteBanner;
-      const twitterImageURL = (imageURL)? imageURL.replace("https:", "http:"): config.siteBanner;
+      const sharingImageURL = (imageURL)? imageURL.replace("https:", "http:"): config.siteBanner;
       const title = data.title;
       let htmlTitle = title;
       const lastIndex = htmlTitle.lastIndexOf(" ");
@@ -188,30 +186,24 @@ class Post extends Component {
       htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
       const convertedTitle = this.encodeHTMLentities(title);
       
-      console.log( data.ID  );
-
       return (
         <div className="app-shell__content-wrapper">
           <Helmet>
               <title>{ convertedTitle + " | Filippo Di Trapani" }</title>
-              <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href="https://filippodt.blog/feed/" />
+              <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href={ config.rss_feed } />
               <meta name="description" content={ description }/>
               <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />
               <meta property="og:type"               content="article" />
               <meta property="og:title"              content={ title } />
               <meta property="og:description"        content={ description } />
-              <meta property="og:image"              content={ imageURL + "?w=1200" } />
-              { data.ID === 2658 ? ( 
-                <meta name="twitter:image" content="https://filippodt.com/images/automattic.jpg" /> 
-              ) : ( 
-                <meta name="twitter:image" content={ twitterImageURL } /> 
-              ) }
-               <meta name="twitter:creator"           content="@filippodt" />
+              <meta property="og:image"              content={ sharingImageURL + "?w=1200" } />
+              <meta name="twitter:image" content={ sharingImageURL } /> 
+              <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
 
           {  this.renderTitle( htmlTitle, data.content, isArticle, description, year ) }
-            
-          { this.showFeaturedImage( imageURL, title ) } 
+          
+          { imageURL && this.showFeaturedImage( imageURL, title ) } 
 
           <div className="container">
             <div className="content content-wrapper">

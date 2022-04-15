@@ -141,7 +141,7 @@ export default class Related extends React.Component {
             </Button>
            ) :
            (
-              <Button to="/blog" buttonStyle="primary">
+              <Button to="/" buttonStyle="primary">
                 View all posts
               </Button>
             )

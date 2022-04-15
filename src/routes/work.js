@@ -135,7 +135,7 @@ class Work extends Component {
         <div className="app-shell__content-wrapper">
           <Helmet>
               <title>Flow: An online journal by Filippo Di Trapani</title>
-              <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href="https://filippodt.blog/feed/" />              
+              <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href={ config.rss_feed } />              
               <meta name="description"               content="Personal website for designer based in Ottawa, 
                   Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
               <meta property="og:url"                content={ config.url } />
@@ -149,7 +149,6 @@ class Work extends Component {
           </Helmet>
           { this.props.type }
           <div className="post-listing__wrapper">
-            <h1 className="page-title">Selected Works</h1>
                <div className="grid grid--work">
                {
                  data.map( (post, index) => {
