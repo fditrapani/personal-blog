@@ -32,8 +32,8 @@
 	}
 
 	&:hover .post-listing__visited {
-		
-	color: $interactive--light;
+		background: $primary-colour;
+		color: $dark-colour;
 	}
 
 	&:hover .post__title--listing {
