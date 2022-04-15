@@ -8,8 +8,8 @@
 	}
 
 	p {
-		font-family: Georgia;
 		line-height: 1.6;
+		color: $text-light;
 
 		@media (min-width: 550px) {
 			font-size: 2.2rem;
@@ -44,8 +44,8 @@
 	}
 	
 	ol, ul {
-		font-family: Georgia;
 		line-height: 1.6;
+		color: $text-light;
 
 
 		@media (min-width: 550px) {
