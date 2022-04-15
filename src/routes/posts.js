@@ -148,7 +148,6 @@ class Posts extends Component {
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
           <div className="post-listing__wrapper">
-            <h1 className="page-title">Latest posts</h1>
                {
                  data.map( (post, index) => {
                    return (
