@@ -60,13 +60,20 @@
 		font-size: 2rem;
 	}
 
-	@media (min-width: 650px) {
+	.tale & {
+		font-size: 2.4rem;
+	}
 
+	@media (min-width: 650px) {
 		.post-listing--related & {
 			font-size: 2.4rem;
 		}
 
 		font-size: 6rem; 
+
+		.tale & {
+			font-size: 3.2rem;
+		}
 	}
 }
 
