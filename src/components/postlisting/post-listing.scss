@@ -53,15 +53,24 @@
 
 .post-listing__title {
 	font-weight: 300;
-	font-size: 6rem;
+	font-size: 4rem;
 	line-height: 1.2;
+
+	@media (min-width: 650px) {
+		font-size: 6rem; 
+	}
 }
 
 .post-listing__details {
 	display: inline-flex;
 	align-items: center;
-	gap: 16px;
-	margin-bottom: 80px
+	gap: 8px;
+	margin-top: 40px;
+
+	@media (min-width: 650px) {
+		margin-top: 80px;
+		gap: 16px;
+	}
 }
 
 .post-listing__visited {
@@ -87,5 +96,9 @@
 .post-listing__icon {
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: 4px;
+
+	@media (min-width: 650px) {
+		gap: 8px;
+	}
 }

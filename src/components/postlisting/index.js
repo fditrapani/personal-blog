@@ -102,6 +102,8 @@ export default class PostListing extends React.Component {
           { this.showImage ( image, this.props.isFeatured, title ) }
 
           <div className="post-listing__content" >
+            <div className="post-listing__title" dangerouslySetInnerHTML={{ __html: title }} />
+            
             { ! this.props.hideReadingTime && (
               <div className="post-listing__details">
                 { this.renderDate(date) }
@@ -109,9 +111,6 @@ export default class PostListing extends React.Component {
                 { this.renderVisited( url ) }
               </div>
             ) } 
-
-            <div className="post-listing__title" dangerouslySetInnerHTML={{ __html: title }} />
-            
           </div>
         </Link>
     );
