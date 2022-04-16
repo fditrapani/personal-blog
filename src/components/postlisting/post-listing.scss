@@ -56,7 +56,16 @@
 	font-size: 4rem;
 	line-height: 1.2;
 
+	.post-listing--related & {
+		font-size: 2rem;
+	}
+
 	@media (min-width: 650px) {
+
+		.post-listing--related & {
+			font-size: 2.4rem;
+		}
+
 		font-size: 6rem; 
 	}
 }

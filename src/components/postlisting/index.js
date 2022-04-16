@@ -104,7 +104,7 @@ export default class PostListing extends React.Component {
           <div className="post-listing__content" >
             <div className="post-listing__title" dangerouslySetInnerHTML={{ __html: title }} />
             
-            { ! this.props.hideReadingTime && (
+            { (! this.props.hideReadingTime && ! this.props.embedded) && (
               <div className="post-listing__details">
                 { this.renderDate(date) }
                 <ReadingTime content={ content } />

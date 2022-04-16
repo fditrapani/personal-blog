@@ -2,9 +2,9 @@
 	color: $text;
 
 	h1, h2, h3, h4, h5 {
-		font-weight: 900;
+		font-weight: 400;
 		color: $text;
-		margin-top: 1em;
+		margin: 3.2rem 0 1.6rem;
 	}
 
 	p {
@@ -29,8 +29,6 @@
 		width: 100%;
 		height: auto;
 		display: block;
-		background: $white;
-		padding: 10px;
 		box-sizing: border-box;
 	}
 

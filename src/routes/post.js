@@ -178,49 +178,52 @@ class Post extends Component {
       const imageURL = (data.post_thumbnail)? data.post_thumbnail.URL : false;
       const sharingImageURL = (imageURL)? imageURL.replace("https:", "http:"): config.siteBanner;
       const title = data.title;
-      let htmlTitle = title;
-      const lastIndex = htmlTitle.lastIndexOf(" ");
+      const htmlTitle = title;
       const isArticle = (data.categories.Articles)? true : false;
       const isCaseStudy = (data.categories.Portfolio)? true : false;
       const year = new Date(data.date).getFullYear();
-      htmlTitle = htmlTitle.substr(0, lastIndex) + '&nbsp;' + htmlTitle.substr(lastIndex + 1);
       const convertedTitle = this.encodeHTMLentities(title);
       
       return (
-        <div className="app-shell__content-wrapper">
-          <Helmet>
-              <title>{ convertedTitle + " | Filippo Di Trapani" }</title>
-              <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href={ config.rss_feed } />
-              <meta name="description" content={ description }/>
-              <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />
-              <meta property="og:type"               content="article" />
-              <meta property="og:title"              content={ title } />
-              <meta property="og:description"        content={ description } />
-              <meta property="og:image"              content={ sharingImageURL + "?w=1200" } />
-              <meta name="twitter:image" content={ sharingImageURL } /> 
-              <meta name="twitter:creator"           content="@filippodt" />
-          </Helmet>
+        <React.Fragment>
+          <div className="app-shell__content-wrapper">
+            <Helmet>
+                <title>{ convertedTitle + " | Filippo Di Trapani" }</title>
+                <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href={ config.rss_feed } />
+                <meta name="description" content={ description }/>
+                <meta property="og:url"                content={ config.url + "/post/" + data.ID + "/" + data.slug } />
+                <meta property="og:type"               content="article" />
+                <meta property="og:title"              content={ title } />
+                <meta property="og:description"        content={ description } />
+                <meta property="og:image"              content={ sharingImageURL + "?w=1200" } />
+                <meta name="twitter:image" content={ sharingImageURL } /> 
+                <meta name="twitter:creator"           content="@filippodt" />
+            </Helmet>
 
-          {  this.renderTitle( htmlTitle, data.content, isArticle, description, year ) }
+            
 
-          { imageURL && this.showFeaturedImage( imageURL, title ) } 
+            <div className="container">
+              <div className="content content-wrapper">
+                 { imageURL && this.showFeaturedImage( imageURL, title ) } 
+                 {  this.renderTitle( htmlTitle, data.content, isArticle, description, year ) }
+                 
+                 <div dangerouslySetInnerHTML={{ __html: data.content}} />
 
-          <div className="container">
-            <div className="content content-wrapper">
-               <div dangerouslySetInnerHTML={{ __html: data.content}} />
+                 { navigator.share && (
+                    <button className="button--primary" onClick={ this.shareButtonClick }>
+                      Share
+                    </button>
+                  ) }
 
-               { navigator.share && (
-                  <button className="button--primary" onClick={ this.shareButtonClick }>
-                    Share
-                  </button>
-                ) }
-
-               <div className="divider">
-                 { this.showRelatedContent( data, isCaseStudy ) }
+                 <div className="divider">
+                   { this.showRelatedContent( data, isCaseStudy ) }
+                 </div>
                </div>
-             </div>
+            </div>
           </div>
-        </div>
+
+
+        </React.Fragment>
       )
     }
   }

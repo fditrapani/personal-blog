@@ -4,16 +4,14 @@
     position: relative;
     padding: 46% 20px 0;
     overflow: hidden;
-    background: $text-light;
 
     .post__content-wrapper & {
         margin-bottom: 1.5em;
     }
 
     @media (min-width: 900px) { 
-        border: 10px solid $white;
         box-sizing: border-box;
-        padding-top: 45%;
+        padding-top: 46%;
     }
 }
 
@@ -39,6 +37,10 @@
     width: 100%;
     display: inline-block;
     transition: opacity 0.3s ease-in-out;
+
+    .content & {
+        padding: 0;
+    }
 }
 
 .featured-image--loaded {
