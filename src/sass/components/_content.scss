@@ -8,7 +8,7 @@
 	}
 
 	p {
-		line-height: 1.6;
+		line-height: 1.4;
 		color: $text-light;
 
 		@media (min-width: 550px) {
@@ -17,7 +17,7 @@
 
 		@media (min-width: 900px) {
 			font-size: 2.4rem;
-			line-height: 1.7;
+			line-height: 1.5;
 		}
 	}
 
@@ -42,7 +42,7 @@
 	}
 	
 	ol, ul {
-		line-height: 1.6;
+		line-height: 1.4;
 		color: $text-light;
 
 
@@ -60,7 +60,7 @@
 		list-style-type: disc;
 	    list-style-position: outside;
 	    margin-left: 25px;
-	    color: $text;
+	    color: $text-light;
 
 	    @media (min-width: 550px) {
 	    	font-size: 2.2rem;
@@ -68,7 +68,7 @@
 
 	    @media (min-width: 900px) {
 	    	font-size: 2.4rem;
-	    	line-height: 1.7;
+	    	line-height: 1.5;
 	    }
 	}
 
@@ -92,9 +92,13 @@
 }
 
 .divider {
-	border-top: 16px solid $white;
+	border-top: 8px solid $white;
 	padding-top: 5rem;
 	margin: 6rem 0 6rem;
+
+	@media (min-width: 550px) {
+		border-width: 16px;
+	}
 }
 
 .content-wrapper {
