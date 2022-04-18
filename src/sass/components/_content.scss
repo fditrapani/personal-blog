@@ -92,12 +92,12 @@
 }
 
 .divider {
-	border-top: 8px solid $white;
+	border-top: 4px solid $white;
 	padding-top: 5rem;
 	margin: 6rem 0 6rem;
 
 	@media (min-width: 550px) {
-		border-width: 16px;
+		border-width: 8px;
 	}
 }
 
