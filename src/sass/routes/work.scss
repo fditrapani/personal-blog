@@ -1,4 +1,135 @@
 @import "../components/colours";
+
+/*= Eye candy
+================================================== */
+.portfolio {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, 0.5fr);
+	grid-column-gap: 1.6rem;
+	grid-row-gap: 1.6rem;
+	padding: 20px;
+
+	@media (min-width: 650px) {
+		grid-row-gap: 0rem;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(23, 7vw);
+		padding: 0px;
+	}
+}
+
+.portfolio__cell {
+	overflow:hidden;
+}
+
+.portfolio-lettering {
+	display: none;
+	font-weight: 900;
+	text-shadow: -1px 0 rgba($text-light, 0.5), 0 1px rgba($text-light, 0.5), 1px 0 rgba($text-light, 0.5), 0 -1px rgba($text-light, 0.5);
+	color: $background;
+	font-size: 10rem;
+	overflow: hidden;
+	text-transform: uppercase;
+
+	@media (min-width: 650px) {
+		display: block;
+	}
+
+	@media (min-width: 850px) {
+		display: block;
+		font-size: 15rem;
+	}
+}
+
+.porfolio__image {
+	display: block;
+	width: 100%;
+}
+
+.feature1,
+.feature4 {
+	grid-column: 1/3;
+}
+
+.feature3 img {
+	object-fit: cover;	
+	height: 100%;
+}
+
+.feature6 img {
+	object-fit: cover;
+	height: 100%;
+}
+
+.porfolio__image--desktop {
+	display: none;
+}
+
+@media (min-width: 650px) {
+	.porfolio__image--desktop {
+		display: block;
+	}
+
+	.porfolio__image--mobile {
+		display: none;
+	}	
+
+	.feature1 {
+		grid-column: 1/8;
+		grid-row: 1/7;
+	}
+
+	.portfolio-lettering--web {
+		grid-column: 10/13;
+		grid-row: 1/4;
+		justify-self: end;
+		align-self: center;
+	}
+
+	.feature2 {
+		grid-column: 2/5;
+		grid-row: 8/12;
+	}
+
+	.portfolio-lettering--brand {
+		grid-column: 6/13;
+		grid-row: 8/10;
+		align-self: center;
+	}
+
+	.feature3 {
+		grid-column: 9/13;
+		grid-row: 4/8;
+		background: #8a7e61;
+	}
+
+	.feature4 {
+		grid-column: 1/5;
+		grid-row: 13/17;
+	}
+
+	.feature5 {
+		grid-column: 6/13;
+		grid-row: 10/18;
+		overflow: hidden;
+	}
+
+	.portfolio-lettering--product {
+		grid-column: 1/13;
+		text-align: center;
+
+		grid-row: 17/22;
+		align-self: center;
+	}
+
+	.feature6 {
+		grid-column: 1/13;
+		grid-row: 21/25;
+	}
+}
+
+/*= Grid
+================================================== */
 .grid.grid--work {
 	width: 100%;
 }

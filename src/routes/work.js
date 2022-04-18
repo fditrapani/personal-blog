@@ -127,6 +127,43 @@ class Work extends Component {
     )
   }
 
+  renderPorfolio = () => {
+    return (
+      <div className="portfolio">
+        <div className="feature1 portfolio__cell">
+          <img src="/images/work/creator-tool-future.jpeg" alt="" className="porfolio__image" />
+        </div>
+        
+        <div className="portfolio-lettering portfolio-lettering--web portfolio__cell">Web</div>
+        
+        <div className="feature2 feature-image portfolio__cell">
+          <img src="/images/work/shopify-plus.jpeg" alt="" className="porfolio__image" />
+        </div>
+        
+        <div className="feature3 feature-image portfolio__cell">
+          <img src="/images/work/home-stylist.png" alt="" className="porfolio__image" />
+        </div>
+        
+        <div className="portfolio-lettering portfolio-lettering--brand portfolio__cell">Brand</div>
+        
+        <div className="feature4 feature-image portfolio__cell">
+          <img src="/images/work/blog-post.png" alt="" className="porfolio__image" />
+        </div>
+        
+        <div className="feature5 feature-image portfolio__cell">
+          <img src="/images/work/checkout.jpeg" alt="" className="porfolio__image porfolio__image--desktop" />
+          <img src="/images/work/checkout-mobile.jpg" alt="" className="porfolio__image porfolio__image--mobile" />
+        </div>
+        
+        <div className="portfolio-lettering portfolio-lettering--product portfolio__cell">Product</div>
+        
+        <div className="feature6 feature-image portfolio__cell">
+          <img src="/images/work/b12-mobile.jpg" alt="" className="porfolio__image" />
+        </div>
+      </div>
+    )
+  }
+
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
@@ -147,8 +184,12 @@ class Work extends Component {
               <meta name="twitter:image"             content={ config.siteBanner } />
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
-          { this.props.type }
+          
+
+          { this.renderPorfolio() }   
+
           <div className="post-listing__wrapper">
+               <h2>Case studies</h2>
                <div className="grid grid--work">
                {
                  data.map( (post, index) => {
