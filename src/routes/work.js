@@ -188,7 +188,7 @@ class Work extends Component {
 
           { this.renderPorfolio() }   
 
-          <div className="post-listing__wrapper">
+          <div className="post-listing__wrapper case-studies">
                <h2 className="work-title--case-studies">Case studies</h2>
                <div className="grid grid--work">
                {
