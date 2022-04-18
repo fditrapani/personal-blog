@@ -136,6 +136,13 @@
 
 /*= Tales from the cript
 ================================================== */
+.work-title--case-studies {
+	margin: 2.4rem 20px 0;
+	@media (min-width: 650px) {
+		margin: 6.4rem 0 0;
+	}
+}
+
 .tales {
 	background: $dark-colour;
 	padding: 4em 0 3em; 

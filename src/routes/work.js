@@ -189,7 +189,7 @@ class Work extends Component {
           { this.renderPorfolio() }   
 
           <div className="post-listing__wrapper">
-               <h2>Case studies</h2>
+               <h2 className="work-title--case-studies">Case studies</h2>
                <div className="grid grid--work">
                {
                  data.map( (post, index) => {
