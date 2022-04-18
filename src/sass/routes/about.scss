@@ -83,3 +83,12 @@
         opacity: 0;
     }    
 }
+
+.content .intro-paragraph {
+	color: $white;
+	font-size: 3.2rem;
+	
+	@media (min-width: 650px) {
+		font-size: 4rem;
+	}
+}

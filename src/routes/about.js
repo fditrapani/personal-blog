@@ -22,7 +22,6 @@ class About extends Component {
 
     getData = () => {
       const localData = localStorage.getItem( "About" );
-      console.log(localData);
 
       if ( localData ) {
         const dataObject = JSON.parse( localData );
@@ -35,6 +34,7 @@ class About extends Component {
           });
         }
 
+        this.fetchData();
         return;
       }
 
