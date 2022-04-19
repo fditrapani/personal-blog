@@ -23,14 +23,12 @@ class Connect extends Component {
       return (
         <div>
           <Helmet>
-              <title>Flow: An online journal by Filippo Di Trapani</title>
-              <meta name="description"               content="Personal website for designer based in Ottawa, 
-                  Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
+              <title>Contact | Filippo Di Trapani</title>
+              <meta name="description"               content="The professional website of Fiippo Di Trapani. A product designer based out of Ottawa, Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
               <meta property="og:url"                content={ config.url } />
               <meta property="og:type"               content="website" />
-              <meta property="og:title"              content="Flow: An online journal by Filippo Di Trapani" />
-              <meta property="og:description"        content="Personal website for designer based in Ottawa, 
-                  Canada. Take a peak into his process as he share's his thoughts and experiences on design." />
+              <meta property="og:title"              content="Contact | Filippo Di Trapani" />
+              <meta property="og:description"        content="The professional website of Fiippo Di Trapani. A product designer based out of Ottawa, Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
               <meta property="og:image"              content={ config.siteBanner } />
           </Helmet>
 

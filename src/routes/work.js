@@ -171,16 +171,15 @@ class Work extends Component {
       return (
         <div className="app-shell__content-wrapper">
           <Helmet>
-              <title>Flow: An online journal by Filippo Di Trapani</title>
+              <title>Work | Filippo Di Trapani</title>
               <link rel="alternate" type="application/rss+xml" title="Subscribe to What's New" href={ config.rss_feed } />              
-              <meta name="description"               content="Personal website for designer based in Ottawa, 
+              <meta name="description"               content="The professional website of Fiippo Di Trapani. A product designer based out of Ottawa, Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
                   Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
               <meta property="og:url"                content={ config.url } />
               <meta property="og:type"               content="website" />
-              <meta property="og:title"              content="Flow: An online journal by Filippo Di Trapani" />
-              <meta property="og:description"        content="Personal website for designer based in Ottawa, 
-                  Canada. Take a peak into his process as he share's his thoughts and experiences on design." />
-              <meta property="og:image"             content={ config.siteBanner } />
+              <meta property="og:title"              content="Work | Filippo Di Trapani" />
+              <meta property="og:description"        content="The professional website of Fiippo Di Trapani. A product designer based out of Ottawa, Canada. Take a peak into his process as he share's his thoughts and experiences on design."/>
+              <meta property="og:image"              content={ config.siteBanner } />
               <meta name="twitter:image"             content={ config.siteBanner } />
               <meta name="twitter:creator"           content="@filippodt" />
           </Helmet>
