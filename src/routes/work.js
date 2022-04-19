@@ -206,7 +206,7 @@ class Work extends Component {
                }
                </div>
 
-               { this.renderPagination() }                            
+               { this.renderPagination() }       
           </div>
         </div>
       )

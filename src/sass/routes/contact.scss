@@ -1,0 +1,30 @@
+@import "../../sass/components/colours";
+.content .contact__title {
+	font-weight: 900;
+	line-height: 1em;
+	
+	color: $interactive;
+	font-size: 10rem;
+	overflow: hidden;
+	text-transform: uppercase;
+	margin-top: 8rem;
+	
+	@media (min-width: 650px) {
+		margin-top: 16rem;
+	}
+
+	@media (min-width: 850px) {
+		font-size: 15rem;
+	}
+}
+
+.contact__copy {
+	margin-top: 1.6rem;
+	color: $white;
+	line-height: 1.2em;
+
+	@media (min-width: 650px) {
+		font-size: 15rem;
+	}
+}
+

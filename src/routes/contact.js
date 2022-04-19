@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { config } from "../config";
-import '../sass/routes/about.scss';
-import Footer from '../components/footer'
+import '../sass/routes/contact.scss';
+import Footer from '../components/footer';
 
 class Connect extends Component {
     renderContent = () => {
       return (
-        <div className="app-shell__content-wrapper about__content-wrapper">
-          <h1>Get in touch with me</h1>
+        <div className="app-shell__content-wrapper">
+          <div className="container contact-wrapper">
+            <div className="content content-wrapper">
+              <h1 className="contact__title">Let's talk</h1>
+              <p className="contact__copy">Thanks for stopping by! Reach me on LinkedIn or Twitter to connect.</p>
+              <Footer />
+            </div>
+          </div>
         </div>
       )
     }

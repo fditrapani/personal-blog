@@ -34,13 +34,12 @@
 ===========================================*/
 .brand {
 	background: $primary-colour;
-	padding: 8rem 0;
+	padding: 28rem 0;
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 2.4rem;
 
 	@media (min-width: 650px) {
-		padding: 16rem 0;
 		margin-bottom: 6.4rem;
 	}
 }
