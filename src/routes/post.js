@@ -195,7 +195,7 @@ class Post extends Component {
                 <meta property="og:type"               content="article" />
                 <meta property="og:title"              content={ title } />
                 <meta property="og:description"        content={ description } />
-                <meta property="og:image"              content={ sharingImageURL + "?w=1200" } />
+                <meta property="og:image"              content={ config.siteBanner } />
                 <meta name="twitter:image"             content={ config.siteBanner } /> 
                 <meta name="twitter:creator"           content="@filippodt" />
             </Helmet>
