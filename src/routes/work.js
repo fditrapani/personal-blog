@@ -182,6 +182,8 @@ class Work extends Component {
               <meta property="og:image"              content={ config.siteBanner } />
               <meta name="twitter:image"             content={ config.siteBanner } />
               <meta name="twitter:creator"           content="@filippodt" />
+              <meta name="twitter:card"              content="summary_large_image" />
+              <meta name="twitter:title"             content="Work | Filippo Di Trapani" />
           </Helmet>
           
 
