@@ -127,7 +127,6 @@ class About extends Component {
               <meta property="og:title"              content="About | Filippo Di Trapani" />
               <meta property="og:description"        content="Professional website for a product designer based in Ottawa, Canada. Take a peak into his process as he share's his thoughts and experiences on design." />
               <meta property="og:image"              content={ config.siteBanner } />
-              <meta name="twitter:card"              content="summary_large_image">
               <meta name="twitter:image"             content={ config.siteBanner } />
               <meta name="twitter:creator"           content="@filippodt" />
               <meta name="twitter:card"              content="summary_large_image" />

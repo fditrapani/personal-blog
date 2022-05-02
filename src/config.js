@@ -4,6 +4,6 @@ export const config = {
 	wordpress_url: "fditrapani.wordpress.com",
 	rss_feed: "https://fditrapani.wpcomstaging.com/feed/",
 	siteTitle: "The personal blog of Filippo Di Trapani",
-	siteBanner: "http://filippodt.com/images/filippodt-com.jpg",
+	siteBanner: "https://filippodt.com/images/filippodt-com.jpg",
 	postsPerPage: 10,
 }
