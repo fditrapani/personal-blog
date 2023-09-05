@@ -35,6 +35,25 @@
 	padding: 24px 0;
 }
 
+.post-listing--current {
+	color: $interactive;
+	position: relative;
+
+	&:hover {
+		cursor: default;
+	}
+}
+
+.post-listing__current-dot {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 100%;
+	background: $interactive;
+	margin-left: 8px;
+	transform: translateY(-3px);
+}
+
 .post-listing__image-wrapper {
 	margin-bottom: 15px;
 }

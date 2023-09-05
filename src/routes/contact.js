@@ -11,7 +11,7 @@ class Connect extends Component {
           <div className="container contact-wrapper">
             <div className="content content-wrapper">
               <h1 className="contact__title">Let's talk</h1>
-              <p className="contact__copy">Thanks for stopping by! Reach me on LinkedIn or Twitter to connect.</p>
+              <p className="contact__copy">Thanks for stopping by! Reach out to me on LinkedIn to connect.</p>
               <Footer />
             </div>
           </div>

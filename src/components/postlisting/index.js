@@ -19,12 +19,14 @@ export default class PostListing extends React.Component {
     isFeatured: PropTypes.bool, 
     embedded: PropTypes.bool,
     isCaseStudy: PropTypes.bool,
+    isCurrentPost: PropTypes.bool,
   }
 
   static defaultProps = {
     isFeatured: false,
     embedded: false,
     isCaseStudy: false,
+    isCurrentPost: false,
   };
 
   componentDidMount() {
@@ -45,7 +47,6 @@ export default class PostListing extends React.Component {
               <path d="M11 6.5L6.875 10.5L5 8.68182" stroke="#EAEAEA" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
               <rect x="0.666667" y="1.16667" width="14.6667" height="14.6667" rx="7.33333" stroke="#EAEAEA" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-
 
             Viewed
           </span> 
@@ -93,16 +94,26 @@ export default class PostListing extends React.Component {
     const url = `/${ directory }/${ id }/${ slug }`;
     const content = post.content;
     const date = new Date(post.date).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
+    const isCurrentPost = this.props.isCurrentPost;
 
     return (
         <Link 
           to={ url } 
-          className={ "post-listing" + ( (this.props.embedded) ? " post-listing--related" : "" ) }
+          className={ "post-listing" + 
+            ( (this.props.embedded) ? " post-listing--related" : "" ) +
+            ( (isCurrentPost) ? " post-listing--current" : "" ) 
+           }
         >
           { this.showImage ( image, this.props.isFeatured, title ) }
 
           <div className="post-listing__content" >
-            <div className="post-listing__title" dangerouslySetInnerHTML={{ __html: title }} />
+            <div className="post-listing__title">
+              <span dangerouslySetInnerHTML={{ __html: title }} />
+              
+              { isCurrentPost && (
+                <span className="post-listing__current-dot" />
+              ) }
+            </div>
             
             { (! this.props.hideReadingTime && ! this.props.embedded) && (
               <div className="post-listing__details">

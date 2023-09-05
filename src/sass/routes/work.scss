@@ -20,6 +20,19 @@
 
 .portfolio__cell {
 	overflow:hidden;
+	position: relative;
+
+	.porfolio__image {
+		object-fit: cover;	
+		height: 100%;
+	}
+}
+
+@media (min-width: 650px) {
+	.feature5 .porfolio__image {
+		object-fit: inherit;
+		height: auto;
+	}
 }
 
 .portfolio-lettering {
@@ -41,24 +54,54 @@
 	}
 }
 
+.portfolio__cell--image {
+	background: $interactive;
+}
+
+.portfolio__link {
+	background: $interactive;
+
+	.icon--chevron {
+		transition: transform 200ms ease-in-out;
+	}
+
+	&:hover .porfolio__image {
+		filter: grayscale(1);
+		mix-blend-mode: multiply;
+		opacity: 0.7;
+	}
+
+	&:hover .icon--chevron {
+		display: inline-block;
+		transform: translateX(8px);
+	}
+}
+
 .porfolio__image {
 	display: block;
 	width: 100%;
 }
 
+.portfolio__name {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 8px 12px;
+	background: rgba($dark-colour,0.6);
+	color: $white;
+	font-size: 0.75em;
+	display: flex;
+	align-items: center;
+
+	@media (min-width: 650px) {
+		font-size: 1em;
+	}
+}
+
 .feature1,
 .feature4 {
 	grid-column: 1/3;
-}
-
-.feature3 img {
-	object-fit: cover;	
-	height: 100%;
-}
-
-.feature6 img {
-	object-fit: cover;
-	height: 100%;
 }
 
 .porfolio__image--desktop {
@@ -95,12 +138,12 @@
 		grid-column: 6/13;
 		grid-row: 8/10;
 		align-self: center;
+		transform: translateX(-10px);
 	}
 
 	.feature3 {
 		grid-column: 9/13;
 		grid-row: 4/8;
-		background: #8a7e61;
 	}
 
 	.feature4 {

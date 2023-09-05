@@ -1,7 +1,9 @@
 @import "../components/colours";
 
 .post__image {
-    margin-top: 2rem;
+    margin: 0 0 0 -5%;
+    width: calc(110%);
+
 
     @media (min-width: 900px) { 
         margin-top: 4rem;
@@ -33,12 +35,12 @@
 	}
 }
 
-.post__title--small {
+.content h1.post__title--small {
 	font-size: 1.6rem;
 	font-weight: normal;
 	color: $text-light;
 	display: block;
-	margin: 0 0 5px;
+	margin: 3.6rem 0 5px;
 	width: 100%;
 	letter-spacing: 0.1rem;
 }

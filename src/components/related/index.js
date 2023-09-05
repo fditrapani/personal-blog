@@ -62,7 +62,10 @@ export default class Related extends React.Component {
         return null; 
       }); 
 
-      shuffleArray( dataArray );
+      if (!isCaseStudy) {
+        shuffleArray( dataArray );
+      }
+  
 
       const hideRelated = ( dataArray.length < 1 ) || false;
 
@@ -81,26 +84,37 @@ export default class Related extends React.Component {
       return response.json();
     }).then( data => {
       const dataArray = data.posts;
-      shuffleArray( dataArray );
+      let isCurrentPost = false;
+
+      if (!isCaseStudy) {
+        shuffleArray( dataArray );
+      }
 
       let posts = dataArray.map( ( post ) => {
         if ( this.props.preLoadedData.ID === post.ID ) {
           return null;
         }
 
+        if ( this.props.preLoadedData.ID === post.ID && isCaseStudy) {
+          isCurrentPost = true;
+        } else {
+          isCurrentPost = false;
+        }
+
         return (
-          <div key={ post.ID } >
+          <div key={ post.ID }>
             <PostListing 
               post={ post } 
               embedded={ true } 
               isCaseStudy={ isCaseStudy }
-              hideReadingTime={ true } />
+              hideReadingTime={ true }
+              isCurrentPost={ isCurrentPost } />
           </div>
         )
       });
 
       const emptyKey = posts.indexOf(null);
-      posts.splice( emptyKey, 1 );
+      isCaseStudy ? null : posts.splice( emptyKey, 1 );
 
       const hideRelated = ( posts.length < 1 ) || false;
       
