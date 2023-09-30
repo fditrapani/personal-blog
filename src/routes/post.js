@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReadingTime from '../components/readingtime/';
 import FeaturedImage from '../components/featuredimage';
 import ProgressIndicator from '../components/progressindicator';
+import CalendarIcon from '../components/calendaricon';
 import { Redirect } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import Related from "../components/related";
@@ -128,11 +129,14 @@ class Post extends Component {
     )
   }
 
-  renderTitle = ( htmlTitle, content, isArticle, description, year ) => {
+  renderTitle = ( htmlTitle, content, isArticle, description, year, date, imageURL ) => {
     if ( isArticle ) {
       return (
-        <div className="post__title-wrapper">
+        <div className={ imageURL ? 'post__title-wrapper' : 'post__title-wrapper-without-image'   }>
           <h1 className="post__title" dangerouslySetInnerHTML={{ __html: htmlTitle }} />
+          <span className="post__date">
+            <CalendarIcon /> { date }
+          </span>
         </div>
       )
     }
@@ -182,6 +186,7 @@ class Post extends Component {
       const isArticle = (data.categories.Articles)? true : false;
       const isCaseStudy = (data.categories.Portfolio)? true : false;
       const year = new Date(data.date).getFullYear();
+      const date = new Date(data.date).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
       const convertedTitle = this.encodeHTMLentities(title);
       
       return (
@@ -205,7 +210,7 @@ class Post extends Component {
             <div className="container">
               <div className="content content-wrapper">
                  { imageURL && this.showFeaturedImage( imageURL, title ) } 
-                 {  this.renderTitle( htmlTitle, data.content, isArticle, description, year ) }
+                 {  this.renderTitle( htmlTitle, data.content, isArticle, description, year, date, imageURL ) }
                  
                  <div dangerouslySetInnerHTML={{ __html: data.content}} />
 

@@ -34,16 +34,7 @@ class Navigation extends Component {
                 className={ "app-shell__nav-link" + ( location === "/" ?  ' active' : '' ) }
                 to="/"
               >
-                Home
-              </Link>
-            </li>
-
-             <li className="app-shell__nav-item">
-              <Link
-                className={ "app-shell__nav-link" + ( location === "/about" ?  ' active' : '' ) }
-                to="/about"
-              >
-                About
+                Blog
               </Link>
             </li>
 
@@ -53,6 +44,15 @@ class Navigation extends Component {
                 to="/work"
               >
                 Work
+              </Link>
+            </li>
+
+             <li className="app-shell__nav-item">
+              <Link
+                className={ "app-shell__nav-link" + ( location === "/about" ?  ' active' : '' ) }
+                to="/about"
+              >
+                About
               </Link>
             </li>
 

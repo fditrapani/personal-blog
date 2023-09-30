@@ -11,12 +11,19 @@
 }
 
 .post__title-wrapper {
-	margin: 2.4rem auto 1.6rem;
+	margin: 2.4rem auto 2.6rem;
 
     @media (min-width: 900px) { 
-		margin: 3.2rem auto 2.4rem;
+		margin: 3.2rem auto 4.2rem;
     }
+}
 
+.post__title-wrapper-without-image {
+	margin: 2.4rem auto 2.6rem;
+
+    @media (min-width: 900px) { 
+		margin: 12rem auto 4.2rem;
+    }
 }
 
 .post__title {
@@ -33,6 +40,15 @@
 	@media (min-width: 650px) {
 		font-size: 6rem;
 	}
+}
+
+.post__date {
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: 6px;
+	margin-top:8px;
 }
 
 .content h1.post__title--small {
