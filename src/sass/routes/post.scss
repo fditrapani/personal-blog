@@ -42,13 +42,25 @@
 	}
 }
 
-.post__date {
-	font-size: 1.5rem;
+.post__meta {
 	display: flex;
 	align-items: center;
-	width: 100%;
+	justify-content: flex-start;	
+	gap: 16px;
+}
+
+.post__meta-content {
+	font-size: 1.5rem;
+	font-weight: 100;
+	display: flex;
+	align-items: center;
 	gap: 6px;
 	margin-top:8px;
+	color: $text-light;
+
+	svg {
+		transform: translateY(-1px);
+	}
 }
 
 .content h1.post__title--small {
@@ -59,6 +71,12 @@
 	margin: 3.6rem 0 5px;
 	width: 100%;
 	letter-spacing: 0.1rem;
+	transform: translateX(4px);
+	font-weight: 200;
+
+	@media (min-width: 650px) {
+		transform: translateX(6px);
+	}
 }
 
 .post__title-wrapper--portfolio {

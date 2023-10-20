@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ReadingTime from '../components/readingtime/';
 import FeaturedImage from '../components/featuredimage';
 import ProgressIndicator from '../components/progressindicator';
 import CalendarIcon from '../components/calendaricon';
+import ReadingTime from "../components/readingtime";
 import { Redirect } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import Related from "../components/related";
@@ -134,9 +134,14 @@ class Post extends Component {
       return (
         <div className={ imageURL ? 'post__title-wrapper' : 'post__title-wrapper-without-image'   }>
           <h1 className="post__title" dangerouslySetInnerHTML={{ __html: htmlTitle }} />
-          <span className="post__date">
-            <CalendarIcon /> { date }
-          </span>
+          <div className="post__meta">
+            <span className="post__meta-content">
+              <CalendarIcon /> { date }
+            </span>
+            <span className="post__meta-content">
+              <ReadingTime content={ content } />
+            </span>
+          </div>
         </div>
       )
     }

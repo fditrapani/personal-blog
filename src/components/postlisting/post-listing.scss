@@ -111,7 +111,6 @@
 	font-weight: normal;
 	color: $text-light;
 	font-size: 1.5rem;
-	padding: 3px 8px;
 }
 
 .post-listing__date {
@@ -124,15 +123,19 @@
 	font-size: 1.5rem;
 	font-weight: normal;
 	color: $text-light;
-	margin: 0;
 }
 
 .post-listing__icon {
 	display: inline-flex;
 	align-items: center;
 	gap: 4px;
+	font-weight: 100;
+
+	svg {
+		transform: translateY(-1px);
+	}
 
 	@media (min-width: 650px) {
-		gap: 8px;
+		gap: 6px;
 	}
 }
