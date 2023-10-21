@@ -87,7 +87,7 @@ export default class PostListing extends React.Component {
     const directory = this.props.isCaseStudy ? 'casestudy' : 'post';
     const url = `/${ directory }/${ id }/${ slug }`;
     const content = post.content;
-    const date = new Date(post.date).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
+    const date = new Date(post.date).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
     const isCurrentPost = this.props.isCurrentPost;
 
     return (

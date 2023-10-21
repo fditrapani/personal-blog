@@ -191,7 +191,7 @@ class Post extends Component {
       const isArticle = (data.categories.Articles)? true : false;
       const isCaseStudy = (data.categories.Portfolio)? true : false;
       const year = new Date(data.date).getFullYear();
-      const date = new Date(data.date).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
+      const date = new Date(data.date).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
       const convertedTitle = this.encodeHTMLentities(title);
       
       return (

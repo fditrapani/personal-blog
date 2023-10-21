@@ -98,12 +98,11 @@
 .post-listing__details {
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: 16px;
 	margin-top: 40px;
 
 	@media (min-width: 650px) {
 		margin-top: 80px;
-		gap: 16px;
 	}
 }
 
