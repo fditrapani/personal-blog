@@ -151,7 +151,7 @@ export default class Related extends React.Component {
           { ! this.props.isCaseStudy &&
            
            (
-              <Button to="/" buttonStyle="primary">
+              <Button to="/blog" buttonStyle="primary">
                 View all posts
               </Button>
             )
