@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { config } from "../config";
 import { Link } from 'react-router-dom';
 import Chevronicon from '../components/icons/chevronicon';
+import Footer from '../components/footer'
 import '../sass/routes/posts.scss';
 import '../sass/routes/work.scss';
 

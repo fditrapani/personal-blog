@@ -90,7 +90,7 @@ body, #root {
 	width: 16px;
 
 	.app-shell__nav-icon-link &:hover {
-		fill: $interactive--light;
+		fill: #F191F4;
 	}
 
 	.app-shell__nav-icon-link &:active {
@@ -131,7 +131,7 @@ body, #root {
 	position: relative;
 
 	&:hover{
-		color: $interactive--light;
+		color: $dark-colour;
 	}
 
 	&:after {
@@ -151,7 +151,6 @@ body, #root {
 
 	&:hover:after {
 		height: 4px;
-		background: $interactive--light;
 	}
 
 	&.active {

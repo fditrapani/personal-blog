@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { config } from "../config";
 import '../sass/routes/contact.scss';
-import Footer from '../components/footer';
+import Contact from '../components/contact';
 
 class Connect extends Component {
     renderContent = () => {
@@ -12,7 +12,7 @@ class Connect extends Component {
             <div className="content content-wrapper">
               <h1 className="contact__title">Let's talk</h1>
               <p className="contact__copy">Thanks for stopping by! Reach out to me on LinkedIn to connect.</p>
-              <Footer />
+              <Contact />
             </div>
           </div>
         </div>

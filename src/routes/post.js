@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FeaturedImage from '../components/featuredimage';
 import ProgressIndicator from '../components/progressindicator';
-import CalendarIcon from '../components/calendaricon';
+import CalendarIcon from '../components/icons/calendaricon';
 import ReadingTime from "../components/readingtime";
 import { Redirect } from 'react-router-dom';
 import { Helmet } from "react-helmet";

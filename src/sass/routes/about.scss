@@ -29,7 +29,6 @@
 	width: 100%;
 }
 
-
 /*= Brand
 ===========================================*/
 .brand {
@@ -37,11 +36,6 @@
 	padding: 28rem 0;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 2.4rem;
-
-	@media (min-width: 650px) {
-		margin-bottom: 6.4rem;
-	}
 }
 
 .brand__logo {
@@ -83,12 +77,129 @@
     }    
 }
 
-.content .intro-paragraph {
-	color: $white;
-	font-size: 3.2rem;
-	line-height: 1.3em;
-	
+.designing_since_wrapper {
+	font-weight: 900;
+	font-size: 6rem;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1em;
+	display: flex;
+	justify-content: center;
+	padding: 6rem 0;
+	transform: translateX(-0.2em);
+
 	@media (min-width: 650px) {
-		font-size: 4rem;
+		padding: 8rem 0;
+		font-size: 10rem;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 12rem 0;
+		font-size: 16rem;
+	}
+}
+
+.designing_since {
+	text-shadow: -1px 0  $primary-colour, 0 1px  $primary-colour, 1px 0  $primary-colour, 0 -1px  $primary-colour;
+	color: $background;
+	overflow: hidden;
+}
+
+.year {
+	color: $primary-colour;
+	margin-left: 0.25em;
+}
+
+.about_section {
+	@media (min-width: 800px) {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	@media (min-width: 1300px) {
+		align-items: flex-start;
+	}
+}
+
+.about_content {
+	padding: 0 24px;
+
+	@media (min-width: 800px) {
+		width: 600px;
+	}
+
+	@media (min-width: 1000px) {
+		padding: 0 64px;
+	}
+}
+
+.about_text {
+	margin-bottom: 24px;
+
+	@media (min-width: 1000px) {
+		font-size: 2.75rem;
+		margin-bottom: 40px;
+	}
+}
+
+.company_link {
+	text-underline-offset: 4px;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:active {
+		text-decoration: underline;
+	}
+}
+
+.about_links {
+	border-bottom: 1px solid rgba($text-light, 0.2);
+}
+
+.about_links__link_wrapper {
+	list-style: none;
+	margin: 0;
+	left: 0;
+	border-top: 1px solid rgba($text-light, 0.2);
+}
+
+.about_links__link {
+	display: block;
+	text-decoration: none;
+	padding: 16px 0;
+	color: $text-light;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.vision_wrapper {
+	text-shadow: -1px 0 rgba($text-light, 0.2), 0 1px rgba($text-light, 0.2), 1px 0 rgba($text-light, 0.2), 0 -1px rgba($text-light, 0.2);
+	color: $background;
+	text-align: right;
+	font-size: 9rem;
+	line-height: 1em;
+	font-weight: 900;
+	margin: 40px 0;
+
+	@media (min-width: 650px) {
+		font-size: 14rem;
+		margin: 0;
+	}
+
+	@media (min-width: 800px) {
+		font-size: 8rem;
+	}
+
+	@media (min-width: 1000px) {
+		font-size: 10rem;
+	}
+
+	@media (min-width: 1300px) {
+		font-size: 18rem;
+		margin: 64px 0;
 	}
 }

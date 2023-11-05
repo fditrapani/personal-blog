@@ -44,8 +44,8 @@ class App extends Component {
               timeout={400}
             >
               <Switch location={ this.props.location } >
-                 <Route path="/" exact component={ Posts } />
-                 <Route path="/about" component={ About } />
+                 <Route path="/" exact component={ About } />
+                 <Route path="/blog" component={ Posts } />
                  <Route path="/work" exact component={ Work } />
                  <Route path="/contact" exact component={ Contact } />
                  <Route path="/page/:page" exact component={ Posts } />

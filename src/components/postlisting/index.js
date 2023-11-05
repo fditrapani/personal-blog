@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import ReadingTime from "../readingtime";
 import "./post-listing.scss";
 import FeaturedImage from "../featuredimage"
-import CalendarIcon from "../calendaricon"
-import CheckIcon from "../checkicon"
+import CalendarIcon from "../icons/calendaricon"
+import CheckIcon from "../icons/checkicon"
 
 export default class PostListing extends React.Component {
   constructor() {
