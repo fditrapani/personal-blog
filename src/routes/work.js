@@ -131,73 +131,79 @@ class Work extends Component {
 
   renderPorfolio = () => {
     return (
-      <div className="portfolio">
-        <div className="feature1 portfolio__cell portfolio__cell--image">
-          <Link to={ "/casestudy/2953/b12-design-system" } className="portfolio__link">
-            <img src="/images/work/b12-design-system.png" alt="" className="porfolio__image" />
-            <span className="portfolio__name">
-              Design system
-              <Chevronicon />
-            </span>
-          </Link>
-        </div>
-        
-        <div className="portfolio-lettering portfolio-lettering--web portfolio__cell">Web</div>
-        
-        <div className="feature2 portfolio__cell portfolio__cell--image">
-          <Link to={ "/casestudy/2433/shopify-plus" } className="portfolio__link">
-            <img src="/images/work/shopify-plus-redesign.png" alt="" className="porfolio__image" />
-            <span className="portfolio__name">
-                Marketing design
+      <div>
+        <h1 className='porfolio__title'>
+          <span className='porfolio_title__selected'>Selected</span>
+          <span className='porfolio_title__works'>works</span>
+        </h1>
+        <div className="portfolio">
+          <div className="feature1 portfolio__cell portfolio__cell--image">
+            <Link to={ "/casestudy/2953/b12-design-system" } className="portfolio__link">
+              <img src="/images/work/b12-design-system.png" alt="" className="porfolio__image" />
+              <span className="portfolio__name">
+                Design system
                 <Chevronicon />
-            </span>
-          </Link>
-        </div>
-        
-        <div className="feature3 portfolio__cell portfolio__cell--image">
-          <Link to={ "/casestudy/2960/remx-brand-guide" } className="portfolio__link">
-            <img src="/images/work/remx-brand-guide.png" alt="" className="porfolio__image" />
-            <span className="portfolio__name">
-              Brand guide
-              <Chevronicon />
-            </span>
-          </Link>
-        </div>
-        
-        <div className="portfolio-lettering portfolio-lettering--brand portfolio__cell">Brand</div>
-        
-        <div className="feature4 portfolio__cell portfolio__cell--image">
-          <Link to={ "/casestudy/2438/shomi" } className="portfolio__link">
-            <img src="/images/work/shomi-app.png" alt="" className="porfolio__image porfolio__image--desktop" />
-            <img src="/images/work/shomi-app-mobile.png" alt="" className="porfolio__image porfolio__image--mobile" />
-            <span className="portfolio__name">
-              App design
-              <Chevronicon />
-            </span>
-          </Link>
-        </div>
-        
-        <div className="feature5 portfolio__cell portfolio__cell--image">
-          <Link to={ "/casestudy/2475/wordpress-com-checkout" } className="portfolio__link">
-            <img src="/images/work/checkout.jpeg" alt="" className="porfolio__image porfolio__image--desktop" />
-            <img src="/images/work/checkout-mobile.jpg" alt="" className="porfolio__image porfolio__image--mobile" />
-            <span className="portfolio__name">
-              Product design
-              <Chevronicon />
-            </span>
-          </Link>
-        </div>
-        
-        <div className="portfolio-lettering portfolio-lettering--product portfolio__cell">Product</div>
-        
-        <div className="feature6 portfolio__cell portfolio__cell--image">
-          <Link to={ "/casestudy/2356/shopify-partner-program" } className="portfolio__link">
-            <img src="/images/work/shopify-partners.png" alt="" className="porfolio__image" />
-            <span className="portfolio__name">
-              Org design
-              <Chevronicon />
-            </span>
-          </Link>
+              </span>
+            </Link>
+          </div>
+          
+          <div className="portfolio-lettering portfolio-lettering--web portfolio__cell">Web</div>
+          
+          <div className="feature2 portfolio__cell portfolio__cell--image">
+            <Link to={ "/casestudy/2433/shopify-plus" } className="portfolio__link">
+              <img src="/images/work/shopify-plus-redesign.png" alt="" className="porfolio__image" />
+              <span className="portfolio__name">
+                  Marketing design
+                  <Chevronicon />
+              </span>
+            </Link>
+          </div>
+          
+          <div className="feature3 portfolio__cell portfolio__cell--image">
+            <Link to={ "/casestudy/2960/remx-brand-guide" } className="portfolio__link">
+              <img src="/images/work/remx-brand-guide.png" alt="" className="porfolio__image" />
+              <span className="portfolio__name">
+                Brand guide
+                <Chevronicon />
+              </span>
+            </Link>
+          </div>
+          
+          <div className="portfolio-lettering portfolio-lettering--brand portfolio__cell">Brand</div>
+          
+          <div className="feature4 portfolio__cell portfolio__cell--image">
+            <Link to={ "/casestudy/2438/shomi" } className="portfolio__link">
+              <img src="/images/work/shomi-app.png" alt="" className="porfolio__image porfolio__image--desktop" />
+              <img src="/images/work/shomi-app-mobile.png" alt="" className="porfolio__image porfolio__image--mobile" />
+              <span className="portfolio__name">
+                App design
+                <Chevronicon />
+              </span>
+            </Link>
+          </div>
+          
+          <div className="feature5 portfolio__cell portfolio__cell--image">
+            <Link to={ "/casestudy/2475/wordpress-com-checkout" } className="portfolio__link">
+              <img src="/images/work/checkout.jpeg" alt="" className="porfolio__image porfolio__image--desktop" />
+              <img src="/images/work/checkout-mobile.jpg" alt="" className="porfolio__image porfolio__image--mobile" />
+              <span className="portfolio__name">
+                Product design
+                <Chevronicon />
+              </span>
+            </Link>
+          </div>
+          
+          <div className="portfolio-lettering portfolio-lettering--product portfolio__cell">Product</div>
+          
+          <div className="feature6 portfolio__cell portfolio__cell--image">
+            <Link to={ "/casestudy/2356/shopify-partner-program" } className="portfolio__link">
+              <img src="/images/work/shopify-partners.png" alt="" className="porfolio__image" />
+              <span className="portfolio__name">
+                Org design
+                <Chevronicon />
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     )

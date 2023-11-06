@@ -10,7 +10,8 @@ class Connect extends Component {
         <div className="app-shell__content-wrapper">
           <div className="container contact-wrapper">
             <div className="content content-wrapper">
-              <h1 className="contact__title">Let's talk</h1>
+              <h1 className="contact__title">
+                  <span className='contact__title__lets'>Let's</span> talk</h1>
               <p className="contact__copy">Thanks for stopping by! Reach out to me on LinkedIn to connect.</p>
               <Contact />
             </div>

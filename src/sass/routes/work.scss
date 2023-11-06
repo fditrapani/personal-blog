@@ -1,5 +1,23 @@
 @import "../components/colours";
 
+/*= title
+================================================== */
+.porfolio__title {
+	padding: 20px 20px 0 20px;
+	margin: 0;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	@media (min-width: 650px) {
+		display: none;
+	}
+
+	span {
+		margin-right: 1rem;
+	}
+}
+
 /*= Eye candy
 ================================================== */
 .portfolio {
@@ -62,7 +80,8 @@
 	background: $interactive;
 
 	.icon--chevron {
-		transition: transform 200ms ease-in-out;
+		opacity: 0;
+		transition: all 200ms ease-in-out;
 	}
 
 	&:hover .porfolio__image {
@@ -74,6 +93,7 @@
 	&:hover .icon--chevron {
 		display: inline-block;
 		transform: translateX(8px);
+		opacity: 1;
 	}
 }
 

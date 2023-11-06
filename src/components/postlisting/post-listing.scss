@@ -5,8 +5,14 @@
 	border-bottom: 1px solid $background__stroke;
 	text-decoration: none;
 	color: $text;
-
 	padding: 20px;
+
+	.icon {
+		display: inline-block;
+		transform: translateY(25%);
+		opacity: 0;
+		transition: all 200ms ease-in-out;
+	}
 
 	@media (min-width: 650px) {
 		padding: 40px 0; 
@@ -28,6 +34,15 @@
 	&:active,
 	&:active .reading-time__listing {
 		color: $text;
+	}
+
+	&:hover .icon {
+		opacity: 1;
+		transform: translate(8px,25%);
+
+		path {
+			stroke: $interactive--dark;
+		}
 	}
 }
 

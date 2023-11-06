@@ -136,6 +136,7 @@
 
 .about_text {
 	margin-bottom: 24px;
+	color: $white;
 
 	@media (min-width: 1000px) {
 		font-size: 2.75rem;
@@ -170,10 +171,32 @@
 	display: block;
 	text-decoration: none;
 	padding: 16px 0;
-	color: $text-light;
+	color: $white;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+
+	@media (min-width: 650px) {
+		font-size: 2.4rem;
+	}
+
+	.icon {
+		opacity: 0;
+		transition: all 200ms ease-in-out;
+		border-color: $interactive;
+
+		path {
+			transition: stroke 200ms ease-in-out;
+		}
+	}
+
+	&:hover .icon {
+		opacity: 1;
+		transform: translateX(8px);
+
+		path {
+			stroke: $interactive--dark;
+		}
+	}
 }
 
 .vision_wrapper {
@@ -183,15 +206,15 @@
 	font-size: 7rem;
 	line-height: 1em;
 	font-weight: 900;
-	margin: 40px 0;
+	margin: 40px 24px 40px 0;
 
 	@media (min-width: 650px) {
 		font-size: 14rem;
-		margin: 0;
 	}
 
 	@media (min-width: 800px) {
 		font-size: 8rem;
+		margin: 0 40px 0 0;
 	}
 
 	@media (min-width: 1000px) {
@@ -200,6 +223,6 @@
 
 	@media (min-width: 1300px) {
 		font-size: 18rem;
-		margin: 64px 0;
+		margin: 122px 40px 64px 0;
 	}
 }

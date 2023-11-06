@@ -6,6 +6,7 @@ import "./post-listing.scss";
 import FeaturedImage from "../featuredimage"
 import CalendarIcon from "../icons/calendaricon"
 import CheckIcon from "../icons/checkicon"
+import Chevronicon from "../icons/chevronicon"
 
 export default class PostListing extends React.Component {
   constructor() {
@@ -104,6 +105,10 @@ export default class PostListing extends React.Component {
             <div className="post-listing__title">
               <span dangerouslySetInnerHTML={{ __html: title }} />
               
+              { this.props.embedded && ( 
+                  <Chevronicon />
+              ) }
+
               { isCurrentPost && (
                 <span className="post-listing__current-dot" />
               ) }
