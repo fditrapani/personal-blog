@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { config } from "../config";
 import { Link } from 'react-router-dom';
 import Chevronicon from '../components/icons/chevronicon';
-import Footer from '../components/footer'
+import FadingImage from '../components/fadingimage';
 import '../sass/routes/posts.scss';
 import '../sass/routes/work.scss';
 
@@ -139,7 +139,7 @@ class Work extends Component {
         <div className="portfolio">
           <div className="feature1 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2953/b12-design-system" } className="portfolio__link">
-              <img src="/images/work/b12-design-system.png" alt="" className="porfolio__image" />
+              <FadingImage src="/images/work/b12-design-system.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
                 Design system
                 <Chevronicon />
@@ -151,7 +151,7 @@ class Work extends Component {
           
           <div className="feature2 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2433/shopify-plus" } className="portfolio__link">
-              <img src="/images/work/shopify-plus-redesign.png" alt="" className="porfolio__image" />
+              <FadingImage src="/images/work/shopify-plus-redesign.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
                   Marketing <span>design</span>
                   <Chevronicon />
@@ -161,7 +161,7 @@ class Work extends Component {
           
           <div className="feature3 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2960/remx-brand-guide" } className="portfolio__link">
-              <img src="/images/work/remx-brand-guide.png" alt="" className="porfolio__image" />
+              <FadingImage src="/images/work/remx-brand-guide.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
                 Brand guide
                 <Chevronicon />
@@ -173,8 +173,8 @@ class Work extends Component {
           
           <div className="feature4 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2438/shomi" } className="portfolio__link">
-              <img src="/images/work/shomi-app.png" alt="" className="porfolio__image porfolio__image--desktop" loading="lazy"/>
-              <img src="/images/work/shomi-app-mobile.png" alt="" className="porfolio__image porfolio__image--mobile" loading="lazy"/>
+              <FadingImage src="/images/work/shomi-app.png" alt="" addClass="porfolio__image porfolio__image--desktop"/>
+              <FadingImage src="/images/work/shomi-app-mobile.png" alt="" addClass="porfolio__image porfolio__image--mobile"/>
               <span className="portfolio__name">
                 App design
                 <Chevronicon />
@@ -184,8 +184,8 @@ class Work extends Component {
           
           <div className="feature5 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2475/wordpress-com-checkout" } className="portfolio__link">
-              <img src="/images/work/checkout.jpeg" alt="" className="porfolio__image porfolio__image--desktop" loading="lazy" />
-              <img src="/images/work/checkout-mobile.jpg" alt="" className="porfolio__image porfolio__image--mobile" loading="lazy" />
+              <FadingImage src="/images/work/checkout.jpeg" alt="" addClass="porfolio__image porfolio__image--desktop"  />
+              <FadingImage src="/images/work/checkout-mobile.jpg" alt="" addClass="porfolio__image porfolio__image--mobile" />
               <span className="portfolio__name">
                 Product design
                 <Chevronicon />
@@ -197,7 +197,7 @@ class Work extends Component {
           
           <div className="feature6 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2356/shopify-partner-program" } className="portfolio__link">
-              <img src="/images/work/shopify-partners.png" alt="" className="porfolio__image" loading="lazy" />
+              <FadingImage src="/images/work/shopify-partners.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
                 Org design
                 <Chevronicon />

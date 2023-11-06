@@ -1,0 +1,8 @@
+.fading-image {
+    opacity: 0;
+    transition: opacity 600ms ease-in-out; 
+}
+
+.fading-image.loaded {
+    opacity: 1;
+}
