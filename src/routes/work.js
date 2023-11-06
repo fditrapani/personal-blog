@@ -153,7 +153,7 @@ class Work extends Component {
             <Link to={ "/casestudy/2433/shopify-plus" } className="portfolio__link">
               <img src="/images/work/shopify-plus-redesign.png" alt="" className="porfolio__image" />
               <span className="portfolio__name">
-                  Marketing design
+                  Marketing <span>design</span>
                   <Chevronicon />
               </span>
             </Link>
@@ -173,8 +173,8 @@ class Work extends Component {
           
           <div className="feature4 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2438/shomi" } className="portfolio__link">
-              <img src="/images/work/shomi-app.png" alt="" className="porfolio__image porfolio__image--desktop" />
-              <img src="/images/work/shomi-app-mobile.png" alt="" className="porfolio__image porfolio__image--mobile" />
+              <img src="/images/work/shomi-app.png" alt="" className="porfolio__image porfolio__image--desktop" loading="lazy"/>
+              <img src="/images/work/shomi-app-mobile.png" alt="" className="porfolio__image porfolio__image--mobile" loading="lazy"/>
               <span className="portfolio__name">
                 App design
                 <Chevronicon />
@@ -184,8 +184,8 @@ class Work extends Component {
           
           <div className="feature5 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2475/wordpress-com-checkout" } className="portfolio__link">
-              <img src="/images/work/checkout.jpeg" alt="" className="porfolio__image porfolio__image--desktop" />
-              <img src="/images/work/checkout-mobile.jpg" alt="" className="porfolio__image porfolio__image--mobile" />
+              <img src="/images/work/checkout.jpeg" alt="" className="porfolio__image porfolio__image--desktop" loading="lazy" />
+              <img src="/images/work/checkout-mobile.jpg" alt="" className="porfolio__image porfolio__image--mobile" loading="lazy" />
               <span className="portfolio__name">
                 Product design
                 <Chevronicon />
@@ -197,7 +197,7 @@ class Work extends Component {
           
           <div className="feature6 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2356/shopify-partner-program" } className="portfolio__link">
-              <img src="/images/work/shopify-partners.png" alt="" className="porfolio__image" />
+              <img src="/images/work/shopify-partners.png" alt="" className="porfolio__image" loading="lazy" />
               <span className="portfolio__name">
                 Org design
                 <Chevronicon />
