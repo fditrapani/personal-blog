@@ -103,7 +103,44 @@
 	text-shadow: -1px 0  $primary-colour, 0 1px  $primary-colour, 1px 0  $primary-colour, 0 -1px  $primary-colour;
 	color: $background;
 	overflow: hidden;
+  }
+
+.designing_text {
+	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
+  	view-timeline-axis: block;
+	display: block;
+	animation: scrollfromleft auto ease-in-out forwards;
+	animation-timeline: --design-scroll;
 }
+
+@keyframes scrollfromleft { 
+	0% {
+		transform: translateX(-100px);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+.since2004_text {
+	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
+  	view-timeline-axis: block;
+	display: inline-block;
+	animation: scrollfromright auto ease-in-out forwards;
+	animation-timeline: --design-scroll;
+}
+
+@keyframes scrollfromright { 
+	0% {
+		transform: translateX(100px);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}
+
 
 .year {
 	color: $primary-colour;
@@ -136,6 +173,8 @@
 		padding: 0 64px;
 	}
 }
+
+
 
 .about_text {
 	margin-bottom: 24px;
@@ -210,9 +249,15 @@
 	line-height: 1em;
 	font-weight: 900;
 	margin: 40px 24px 40px 0;
+	view-timeline-name: --vision-scroll;
+	view-timeline-axis: block;
+	animation: scrollfrombottomMobile auto ease-in-out forwards;
+	animation-timeline: --vision-scroll;
 
 	@media (min-width: 650px) {
 		font-size: 14rem;
+		animation: scrollfrombottom auto ease-in-out forwards;
+		animation-timeline: --vision-scroll;
 	}
 
 	@media (min-width: 800px) {
@@ -227,5 +272,43 @@
 	@media (min-width: 1300px) {
 		font-size: 18rem;
 		margin: 122px 40px 64px 0;
+	}
+}
+
+.vision_word {
+	display: block;
+}
+
+@keyframes scrollfrombottomMobile { 
+	0% {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	60% {
+		transform: translateX(100px);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(100px);
+		opacity: 1;
+	}
+}
+
+@keyframes scrollfrombottom { 
+	0% {
+		transform: translateY(-200px);
+		opacity: 0;
+	}
+
+	60% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
 	}
 }
