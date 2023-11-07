@@ -251,8 +251,6 @@
 	margin: 40px 24px 40px 0;
 	view-timeline-name: --vision-scroll;
 	view-timeline-axis: block;
-	animation: scrollfrombottomMobile auto ease-in-out forwards;
-	animation-timeline: --vision-scroll;
 
 	@media (min-width: 650px) {
 		font-size: 14rem;
