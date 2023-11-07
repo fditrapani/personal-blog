@@ -59,12 +59,10 @@ body, #root {
 	box-sizing: border-box;
 	box-shadow: 0 -3px 10px #000;
 	z-index: 10;
-	animation: navLoad 0.5s ease-out;
 	animation-fill-mode: backwards;
 
 	@media (max-width: 650px) { 
-		box-shadow: 0 4px 10px #000;
-		animation: mobileNavLoad 0.5s ease-out;
+		box-shadow: 0 4px 10px #000;	
 	}
 }
 
