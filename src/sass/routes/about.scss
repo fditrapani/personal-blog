@@ -106,9 +106,9 @@
   }
 
 .designing_text {
+	display: block;
 	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
   	view-timeline-axis: block;
-	display: block;
 	animation: scrollfromleft auto ease-in-out forwards;
 	animation-timeline: --design-scroll;
 }
@@ -124,13 +124,10 @@
 }
 
 .since2004_text {
+	display: block;
 	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
   	view-timeline-axis: block;
-	display: inline-block;
 	animation: scrollfromright auto ease-in-out forwards;
-}
-
-.since2004_text {
 	animation-timeline: --design-scroll;
 }
 
@@ -250,15 +247,13 @@
 	line-height: 1em;
 	font-weight: 900;
 	margin: 40px 24px 40px 0;
+	display: block;
 
 	@media (min-width: 650px) {
 		font-size: 14rem;
 		view-timeline-name: --vision-scroll;
 		view-timeline-axis: block;
 		animation: scrollfrombottom auto ease-in-out forwards;
-	}
-
-	@media (min-width: 650px) {
 		animation-timeline: --vision-scroll;
 	}
 
