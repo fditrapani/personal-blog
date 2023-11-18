@@ -83,8 +83,6 @@
 	text-transform: uppercase;
 	text-align: center;
 	line-height: 1em;
-	display: flex;
-	justify-content: center;
 	padding: 6rem 0;
 	transform: translateX(-0.2em);
 
@@ -107,9 +105,9 @@
 
 .designing_text {
 	display: block;
+	animation: scrollfromleft auto ease-in-out forwards;
 	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
   	view-timeline-axis: block;
-	animation: scrollfromleft auto ease-in-out forwards;
 	animation-timeline: --design-scroll;
 }
 
@@ -125,9 +123,9 @@
 
 .since2004_text {
 	display: block;
+	animation: scrollfromright auto ease-in-out forwards;
 	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
   	view-timeline-axis: block;
-	animation: scrollfromright auto ease-in-out forwards;
 	animation-timeline: --design-scroll;
 }
 
@@ -251,9 +249,9 @@
 
 	@media (min-width: 650px) {
 		font-size: 14rem;
+		animation: scrollfrombottom auto ease-in-out forwards;
 		view-timeline-name: --vision-scroll;
 		view-timeline-axis: block;
-		animation: scrollfrombottom auto ease-in-out forwards;
 		animation-timeline: --vision-scroll;
 	}
 
