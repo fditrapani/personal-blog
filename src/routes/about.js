@@ -27,11 +27,11 @@ class About extends Component {
 
               <div className='designing_since_wrapper'>
                 <div>
-                  <span className="designing_since designing_text">Designing</span>
-                  <span className='since2004_text'>
+                  <div className="designing_since designing_text left_animation">Designing</div>
+                  <div className='since2004_text right_animation'>
                     <span className='designing_since'>since</span>
                     <span className='year'>2004</span>
-                  </span>
+                  </div>
                 </div>
               </div>
 
@@ -60,7 +60,7 @@ class About extends Component {
                   </ul>
                 </div>
 
-                <div className='vision_wrapper'>
+                <div className='vision_wrapper up_animation'>
                   <span className='vision_word'>vision</span>
                   <span className='vision_word vision_word--strategy'>strategy</span>
                   <span className='vision_word vision_word--execution'>execution</span>

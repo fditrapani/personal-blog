@@ -101,11 +101,10 @@
 	text-shadow: -1px 0  $primary-colour, 0 1px  $primary-colour, 1px 0  $primary-colour, 0 -1px  $primary-colour;
 	color: $background;
 	overflow: hidden;
-  }
-
-.designing_text {
-	display: block;
 	animation: scrollfromleft auto ease-in-out forwards;
+}
+
+.left_animation {
 	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
   	view-timeline-axis: block;
 	animation-timeline: --design-scroll;
@@ -124,6 +123,9 @@
 .since2004_text {
 	display: block;
 	animation: scrollfromright auto ease-in-out forwards;
+}
+
+.right_animation {
 	view-timeline-name: --design-scroll; /* create the element (--image-scroll) */
   	view-timeline-axis: block;
 	animation-timeline: --design-scroll;
@@ -250,9 +252,6 @@
 	@media (min-width: 650px) {
 		font-size: 14rem;
 		animation: scrollfrombottom auto ease-in-out forwards;
-		view-timeline-name: --vision-scroll;
-		view-timeline-axis: block;
-		animation-timeline: --vision-scroll;
 	}
 
 	@media (min-width: 800px) {
@@ -272,6 +271,12 @@
 
 .vision_word {
 	display: block;
+}
+
+.up_animation {
+	view-timeline-name: --vision-scroll;
+	view-timeline-axis: block;
+	animation-timeline: --vision-scroll;
 }
 
 @keyframes scrollfrombottomMobile { 
