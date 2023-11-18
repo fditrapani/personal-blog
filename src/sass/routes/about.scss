@@ -249,11 +249,11 @@
 	line-height: 1em;
 	font-weight: 900;
 	margin: 40px 24px 40px 0;
-	view-timeline-name: --vision-scroll;
-	view-timeline-axis: block;
 
 	@media (min-width: 650px) {
 		font-size: 14rem;
+		view-timeline-name: --vision-scroll;
+		view-timeline-axis: block;
 		animation: scrollfrombottom auto ease-in-out forwards;
 		animation-timeline: --vision-scroll;
 	}
