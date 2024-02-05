@@ -58,16 +58,20 @@
 	font-weight: 900;
 	text-shadow: -1px 0 rgba($text-light, 0.5), 0 1px rgba($text-light, 0.5), 1px 0 rgba($text-light, 0.5), 0 -1px rgba($text-light, 0.5);
 	color: $background;
-	font-size: 10rem;
+	font-size: 8rem;
 	overflow: hidden;
 	text-transform: uppercase;
 
 	@media (min-width: 650px) {
+		font-size: 8rem;
 		display: block;
 	}
 
-	@media (min-width: 850px) {
-		display: block;
+	@media (min-width: 1000px) {
+		font-size: 10rem;
+	}
+
+	@media (min-width: 1400px) {
 		font-size: 15rem;
 	}
 }

@@ -141,19 +141,19 @@ class Work extends Component {
             <Link to={ "/casestudy/2953/b12-design-system" } className="portfolio__link">
               <FadingImage src="/images/work/b12-design-system.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
-                Design system
+                B12
                 <Chevronicon />
               </span>
             </Link>
           </div>
           
-          <div className="portfolio-lettering portfolio-lettering--web portfolio__cell">Web</div>
+          <div className="portfolio-lettering portfolio-lettering--web portfolio__cell">UX</div>
           
           <div className="feature2 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2433/shopify-plus" } className="portfolio__link">
               <FadingImage src="/images/work/shopify-plus-redesign.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
-                  Marketing <span>design</span>
+                  Shopify Plus
                   <Chevronicon />
               </span>
             </Link>
@@ -163,20 +163,20 @@ class Work extends Component {
             <Link to={ "/casestudy/2960/remx-brand-guide" } className="portfolio__link">
               <FadingImage src="/images/work/remx-brand-guide.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
-                Brand guide
+                remx.xyz
                 <Chevronicon />
               </span>
             </Link>
           </div>
           
-          <div className="portfolio-lettering portfolio-lettering--brand portfolio__cell">Brand</div>
+          <div className="portfolio-lettering portfolio-lettering--brand portfolio__cell">Product</div>
           
           <div className="feature4 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2438/shomi" } className="portfolio__link">
               <FadingImage src="/images/work/shomi-app.png" alt="" addClass="porfolio__image porfolio__image--desktop"/>
               <FadingImage src="/images/work/shomi-app-mobile.png" alt="" addClass="porfolio__image porfolio__image--mobile"/>
               <span className="portfolio__name">
-                App design
+                Shomi
                 <Chevronicon />
               </span>
             </Link>
@@ -187,19 +187,19 @@ class Work extends Component {
               <FadingImage src="/images/work/checkout.jpeg" alt="" addClass="porfolio__image porfolio__image--desktop"  />
               <FadingImage src="/images/work/checkout-mobile.jpg" alt="" addClass="porfolio__image porfolio__image--mobile" />
               <span className="portfolio__name">
-                Product design
+                Wordpress.com
                 <Chevronicon />
               </span>
             </Link>
           </div>
           
-          <div className="portfolio-lettering portfolio-lettering--product portfolio__cell">Product</div>
+          <div className="portfolio-lettering portfolio-lettering--product portfolio__cell">Research</div>
           
           <div className="feature6 portfolio__cell portfolio__cell--image">
             <Link to={ "/casestudy/2356/shopify-partner-program" } className="portfolio__link">
               <FadingImage src="/images/work/shopify-partners.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
-                Org design
+                Shopify
                 <Chevronicon />
               </span>
             </Link>
