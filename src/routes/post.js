@@ -215,7 +215,7 @@ class Post extends Component {
             <div className="container">
               <div className="content content-wrapper">
                  { imageURL && this.showFeaturedImage( imageURL, title ) } 
-                 {  this.renderTitle( htmlTitle, data.content, isArticle, description, year, date, imageURL ) }
+                 { this.renderTitle( htmlTitle, data.content, isArticle, description, year, date, imageURL ) }
                  
                  <div dangerouslySetInnerHTML={{ __html: data.content}} />
 
