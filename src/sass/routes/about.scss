@@ -42,6 +42,7 @@
 	width: 80%;
 	margin: 0 auto;
 	display: block;
+	overflow: visible !important;
 
 	@media (min-width: 650px) {
 		grid-column: 4 / 10;
@@ -62,6 +63,20 @@
 	animation-fill-mode: backwards;
 }
 
+#face {
+	animation: reveal 800ms ease-out;
+	animation-fill-mode: backwards;
+}
+
+#filippo_f {
+	animation: reveal 800ms 40ms ease-out;
+	animation-fill-mode: backwards;
+}
+
+#filippo_p {
+	animation: reveal 800ms 90ms ease-out;
+	animation-fill-mode: backwards;
+}
 //screen-loader
 @keyframes blink {
     0% {
@@ -75,6 +90,35 @@
     100% {
         opacity: 0;
     }    
+}
+
+//Move up and fade in
+@keyframes reveal {
+	0% {
+			opacity: 0.5;
+			transform: translateY(800px);
+	}
+
+	20% {
+		transform: translateY(800px);
+	}
+
+	40% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-20px);
+	}
+
+	70% {
+		opacity: 1;
+		transform: translateY(-150px);
+	}
+
+	100% {
+			transform: translateY(0);
+	}    
 }
 
 .designing_since_wrapper {
