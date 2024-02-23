@@ -64,17 +64,17 @@
 }
 
 #face {
-	animation: reveal 800ms 40ms ease-out;
+	animation: reveal 750ms 40ms ease-in-out;
 	animation-fill-mode: backwards;
 }
 
 #filippo_f {
-	animation: reveal 800ms 80ms ease-out;
+	animation: reveal 700ms 80ms ease-in;
 	animation-fill-mode: backwards;
 }
 
 #filippo_p {
-	animation: reveal 800ms 100ms ease-out;
+	animation: reveal 780ms 100ms ease-in-out;
 	animation-fill-mode: backwards;
 }
 //screen-loader
@@ -111,10 +111,7 @@
 		transform: translateY(-150px);
 	}
 
-	80% {
-		opacity: 1;
-		transform: translateY(-20px);
-	}
+	
 
 	100% {
 			transform: translateY(0);
