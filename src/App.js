@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Posts from './routes/posts';
 import Work from './routes/work';
 import Post from './routes/post';
+import Casestudy from './routes/case-study';
 import About from './routes/about';
 import Contact from './routes/contact';
 import NotFound from './routes/404';
@@ -50,7 +51,7 @@ class App extends Component {
                  <Route path="/contact" exact component={ Contact } />
                  <Route path="/page/:page" exact component={ Posts } />
                  <Route path="/post/:id/:slug" component={ Post } />
-                 <Route path="/casestudy/:id/:slug" component={ Post } />
+                 <Route path="/casestudy/:id/:slug" component={ Casestudy } />
                  <Route component={ NotFound } />
               </Switch>
             </CSSTransition>

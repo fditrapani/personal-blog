@@ -1,0 +1,129 @@
+@import "../components/colours";
+
+.container.container--casestudy {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 2000px;
+  padding: 0 20px;
+
+  @media (min-width: 900px) { 
+    flex-direction: row-reverse;  
+    gap: 60px;
+    padding: 0;
+  }
+
+  @media (min-width: 1200px) { 
+    gap: 80px;
+  }
+
+  &:after {
+    display: none;
+  }
+}
+
+.casestudy_images_container {
+  margin-left: -20px;
+  width: calc(100% + 40px);
+  position: relative;
+  background: $black;
+  
+  @media (min-width: 900px) { 
+    margin-left: 0;
+    width: 100%;
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 0;  
+    background: none;
+  }
+}
+
+.casestudy_images {
+  overflow-x: scroll;
+  scroll-behavior: smooth; // Add smooth scrolling behavior
+  transition: scroll-left 200ms ease-in;
+}
+
+.casestudy_images_button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.casestudy_images_button--right {
+  right: 10px;
+  justify-content: end;
+  left: auto;
+
+  svg {
+    transform: scaleX(-1);
+  }
+}
+
+#image-container {
+  display: flex;
+  position: relative;
+
+  @media (min-width: 900px) { 
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  figure {
+    display: block;
+    margin: 0;
+    padding: 0;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 0;
+
+    @media (min-width: 900px) {
+      width: 100%;
+      flex-grow: 1;
+      flex-shrink: 1; 
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+.content--casestudy {
+
+  @media (min-width: 550px) { 
+    padding: 40px;
+  }
+
+  @media (min-width: 900px) { 
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    width: 0;
+    padding: 20px 0 0 40px;
+  }
+
+  @media (min-width: 1200px) { 
+    padding: 40px 0 0 70px;
+  }
+
+}
+

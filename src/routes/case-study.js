@@ -1,28 +1,44 @@
-import React, { Component } from 'react';
-import FeaturedImage from '../components/featuredimage';
+import React, { Component, useRef } from 'react';
 import ProgressIndicator from '../components/progressindicator';
-import CalendarIcon from '../components/icons/calendaricon';
-import ReadingTime from "../components/readingtime";
 import { Redirect } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import Related from "../components/related";
+import NavigationIcon from '../components/icons/navigationIcon';
 import { config } from "../config";
-import '../sass/routes/post.scss';
+import '../sass/routes/casestudies.scss';
 
-class Post extends Component {
+class Casestudy extends Component {
   constructor() {
     super();
+    this.carouselRef = React.createRef();
 
     this.state = {
       isLoaded: false,
       isNotFound: false,
       postData: {},
+      leftButtonOpacity: {
+        opacity: 0.5,
+      },
+      rightButtonOpacity: {
+        opacity: 1,
+      },
     };
   }
 
   componentDidMount() {
     localStorage.setItem( 'visited-'+ window.location.pathname, true );
     this.getData();
+
+    if (this.carouselRef.current) {
+      this.carouselRef.current.addEventListener('scroll', this.handleScroll);
+    }
+  }
+
+  componentWillUnmount() {
+    // Remove scroll event listener when component unmounts
+    if (this.carouselRef.current) {
+      this.carouselRef.current.removeEventListener('scroll', this.handleScroll);
+    }
   }
 
   componentWillReceiveProps( nextProps ) {
@@ -39,7 +55,7 @@ class Post extends Component {
   }
 
   getData = () => {
-    const dataSource = "Data";
+    const dataSource = "Portfolio";
     const localData = localStorage.getItem( dataSource );
 
     if ( localData ) {
@@ -73,8 +89,7 @@ class Post extends Component {
       'https://public-api.wordpress.com/rest/v1.1/sites/' + config.wordpress_url + '/posts/' + this.props.match.params.id
     ).then( response => {
           if (response.status !== 200) {
-            console.log('Looks like there was a problem. Status Code: ' +
-              response.status);
+            console.log('Looks like there was a problem. Status Code: ' + response.status);
 
             switch( response.status ) {
               case 404:
@@ -114,41 +129,28 @@ class Post extends Component {
       });
     }
 
-  renderSubTitle = ( content ) => {
+  renderSubTitle = ( description ) => {
+    //Portfolio title
     return (
-      <ReadingTime content={ content } fullView={ true } />
+      <React.Fragment>
+        { description }
+      </React.Fragment>
     )
   }
 
-  renderTitle = ( htmlTitle, content, date, imageURL ) => {
+  renderTitle = ( htmlTitle, description, year ) => {
+    // Portfolio: duplicate h1 because it's better than a nonsense div or span
     return (
-      <div className={ imageURL ? 'post__title-wrapper' : 'post__title-wrapper-without-image'   }>
-        <h1 className="post__title" dangerouslySetInnerHTML={{ __html: htmlTitle }} />
-        <div className="post__meta">
-          <span className="post__meta-content">
-            <CalendarIcon /> { date }
-          </span>
-          <span className="post__meta-content">
-            <ReadingTime content={ content } />
-          </span>
-        </div>
-      </div>
-    )
-  }
-
-  showFeaturedImage = ( url, title ) => {
-    return (
-      <div className="post__image">
-        <FeaturedImage 
-          imageUrl={ url }
-          altText={ "Featured image for " + title } />
+      <div className="post__title-wrapper post__title-wrapper--portfolio">        
+        <h1 className="post__title--small" dangerouslySetInnerHTML={{ __html: htmlTitle + ": " + year }} />  
+        <h2 className="post__title">{ this.renderSubTitle( description.replace("&#8217;", "'") ) }</h2>
       </div>
     )
   }
 
   showRelatedContent = ( data ) => {
       return (
-        <Related preLoadedData={ data } isCaseStudy={ false } />
+        <Related preLoadedData={ data } isCaseStudy={ true } />
       )
   }
 
@@ -161,16 +163,54 @@ class Post extends Component {
       );
   }
 
+   // Event handler for scrolling the carousel left
+   handleCarouselNavigation = ( direction ) => {
+    const totalSlides = this.carouselRef.current.scrollWidth / window.innerWidth;
+    const currentSlide = direction === 1 ? Math.floor(this.carouselRef.current.scrollLeft / window.innerWidth) : Math.ceil(this.carouselRef.current.scrollLeft / window.innerWidth);
+    const newSlide = (currentSlide + direction) * window.innerWidth;
+
+    if (this.carouselRef.current) {
+      this.carouselRef.current.scrollLeft = newSlide;
+    }
+  };
+
+  // Event handler for scrolling the carousel right
+  scrollRight = () => {
+    if (this.carouselRef.current) {
+      this.carouselRef.current.scrollLeft += window.innerWidth; // Adjust scroll distance as needed
+    }
+  };
+
+  // Event handler for scroll event
+  handleScroll = () => {
+    if (this.carouselRef.current) {
+      const isAtBeginning = this.carouselRef.current.scrollLeft === 0;
+      const isAtEnd = this.carouselRef.current.scrollLeft + this.carouselRef.current.clientWidth >= this.carouselRef.current.scrollWidth;
+  
+      this.setState({
+        leftButtonOpacity: { opacity: isAtBeginning ? 0.5 : 1 },
+        rightButtonOpacity: { opacity: isAtEnd ? 0.5 : 1 },
+      });
+    }
+  };
+
   renderContent = () => {
     if ( this.state.isLoaded ) {
       const data = this.state.postData;
       const description = data.excerpt.replace(/<\/?[^>]+(>|$)/g, "");
-      const imageURL = (data.post_thumbnail)? data.post_thumbnail.URL : false;
       const title = data.title;
       const htmlTitle = title;
-      const date = new Date(data.date).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
+      const year = new Date(data.date).getFullYear();
       const convertedTitle = this.encodeHTMLentities(title);
-      
+
+      //Wrangling content
+      const content = data.content;
+      let contentObject = document.createElement('div');
+      contentObject.innerHTML = content;
+      const caseStudyImages = contentObject.querySelector("#image-container").outerHTML;
+      contentObject.querySelector("#image-container").remove();
+      const strippedContent = contentObject.outerHTML;
+
       return (
         <React.Fragment>
           <div className="app-shell__content-wrapper">
@@ -189,23 +229,46 @@ class Post extends Component {
                 <meta name="twitter:title"             content={ title } />
             </Helmet>
 
-            <div className="container">
-              <div className="content content-wrapper">
-                 { imageURL && this.showFeaturedImage( imageURL, title ) } 
-                 { this.renderTitle( htmlTitle, data.content, date, imageURL ) }
-                 
-                 <div dangerouslySetInnerHTML={{ __html: data.content}} />
+            <div className="container container--casestudy">
+              <div className="casestudy_images_container">
+                <div 
+                  ref={ this.carouselRef } 
+                  className="casestudy_images"
+                  dangerouslySetInnerHTML={{ __html: caseStudyImages}} 
+                  onScroll={ this.handleScroll }
+                />
 
-                 { navigator.share && (
+                <button 
+                  className="casestudy_images_button casestudy_images_button--left" 
+                  onClick={ () => { this.handleCarouselNavigation( -1 ) } }
+                  style={ this.state.leftButtonOpacity }
+                >
+                  <NavigationIcon />
+                </button>
+                <button 
+                  className="casestudy_images_button casestudy_images_button--right" 
+                  onClick={ () => { this.handleCarouselNavigation( 1 ) } }
+                  style={ this.state.rightButtonOpacity }
+                >
+                  <NavigationIcon />
+                </button>
+              </div>
+
+              <div className="content content--casestudy">
+                { this.renderTitle( htmlTitle, description, year ) }
+                
+                <div dangerouslySetInnerHTML={{ __html: strippedContent }} />
+
+                { navigator.share && (
                     <button className="button--primary" onClick={ this.shareButtonClick }>
                       Share
                     </button>
                   ) }
 
-                 <div className="divider">
-                   { this.showRelatedContent( data ) }
-                 </div>
-               </div>
+                <div className="divider">
+                  { this.showRelatedContent( data ) }
+                </div>
+              </div>
             </div>
           </div>
 
@@ -229,4 +292,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default Casestudy;
