@@ -163,21 +163,13 @@ class Casestudy extends Component {
       );
   }
 
-   // Event handler for scrolling the carousel left
+   // Event handler for scrolling the carousel left/right
    handleCarouselNavigation = ( direction ) => {
-    const totalSlides = this.carouselRef.current.scrollWidth / window.innerWidth;
     const currentSlide = direction === 1 ? Math.floor(this.carouselRef.current.scrollLeft / window.innerWidth) : Math.ceil(this.carouselRef.current.scrollLeft / window.innerWidth);
-    const newSlide = (currentSlide + direction) * window.innerWidth;
+    const nextSlide = (currentSlide + direction) * window.innerWidth;
 
     if (this.carouselRef.current) {
-      this.carouselRef.current.scrollLeft = newSlide;
-    }
-  };
-
-  // Event handler for scrolling the carousel right
-  scrollRight = () => {
-    if (this.carouselRef.current) {
-      this.carouselRef.current.scrollLeft += window.innerWidth; // Adjust scroll distance as needed
+      this.carouselRef.current.scrollLeft = nextSlide;
     }
   };
 
