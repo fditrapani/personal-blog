@@ -134,6 +134,11 @@
 
 .feature1 {
 	grid-row: 1/3;
+	aspect-ratio: 195/166;
+
+	@media (min-width: 650px) {
+		aspect-ratio: auto;
+	}
 }
 
 .feature1,
@@ -141,9 +146,28 @@
 	grid-column: 1/3;
 }
 
+.feature2,
+.feature3 {
+	aspect-ratio: 224/191;
+
+	@media (min-width: 650px) {
+		aspect-ratio: auto;
+	}
+}
+
+.feature4 {
+	aspect-ratio: 460/189;
+}
+
 .feature5,
 .feature6 {
 	grid-row: 5/7;
+
+	aspect-ratio: 111/197;
+
+	@media (min-width: 650px) {
+		aspect-ratio: auto;
+	}
 }
 
 .porfolio__image--desktop {
