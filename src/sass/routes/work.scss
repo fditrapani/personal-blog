@@ -157,6 +157,10 @@
 
 .feature4 {
 	aspect-ratio: 460/189;
+
+	@media (min-width: 650px) {
+		aspect-ratio: auto;
+	}
 }
 
 .feature5,
