@@ -160,7 +160,7 @@ class Work extends Component {
           </div>
           
           <div className="feature3 portfolio__cell portfolio__cell--image">
-            <Link to={ "/casestudy/2960/remx-brand-guide" } className="portfolio__link">
+            <Link to={ "/casestudy/3141/remx-xyz" } className="portfolio__link">
               <FadingImage src="/images/work/remx-brand-guide.png" alt="" addClass="porfolio__image" />
               <span className="portfolio__name">
                 remx.xyz
