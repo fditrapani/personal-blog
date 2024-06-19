@@ -38,7 +38,7 @@ class About extends Component {
               <div className='about_section'>
                 <div className='about_content'>
                   <div className='about_text'>
-                    Filippo Di Trapani is a Design leader who specializes in strategic thinking and working with teams to build products people love. Currently based in Ottawa, Canada crafting the future of commerce with <a href="https://remx.xyz" className='company_link'>remx.xyz</a>.
+                    Filippo Di Trapani is a Design leader who specializes in strategic thinking and working with teams to build products people love. Currently based in Ottawa, Canada building a better web at <a href="https://automattic.com" className='company_link'>Automattic</a>.
                     </div>
                   
                   <ul className='about_links'>
