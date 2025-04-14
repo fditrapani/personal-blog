@@ -23,7 +23,7 @@ class Navigation extends Component {
         <div className="app-shell__nav-content">
   
           <Link to="/" className="app-shell__nav-icon-link">
-            <span className='app-shell__nav-wordmark'>Filippo <span className='app-shell__nav-cognome'>Di Trapani</span></span>
+            <span className='app-shell__nav-wordmark'>Filippo Di Trapani</span>
           </Link> 
 
           { this.showOffline() }
