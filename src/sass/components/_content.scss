@@ -81,7 +81,8 @@
 	ul li {
 		list-style-type: disc;
 	    list-style-position: outside;
-	    margin-left: 25px;
+	    margin-left: 16px;
+		padding-left: 4px;
 	    color: $text-light;
 
 	    @media (min-width: 550px) {
@@ -95,14 +96,19 @@
 	}
 
 	blockquote {
-		font-style: oblique;
+		font-style: normal;
 		margin-right: 0;
 		margin-left: 0;
-		padding-left: 1em;
+		padding: 1em;
 		border-left: 8px solid $background__stroke;
+		background: rgba(255,255,255,0.02);
 		
 		@media (min-width: 550px) {
-			padding-left: 1.5em;
+			padding: 1.5em;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
 		}
 	}
 

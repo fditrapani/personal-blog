@@ -77,23 +77,45 @@ body, #root {
 	height: 50px;
 	padding: 0px 20px;
 	overflow: hidden;
+	background: #262326;
 }
 
-.app-shell__nav-icon-link {
-	height: 25px;
+.app-shell__nav-icon-link {	
 	padding-right: 20px;
+	color: #fff;
+
+	&:hover{
+		color: $primary-colour;
+	}
+}
+
+.app-shell__nav-wordmark {
+	display: none;
+
+	@media (min-width: 650px) { 
+		display: inline-block;	
+		line-height: 1em;
+	}
+}
+
+.app-shell__nav-icon-wrapper {
+	width: 32px;
+	height: 32px;
+	border-radius: 1000px;
+	background-color: $primary-colour;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translate(-10px,-1px);
+
+	@media (min-width: 650px) { 
+		display: none;	
+	}
 }
 
 .app-shell__nav-icon {
-	width: 16px;
-
-	.app-shell__nav-icon-link &:hover {
-		fill: #F191F4;
-	}
-
-	.app-shell__nav-icon-link &:active {
-		fill: $dark-colour;
-	}
+	width: 10px;
+	fill: $dark-colour;
 }
 
 .app-shell__nav-offline {
@@ -123,13 +145,13 @@ body, #root {
 
 .app-shell__nav-link {
 	text-decoration: none;
-	color: $dark-colour;
+	color: $white;
 	font-size: 1.6rem;
 	padding: 5px 10px;
 	position: relative;
 
 	&:hover{
-		color: $dark-colour;
+		color: $primary-colour;
 	}
 
 	&:after {
@@ -140,11 +162,7 @@ body, #root {
 		left: 0;
 		width: 100%;
 		height: 0px;
-		background: $dark-colour;
-	}
-
-	&:active {
-		color: #FF0000;
+		background: $primary-colour;
 	}
 
 	&:hover:after {
@@ -152,20 +170,20 @@ body, #root {
 	}
 
 	&.active {
-		color: $dark-colour;
+		color: $primary-colour;
 
 		&:after {
 			height: 4px;
-			background: $dark-colour;
+			background: $primary-colour;
 		}
 	}
 	
 	&:active {
-		color: $dark-colour;
+		color: $white;
 	}
 
 	&:active:after {
-		background: $dark-colour;
+		background: $white;
 	}
 }
 

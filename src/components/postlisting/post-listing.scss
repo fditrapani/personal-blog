@@ -41,7 +41,7 @@
 		transform: translate(8px,25%);
 
 		path {
-			stroke: $interactive--dark;
+			stroke: $primary-colour;
 		}
 	}
 }
@@ -82,6 +82,12 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+.post-listing:hover {
+	.post-listing__title {
+		color: $primary-colour;
+	}
 }
 
 .post-listing__title {
