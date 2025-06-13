@@ -69,12 +69,12 @@
 }
 
 #filippo_f {
-	animation: reveal 700ms 80ms ease-in;
+	animation: reveal 700ms 60ms ease-in;
 	animation-fill-mode: backwards;
 }
 
 #filippo_p {
-	animation: reveal 780ms 100ms ease-in-out;
+	animation: reveal 780ms 80ms ease-in-out;
 	animation-fill-mode: backwards;
 }
 //screen-loader
@@ -104,17 +104,16 @@
 	}
 
 	40% {
+		opacity: 1;
 		transform: translateY(0);
 	}
 
 	50% {
-		transform: translateY(-150px);
+		transform: translateY(-50px);
 	}
 
-	
-
 	100% {
-			transform: translateY(0);
+		transform: translateY(0);
 	}    
 }
 
@@ -126,6 +125,9 @@
 	line-height: 1em;
 	padding: 6rem 0;
 	transform: translateX(-0.2em);
+	animation: fade-in 780ms 120ms ease-in-out 1;
+	animation-fill-mode: forwards;
+	opacity: 0;
 
 	@media (min-width: 650px) {
 		padding: 8rem 0;
@@ -136,6 +138,24 @@
 		padding: 12rem 0;
 		font-size: 16rem;
 	}
+}
+
+.app-shell__nav-icon-link,
+.app-shell__nav-wrapper {
+	animation: fade-in 780ms 120ms ease-in-out 1;
+	animation-fill-mode: forwards;
+	opacity: 0;	
+}
+
+//screen-loader
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+    	opacity: 1;	
+    }
 }
 
 .designing_since {
