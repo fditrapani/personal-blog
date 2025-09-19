@@ -77,16 +77,12 @@ body, #root {
 	height: 50px;
 	padding: 0px 20px;
 	overflow: hidden;
-	background: #262326;
+	color: #262326;
 }
 
 .app-shell__nav-icon-link {	
 	padding-right: 20px;
-	color: #fff;
-
-	&:hover{
-		color: $primary-colour;
-	}
+	color: #262326;
 }
 
 .app-shell__nav-wordmark {
@@ -125,14 +121,10 @@ body, #root {
 
 .app-shell__nav-link {
 	text-decoration: none;
-	color: $white;
+	color: #262326;
 	font-size: 1.6rem;
 	padding: 5px 10px;
 	position: relative;
-
-	&:hover{
-		color: $primary-colour;
-	}
 
 	&:after {
 		display: block;
@@ -142,7 +134,7 @@ body, #root {
 		left: 0;
 		width: 100%;
 		height: 0px;
-		background: $primary-colour;
+		background: #262326;
 	}
 
 	&:hover:after {
@@ -150,20 +142,20 @@ body, #root {
 	}
 
 	&.active {
-		color: $primary-colour;
+		color: #262326;
 
 		&:after {
 			height: 4px;
-			background: $primary-colour;
+			background: #262326;
 		}
 	}
 	
 	&:active {
-		color: $white;
+		color: #262326;
 	}
 
 	&:active:after {
-		background: $white;
+		background: #262326;
 	}
 }
 
