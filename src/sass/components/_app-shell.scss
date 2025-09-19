@@ -55,15 +55,10 @@ body, #root {
 }
 
 .app-shell__navigation {
-	background: $white;
+	background: $primary-colour;
 	box-sizing: border-box;
-	box-shadow: 0 -6px 10px #540E5E;
 	z-index: 10;
 	animation-fill-mode: backwards;
-
-	@media (max-width: 650px) { 
-		box-shadow: 0 4px 10px #000;	
-	}
 }
 
 .page-main {
